@@ -67,9 +67,8 @@ export default function Services() {
                             return (
                                 <div
                                     key={service.title}
-                                    className={`service-card basis-full sm:basis-1/2 lg:basis-1/3 px-15px mb-30px ${
-                                        active ? "active" : ""
-                                    }`}
+                                    className={`service-card basis-full sm:basis-1/2 lg:basis-1/3 px-15px mb-30px ${active ? "active" : ""
+                                        }`}
                                     onMouseEnter={() => setActiveIndex(i)}
                                 >
                                     <div className="border border-border-color-1 shadow-box-shadow-1 bg-white relative py-10 pb-35px px-30px transition-all duration-300">
@@ -95,9 +94,8 @@ export default function Services() {
                                         </p>
                                         <div className="text-sm text-color-1 font-bold">
                                             <a
-                                                className={`find-service hover:text-secondary-color flex items-center justify-center ${
-                                                    active ? "text-secondary-color" : ""
-                                                }`}
+                                                className={`find-service hover:text-secondary-color flex items-center justify-center ${active ? "text-secondary-color" : ""
+                                                    }`}
                                                 href="service-details.html"
                                             >
                                                 Find A Home
@@ -105,9 +103,8 @@ export default function Services() {
                                             </a>
                                         </div>
                                         <span
-                                            className={`hover-line absolute bottom-0 left-0 ${
-                                                active ? "w-full" : "w-0"
-                                            } h-1 bg-secondary-color transition-all duration-300 block`}
+                                            className={`hover-line absolute bottom-0 left-0 ${active ? "w-full" : "w-0"
+                                                } h-1 bg-secondary-color transition-all duration-300 block`}
                                         ></span>
                                     </div>
                                 </div>
