@@ -1,26 +1,1067 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
+/* Exclude the original template folder from Tailwind's automatic
+   content detection so its classes (e.g. bg-[url('../img/...')])
+   are not compiled into the Next.js build. */
+@source not "../quarter-rtl";
+
+/* ============================================================
+   Quarter Design Tokens (Tailwind v4 @theme)
+   Preserves the original Quarter class names used by the HTML
+   template (e.g. text-primary-color, bg-section-bg-1, mb-10px,
+   w-140px, z-high, shadow-box-shadow-1, font-heading, ...).
+   ============================================================ */
+@theme {
+  /* ---------- Colors ---------- */
+  --color-primary-color: #000000;
+  --color-secondary-color: #ff5a3c;
+  --color-secondary-color-2: #cb3421;
+  --color-primary-color-3: #133236;
+  --color-heading-color: #071c1f;
+  --color-paragraph-color: #5c727d;
+  --color-color-1: #8cb2b2;
+  --color-color-6: #f5dfdc;
+  --color-color-7: #212529;
+  --color-section-bg-1: #f2f6f7;
+  --color-section-bg-2: #171b2a;
+  --color-section-bg-5: #fff2f0;
+  --color-section-bg-6: #0b2c3d;
+  --color-section-bg-7: #282b38;
+  --color-table-bg: #f7f8fa;
+  --color-border-color-1: #e5eaee;
+  --color-border-color-3: #5c617f;
+  --color-border-color-8: #f6f6f6;
+  --color-border-color-9: #e4ecf2;
+  --color-border-color-10: #ebecec;
+  --color-border-color-11: #ededed;
+  --color-border-color-12: #e1e6ff;
+  --color-border-color-13: #f1f8ff;
+  --color-border-color-14: #576466;
+  --color-border-color-15: #f4faff;
+  --color-border-color-16: #93959e;
+  --color-border-color-17: #dee2e6;
+  --color-border-color-18: #203336;
+  --color-border-dashed: #dddddd;
+  --color-border-primary: #eeeeee;
+  --color-white-4: #e6ecf0;
+  --color-white-5: #f0f4f7;
+  --color-white-6: #f1f1f1;
+  --color-white-7: #f7f7f7;
+  --color-green: #77c720;
+  --color-ratings: #ffb800;
+
+  /* ---------- Fonts ---------- */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Nunito Sans", sans-serif;
+
+  /* ---------- Shadows ---------- */
+  --shadow-box-shadow-1: 0 16px 32px 0 rgba(7, 28, 31, 0.1);
+  --shadow-box-shadow-2: 0 0 4px rgba(0, 0, 0, 0.1);
+  --shadow-box-shadow-3: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  --shadow-box-shadow-4: 0 5px 20px 0 rgba(23, 44, 82, 0.1);
+  --shadow-box-shadow-5: 0 8px 16px 0 rgba(93, 93, 93, 0.1);
+
+  /* ---------- Z-index ---------- */
+  --z-1: 1;
+  --z-10: 10;
+  --z-20: 20;
+  --z-xsmall: 99999;
+  --z-small: 999999;
+  --z-high: 99999999;
+  --z-xl: 999999999;
+  --z-xxl: 9999999999;
+
+  /* ---------- Spacing (pixel-based) ----------
+     Generates margin/padding/gap/width/height utilities
+     such as mb-10px, pt-100px, gap-15px, w-140px, h-350px. */
+  --spacing-1px: 1px;
+  --spacing-3px: 3px;
+  --spacing-5px: 5px;
+  --spacing-6px: 6px;
+  --spacing-7px: 7px;
+  --spacing-10px: 10px;
+  --spacing-14px: 14px;
+  --spacing-15px: 15px;
+  --spacing-17px: 17px;
+  --spacing-18px: 18px;
+  --spacing-21px: 21px;
+  --spacing-22px: 22px;
+  --spacing-23px: 23px;
+  --spacing-25px: 25px;
+  --spacing-30px: 30px;
+  --spacing-35px: 35px;
+  --spacing-43px: 43px;
+  --spacing-45px: 45px;
+  --spacing-50px: 50px;
+  --spacing-60px: 60px;
+  --spacing-65px: 65px;
+  --spacing-70px: 70px;
+  --spacing-90px: 90px;
+  --spacing-95px: 95px;
+  --spacing-100px: 100px;
+  --spacing-110px: 110px;
+  --spacing-115px: 115px;
+  --spacing-130px: 130px;
+  --spacing-140px: 140px;
+  --spacing-150px: 150px;
+  --spacing-187px: 187px;
+  --spacing-300px: 300px;
+
+  /* ---------- Custom widths ---------- */
+  --width-dropdown: 14.375rem;
+
+  /* ---------- Custom max-widths ---------- */
+  --max-width-350px: 21.875rem;
+  --max-width-450px: 28.125rem;
+  --max-width-500px: 31.25rem;
+
+  /* ---------- Custom line-heights ---------- */
+  --leading-15px: 15px;
+  --leading-22px: 22px;
+  --leading-23px: 23px;
+  --leading-25px: 25px;
+  --leading-30px: 30px;
+  --leading-50px: 50px;
+  --leading-60px: 60px;
+  --leading-65px: 65px;
+
+  /* ---------- Custom font-sizes ---------- */
+  --text-10px: 10px;
+  --text-11px: 11px;
+  --text-13px: 13px;
+  --text-15px: 15px;
+  --text-17px: 17px;
+  --text-22px: 22px;
+  --text-25px: 25px;
+  --text-26px: 26px;
+  --text-34px: 34px;
+  --text-40px: 40px;
+  --text-42px: 42px;
+  --text-44px: 44px;
+  --text-50px: 50px;
+  --text-65px: 65px;
+  --text-80px: 80px;
+
+  /* ---------- Fixed line-heights ----------
+     The original template's compiled `.text-sm/base/lg/...` use fixed
+     rem line-heights (1.25rem / 1.5rem / 1.75rem / ...). Tailwind v4
+     defaults to unitless ratios, which scale line-height when the
+     font-size is overridden (e.g. `text-lg xl:text-15px`, or the
+     counter heading `text-3xl md:text-4xl lg:text-42px`). These
+     overrides reproduce the original fixed behavior exactly. */
+  --text-xs--line-height: 1rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl--line-height: 2.5rem;
+
+  /* ---------- Custom radii ---------- */
+  --radius-10px: 10px;
+  --radius-100: 100px;
+
+  /* ---------- Custom border widths ---------- */
+  --border-width-3px: 3px;
+
+  /* ---------- Custom breakpoints ----------
+     Matches the original Quarter template's compiled Tailwind
+     breakpoints (sm:576px, md:768px, lg:992px, xl:1200px,
+     2xl:1300px, 3xl:1400px, 4xl:1600px). */
+  --breakpoint-sm: 36rem;
+  --breakpoint-lg: 62rem;
+  --breakpoint-xl: 75rem;
+  --breakpoint-2xl: 81.25rem;
+  --breakpoint-3xl: 87.5rem;
+  --breakpoint-4xl: 100rem;
+}
+
+/* ============================================================
+   Quarter named Z-index utilities
+   Tailwind v4 only generates numeric `z-*` utilities (z-1, z-10,
+   z-20, ...), so the template's named z-index classes used by the
+   header/mega menu and drawers would be dropped. They are
+   reproduced here exactly as the original style.css compiled them
+   so dropdowns/overlays always stack above the banner (banner hero
+   uses `z-10`, mega menu uses `z-xl`, drawers use `z-high`).
+   ============================================================ */
+.z-xl {
+  z-index: 999999999;
+}
+
+.z-high {
+  z-index: 99999999;
+}
+
+.z-small {
+  z-index: 999999;
+}
+
+.z-xsmall {
+  z-index: 99999;
+}
+
+.z-xxl {
+  z-index: 9999999999;
+}
+
+
+/* ============================================================
+   Quarter CSS Variables (:root) + RTL overrides
+   Reproduced from the original template so any component CSS
+   referencing var(--primary-color), var(--heading-font), etc.
+   keeps working.
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* colors */
+  --white: #fff;
+  --primary-color: #000000;
+  --secondary-color: #ff5a3c;
+  --color-1: #8cb2b2;
+  --heading-color: #071c1f;
+  --paragraph-color: #5c727d;
+  --heading-font: "Poppins", sans-serif;
+  --body-font: "Nunito Sans", sans-serif;
+  --border-color-1: #e5eaee;
+  --section-bg-1: #f2f6f7;
+  --section-bg-2: #171b2a;
+  --border-color-9: #e4ecf2;
+  /* shadows */
+  --box-shadow-1: 0 16px 32px 0 rgba(7, 28, 31, 0.1);
+  --box-shadow-4: 0 5px 20px 0 rgba(23, 44, 82, 0.1);
+  --box-shadow-8: 0 10px 50px 0 rgba(46, 56, 220, 0.2);
+  /* position */
+  --left--5: -5px;
+  --left-auto: auto;
+  --left-3-per: 3%;
+  --left-10-per: 10%;
+  --left-15-per: 15%;
+  --left-half: 50%;
+  --right--14: -14px;
+  --right--20: -20px;
+  --right-16: 16px;
+  --right-20: 20px;
+  --right-100: 100px;
+  --right-1-per: 1%;
+  --right-3-per: 3%;
+  --right-8-per: 8%;
+  --right-15-per: 15%;
+  --right-half: 50%;
+  /* transform */
+  --x--6: translateX(-6px);
+  --x--10: translateX(-10px);
+  --x--30: translateX(-30px);
+  --x--37: translateX(-37px);
+  --x--40: translateX(-40px);
+  --x--50: translateX(-50px);
+  --x--60: translateX(-60px);
+  --x--half: translateX(-50%);
+  --x-6: translateX(6px);
+  --x-10: translateX(10px);
+  --x-30: translateX(30px);
+  --x-37: translateX(37px);
+  --x-40: translateX(40px);
+  --x-50: translateX(50px);
+  --x-60: translateX(60px);
+  --x-half: translateX(50%);
+  --x-3d-half: translate3d(-50%, -50%, 0);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* RTL overrides (default direction for the whole app) */
+[dir="rtl"] {
+  /* position */
+  --left--5: 5px;
+  --left-auto: auto;
+  --left-3-per: -3%;
+  --left-10-per: -10%;
+  --left-15-per: -15%;
+  --left-half: -50%;
+  --right--14: 14px;
+  --right--20: 20px;
+  --right-16: -16px;
+  --right-20: -20px;
+  --right-100: -100px;
+  --right-1-per: -1%;
+  --right-3-per: -3%;
+  --right-8-per: -8%;
+  --right-15-per: -15%;
+  --right-half: -50%;
+  /* transform */
+  --x--6: translateX(6px);
+  --x--10: translateX(10px);
+  --x--30: translateX(30px);
+  --x--37: translateX(37px);
+  --x--40: translateX(40px);
+  --x--50: translateX(50px);
+  --x--60: translateX(60px);
+  --x--half: translateX(50%);
+  --x-6: translateX(-6px);
+  --x-10: translateX(-10px);
+  --x-30: translateX(-30px);
+  --x-37: translateX(-37px);
+  --x-40: translateX(-40px);
+  --x-50: translateX(-50px);
+  --x-60: translateX(-60px);
+  --x-half: translateX(-50%);
+  --x-3d-half: translate3d(50%, -50%, 0);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================================
+   Quarter Global Styles
+   ============================================================ */
+body {
+  color: var(--paragraph-color);
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.8;
+  background-color: var(--white);
+}
+
+/* Quarter global inline-block behavior — reproduced from the
+   original template style.css. The template renders `a`, `button`,
+   `input` and `span` as inline-block by default; nav links and
+   sliding buttons rely on it for correct heights/padding.
+
+   NOTE: This MUST live inside `@layer base`. Tailwind v4 puts its
+   utilities in `@layer utilities`, and unlayered CSS would otherwise
+   win over them — breaking `flex justify-center items-center` on
+   `<button>`/`<a>` (icons would not be centered, matching nothing in
+   the original template where the `.flex` class selector won). */
+@layer base {
+
+  a,
+  button,
+  input,
+  span {
+    display: inline-block;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Quarter typography — headings (reproduced from the original
+   template style.css; Poppins heading font, bold, lh 1.3).
+
+   NOTE: Same layering requirement as the inline-block rule above.
+   In the original template these element rules live in style.css
+   which loads BEFORE the compiled Tailwind utilities, so utilities
+   like `text-3xl` / `4xl:text-65px` / `mb-5` override the base
+   font-size/margin. In Tailwind v4 the utilities live in
+   `@layer utilities`, so these defaults must live in `@layer base`
+   or they would win over every heading utility. */
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading-color);
+    clear: both;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* ============================================================
+   Quarter Container
+   Reproduced from the original template style.css. Shared by the
+   Header, Banner and Footer so the layout matches the original.
+   Placed in the `components` layer so Tailwind utilities (e.g.
+   `px-0`, `px-25px`, `md:p-10`) override its default padding, as
+   they do in the original template.
+   ============================================================ */
+@layer components {
+  .container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0px auto;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 33.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 45rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 60rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 75rem;
+  }
+}
+
+
+/* ============================================================
+   Quarter Header/Footer interactive states
+   Small custom CSS for behaviors that Tailwind v4 utilities
+   cannot reasonably reproduce (parent `.active` class toggling
+   with RTL/LTR variants). Mirrors the original template CSS.
+   ============================================================ */
+
+/* Drawer slide-in when its container is `.active` */
+.drawer-container.active .drawer-overlay {
+  opacity: 0.4;
+}
+
+.mobile-menu-container.active .drawer {
+  left: 0;
+}
+
+[dir="rtl"] .mobile-menu-container.active .drawer {
+  right: 0;
+}
+
+.cart-container.active .drawer {
+  right: 0;
+}
+
+[dir="rtl"] .cart-container.active .drawer {
+  left: 0;
+}
+
+/* Search form expand/collapse when its container is `.active` */
+.search-form-container.active .search-form {
+  height: 90px;
+}
+
+.search-form-container.active .for-search-show {
+  display: none;
+}
+
+.search-form-container.active .for-search-close {
+  display: block;
+}
+
+/* Scroll-up button visibility */
+.scroll-up {
+  opacity: 0;
+}
+
+.scroll-up.active {
+  opacity: 1;
+}
+
+/* Sticky header behavior (reproduced from the original template).
+   `.active` is added when scrolled past 300px (position: fixed is
+   applied by the React component). On mobile (< lg) the header is
+   hidden while active; at lg+ it sticks to the top with the
+   template's bluish shadow and reduced container padding. */
+.sticky-header.active {
+  display: none;
+}
+
+.sticky-header.active .container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+  .sticky-header.active {
+    display: block;
+    box-shadow: var(--box-shadow-8);
+  }
+}
+
+@media (min-width: 1200px) {
+  .sticky-header.active .container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+/* Hamburger icon (utilize-toggle) — reproduced from the original
+   template so the mobile-menu SVG renders as a burger with the
+   stroke-based animation. */
+.show-drawer svg {
+  position: absolute;
+  top: 50%;
+  left: var(--left-half);
+  width: 50px;
+  height: 60px;
+  margin-top: -2px;
+  margin-left: -2px;
+  cursor: pointer;
+  transform: var(--x-3d-half);
+}
+
+.show-drawer svg path {
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+    stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+  fill: none;
+  stroke: #333;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  stroke-width: 30px;
+}
+
+.show-drawer svg path#top,
+.show-drawer svg path#bottom {
+  stroke-dasharray: 240px 950px;
+}
+
+.show-drawer svg path#middle {
+  stroke-dasharray: 240px 240px;
+}
+
+.show-drawer .close svg path#top,
+.show-drawer .close svg path#bottom {
+  stroke-dasharray: -650px;
+  stroke-dashoffset: -650px;
+}
+
+.show-drawer .close svg path#middle {
+  stroke-dasharray: 1px 220px;
+  stroke-dashoffset: -115px;
+}
+
+/* ============================================================
+   Quarter Banner (Hero) styles
+   Reproduced from the original template style.css for the
+   homepage hero slider + pinned select area.
+   ============================================================ */
+
+/* ---------- Swiper navigation buttons (shared) ---------- */
+.swiper-container .swiper-button-prev,
+.swiper-container .swiper-button-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  text-align: center;
+  z-index: 9999 !important;
+  border: 1px solid var(--border-color-1);
+  color: var(--primary-color);
+  font-size: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.swiper-container .swiper-button-prev {
+  transform: translateX(0);
+}
+
+.swiper-container .swiper-button-next {
+  transform: translateX(0);
+}
+
+.swiper-container:hover .swiper-button-prev {
+  transform: var(--x-6);
+}
+
+.swiper-container:hover .swiper-button-next {
+  transform: var(--x--6);
+}
+
+.swiper-container:hover .swiper-button-prev,
+.swiper-container:hover .swiper-button-next {
+  opacity: 100;
+  visibility: visible;
+}
+
+.swiper-container .swiper-button-prev:hover,
+.swiper-container .swiper-button-next:hover {
+  background: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+
+/* ---------- Swiper pagination ---------- */
+.swiper-container .swiper-pagination,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: absolute;
+  bottom: 40px;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  transition: 0.3s;
+}
+
+.swiper-pagination-bullet:hover {
+  background: var(--secondary-color);
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--secondary-color);
+  width: 15px;
+  height: 15px;
+  margin-bottom: -2px !important;
+}
+
+/* ---------- Hero slider buttons ---------- */
+.hero-slider-container .swiper-button-prev,
+.hero-slider-container .swiper-button-next {
+  width: 60px;
+  height: 60px;
+  border-radius: 1px;
+}
+
+.hero-slider-container .swiper-button-prev {
+  transform: var(--x-30);
+}
+
+.hero-slider-container .swiper-button-next {
+  transform: var(--x--30);
+}
+
+.hero-slider-container:hover .swiper-button-prev {
+  transform: var(--x-10);
+}
+
+.hero-slider-container:hover .swiper-button-next {
+  transform: var(--x--10);
+}
+
+/* ---------- Slide animation (fadeInUp on active slide) ---------- */
+.slide-animation {
+  position: relative;
+  z-index: 9;
+}
+
+.slide-animation>* {
+  opacity: 0;
+  visibility: hidden;
+  animation-name: fadeOutUp;
+}
+
+.slide-animation>*:nth-child(1) {
+  animation-delay: 0.5s;
+  animation-duration: 0.5s;
+}
+
+.slide-animation>*:nth-child(2) {
+  animation-delay: 1s;
+  animation-duration: 1s;
+}
+
+.slide-animation>*:nth-child(3) {
+  animation-delay: 1.5s;
+  animation-duration: 1.5s;
+}
+
+.slide-animation>*:nth-child(4) {
+  animation-delay: 2s;
+  animation-duration: 2s;
+}
+
+.slide-animation>*:nth-child(5) {
+  animation-delay: 2.5s;
+  animation-duration: 2.5s;
+}
+
+.slide-animation>*:nth-child(6) {
+  animation-delay: 3s;
+  animation-duration: 3s;
+}
+
+.slide-animation>*:nth-child(7) {
+  animation-delay: 3.5s;
+  animation-duration: 3.5s;
+}
+
+.slide-animation>*:nth-child(8) {
+  animation-delay: 4s;
+  animation-duration: 4s;
+}
+
+.slide-animation>*:nth-child(9) {
+  animation-delay: 4.5s;
+  animation-duration: 4.5s;
+}
+
+.slide-animation>*:nth-child(11) {
+  animation-delay: 5s;
+  animation-duration: 5s;
+}
+
+.swiper-slide-active .slide-animation>*,
+.slide-animation-active .slide-animation>* {
+  opacity: 1;
+  visibility: visible;
+  animation-name: fadeInUp;
+}
+
+/* ---------- fadeInUp / fadeOutUp keyframes (from animate.css) ---------- */
+@keyframes fadeInUp {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+/* ---------- Nice Select (pinned select area) ---------- */
+.nice-select {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid 1px #e8e8e8;
+  box-sizing: border-box;
+  clear: both;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  height: 38px;
+  line-height: 36px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+  width: auto;
+}
+
+.nice-select:hover {
+  border-color: #dbdbdb;
+}
+
+.nice-select:active,
+.nice-select.open,
+.nice-select:focus {
+  border-color: #999;
+}
+
+.nice-select:after {
+  border-bottom: 2px solid #999;
+  border-right: 2px solid #999;
+  content: "";
+  display: block;
+  height: 5px;
+  margin-top: -4px;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform-origin: 66% 66%;
+  transform: rotate(45deg);
+  transition: all 0.15s ease-in-out;
+  width: 5px;
+}
+
+.nice-select.open:after {
+  transform: rotate(-135deg);
+}
+
+.nice-select.open .nice-select-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateY(0);
+  width: 100%;
+}
+
+.nice-select .nice-select-dropdown {
+  margin-top: 4px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform-origin: 50% 0;
+  transform: scale(0.75) translateY(19px);
+  transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+  z-index: 9;
+  opacity: 0;
+}
+
+.nice-select .list {
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0;
+  max-height: 210px;
+  overflow-y: auto;
+}
+
+.nice-select .list:hover .option:not(:hover) {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.nice-select .option {
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 40px;
+  list-style: none;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 29px;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.nice-select .option:hover,
+.nice-select .option.focus,
+.nice-select .option.selected.focus {
+  background-color: #f6f6f6;
+}
+
+.nice-select .option.selected {
+  font-weight: bold;
+}
+
+.nice-select .option.disabled {
+  background-color: rgba(0, 0, 0, 0);
+  color: #999;
+  cursor: default;
+}
+
+.nice-select .optgroup {
+  font-weight: bold;
+}
+
+.no-csspointerevents .nice-select .nice-select-dropdown {
+  display: none;
+}
+
+.no-csspointerevents .nice-select.open .nice-select-dropdown {
+  display: block;
+}
+
+.nice-select .has-multiple {
+  white-space: inherit;
+  height: auto;
+  padding: 7px 12px;
+  min-height: 36px;
+  line-height: 22px;
+}
+
+.nice-select .has-multiple span.current {
+  border: 1px solid #ccc;
+  background: #eee;
+  padding: 0 10px;
+  border-radius: 3px;
+  display: inline-block;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 3px;
+  margin-right: 3px;
+}
+
+.nice-select .has-multiple .multiple-options {
+  display: block;
+  line-height: 24px;
+  padding: 0;
+}
+
+.nice-select .nice-select-search-box {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  pointer-events: none;
+  border-radius: 5px 5px 0 0;
+}
+
+.nice-select .nice-select-search {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  color: #444;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 7px 12px;
+  margin: 0 10px 0 0;
+  width: 100%;
+  min-height: 36px;
+  line-height: 22px;
+  height: auto;
+  outline: 0 !important;
+  font-size: 14px;
+}
+
+.nice-select.wide {
+  width: 100%;
+}
+
+.nice-select.wide .nice-select-dropdown {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.nice-select.right {
+  float: right;
+}
+
+.nice-select.right .nice-select-dropdown {
+  left: auto;
+  right: 0;
+}
+
+.nice-select.small {
+  font-size: 12px;
+  height: 36px;
+  line-height: 34px;
+}
+
+.nice-select.small:after {
+  height: 4px;
+  width: 4px;
+}
+
+.nice-select.small .option {
+  line-height: 34px;
+  min-height: 34px;
+}
+
+/* ============================================================
+   Quarter nice-select overrides
+   Reproduced from the original template style.css. The base
+   library (nice-select2.css) above gives 38px/auto-width selects;
+   the template overrides them to 60px, full-width, 16px Poppins,
+   black text — exactly what the homepage pinned select area uses.
+   ============================================================ */
+.nice-select {
+  margin: 0;
+  height: 60px;
+  line-height: 58px;
+  padding-right: 40px;
+  padding-left: 20px;
+  border-radius: 0;
+  min-width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--heading-font);
+  width: 100%;
+  color: #000000;
+}
+
+[dir="rtl"] .nice-select {
+  text-align: right !important;
+  direction: rtl !important;
+  padding-right: 20px !important;
+  padding-left: 40px !important;
+}
+
+[dir="rtl"] .nice-select::after {
+  right: auto;
+  left: 12px;
+}
+
+.nice-select .list {
+  width: 100%;
+  z-index: 99;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.nice-select .option {
+  line-height: 48.8px;
+}
+
+[dir="rtl"] .nice-select .option {
+  text-align: right;
+  padding-left: 29px;
+  padding-right: 18px;
+}
+
+.nice-select.disabled {
+  border-color: #ededed;
+  color: #999;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Quarter About + Counter section styles
+   Reproduced from the original template style.css for the
+   homepage About and Counter sections. Covers behaviors that
+   Tailwind v4 utilities cannot reproduce faithfully:
+   - unitless line-heights (leading-1 / leading-1.3 / leading-1.8)
+   - bare percentage radius (rounded-100%)
+   - the video play button pulsing ring (animate-pulse1)
+   ============================================================ */
+
+/* Unitless line-heights used across the About and Counter sections.
+   Tailwind v4 maps `leading-1` to `line-height: var(--spacing)`
+   (4px), so it is overridden here to the original `line-height: 1`. */
+.leading-1 {
+  line-height: 1;
+}
+
+.leading-1\.3 {
+  line-height: 1.3;
+}
+
+.leading-1\.8 {
+  line-height: 1.8;
+}
+
+/* Circular icon badges (Tailwind v4 does not generate a bare
+   percentage border-radius for `rounded-100%`) */
+.rounded-100\% {
+  border-radius: 100%;
+}
+
+/* Video play button pulsing ring */
+@keyframes pulse1 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.animate-pulse1 {
+  animation: pulse1 1s infinite;
+}
+
+.nice-select.disabled:after {
+  border-color: #ccc;
 }

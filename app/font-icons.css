@@ -1,0 +1,297 @@
+/* ============================================================
+   Quarter Icon Fonts (minimal subset for the shared Header)
+   Source: quarter-rtl/assets/css/font-icons.css
+   Only the icon fonts + icon classes actually used by the
+   Header are included here (asset-on-demand rule).
+   ============================================================ */
+
+/*---------------------------------------------------------------
+  1. Font Awesome 6 (brands / regular / solid)
+  Used by Header: fab fa-facebook-f, fa-twitter, fa-instagram,
+  fa-dribbble, fa-linkedin, far fa-user, far fa-heart,
+  fas fa-shopping-cart
+---------------------------------------------------------------*/
+.fa,
+.fa-brands,
+.fa-regular,
+.fa-solid,
+.fab,
+.far,
+.fas {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+:host,
+:root {
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/webfonts/fa-brands-400.woff2) format("woff2"),
+    url(/webfonts/fa-brands-400.ttf) format("truetype");
+}
+
+.fa-brands,
+.fab {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+:host,
+:root {
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/webfonts/fa-regular-400.woff2) format("woff2"),
+    url(/webfonts/fa-regular-400.ttf) format("truetype");
+}
+
+.fa-regular,
+.far {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+}
+
+:host,
+:root {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(/webfonts/fa-solid-900.woff2) format("woff2"),
+    url(/webfonts/fa-solid-900.ttf) format("truetype");
+}
+
+.fa-solid,
+.fas {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+/* Font Awesome 5 compatibility aliases used by the template */
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-display: block;
+  font-weight: 400;
+  src: url(/webfonts/fa-brands-400.woff2) format("woff2"),
+    url(/webfonts/fa-brands-400.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-display: block;
+  font-weight: 900;
+  src: url(/webfonts/fa-solid-900.woff2) format("woff2"),
+    url(/webfonts/fa-solid-900.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-display: block;
+  font-weight: 400;
+  src: url(/webfonts/fa-regular-400.woff2) format("woff2"),
+    url(/webfonts/fa-regular-400.ttf) format("truetype");
+}
+
+/* Header icon glyphs */
+.fa-facebook-f:before {
+  content: "\f39e";
+}
+
+.fa-twitter:before {
+  content: "\f099";
+}
+
+.fa-instagram:before {
+  content: "\f16d";
+}
+
+.fa-dribbble:before {
+  content: "\f17d";
+}
+
+.fa-linkedin:before {
+  content: "\f08c";
+}
+
+.fa-youtube:before {
+  content: "\f167";
+}
+
+.fa-user:before {
+  content: "\f007";
+}
+
+.fa-heart:before {
+  content: "\f004";
+}
+
+.fa-shopping-cart:before {
+  content: "\f07a";
+}
+
+.fa-location-arrow:before {
+  content: "\f124";
+}
+
+.fa-home:before {
+  content: "\f015";
+}
+
+.fa-arrow-right:before {
+  content: "\f061";
+}
+
+.fa-arrow-left:before {
+  content: "\f060";
+}
+
+.fa-angle-up:before {
+  content: "\f106";
+}
+
+/*---------------------------------------------------------------
+  2. Icomoon Icon
+  Used by Header: icon-mail, icon-placeholder, icon-search,
+  icon-cancel, icon-user, icon-shopping-cart
+---------------------------------------------------------------*/
+@font-face {
+  font-family: "icomoon";
+  src: url(/fonts/icomoon.eot?3aun5s);
+  src: url(/fonts/icomoon.eot?3aun5s#iefix) format("embedded-opentype"),
+    url(/fonts/icomoon.ttf?3aun5s) format("truetype"),
+    url(/fonts/icomoon.woff?3aun5s) format("woff"),
+    url(/fonts/icomoon.svg?3aun5s#icomoon) format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cancel:before {
+  content: "\e900";
+}
+
+.icon-mail:before {
+  content: "\e90b";
+}
+
+.icon-placeholder:before {
+  content: "\e90c";
+}
+
+.icon-call:before {
+  content: "\e90d";
+}
+
+.icon-next:before {
+  content: "\e90f";
+}
+
+.icon-shopping-cart:before {
+  content: "\e933";
+}
+
+.icon-search:before {
+  content: "\e93b";
+}
+
+.icon-user:before {
+  content: "\e93f";
+}
+
+.icon-play:before {
+  content: "\e941";
+}
+
+/*---------------------------------------------------------------
+  3. Flaticon
+  Used by About: flaticon-home-2, flaticon-mountain,
+  flaticon-heart, flaticon-secure
+---------------------------------------------------------------*/
+@font-face {
+  font-family: "flaticon";
+  src: url(/fonts/flaticon.ttf?b66957d660bcc55c5e858f139c964a40) format("truetype"),
+    url(/fonts/flaticon.woff?b66957d660bcc55c5e858f139c964a40) format("woff"),
+    url(/fonts/flaticon.woff2?b66957d660bcc55c5e858f139c964a40) format("woff2"),
+    url(/fonts/flaticon.eot?b66957d660bcc55c5e858f139c964a40#iefix) format("embedded-opentype"),
+    url(/fonts/flaticon.svg?b66957d660bcc55c5e858f139c964a40#flaticon) format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i[class^="flaticon-"]:before,
+i[class*=" flaticon-"]:before {
+  font-family: flaticon !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-home-2:before {
+  content: "\f127";
+}
+
+.flaticon-mountain:before {
+  content: "\f13e";
+}
+
+.flaticon-heart:before {
+  content: "\f125";
+}
+
+.flaticon-secure:before {
+  content: "\f150";
+}
+
+.flaticon-armchair:before {
+  content: "\f108";
+}
+
+.flaticon-excavator:before {
+  content: "\f11d";
+}
+
+.flaticon-office:before {
+  content: "\f13f";
+}
+
+.flaticon-select:before {
+  content: "\f151";
+}
