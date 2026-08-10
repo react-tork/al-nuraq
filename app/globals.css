@@ -321,6 +321,18 @@ body {
   background-color: var(--white);
 }
 
+/* Quarter responsive body typography — reproduced from the original
+   template style.css. From `md` (768px) up the original compiles
+   `body { font-size: 16px; line-height: 1.8 }`, so inherited text
+   (e.g. the header's `icon-search`/social icons that carry no
+   explicit size class) renders at 16px on desktop. */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
 /* Quarter global inline-block behavior — reproduced from the
    original template style.css. The template renders `a`, `button`,
    `input` and `span` as inline-block by default; nav links and
@@ -369,6 +381,24 @@ body {
 
   h1 {
     font-size: 24px;
+  }
+}
+
+/* Quarter paragraph typography — reproduced from the original
+   template style.css. From `lg` (992px) up, the original compiles
+   `p { font-size: 16px; line-height: 1.8 !important }`, so all
+   paragraphs render at 16px/28.8px on desktop (regardless of any
+   `text-sm` utility). The `!important` matters: the About/About2
+   descriptions, counter labels and footer paragraphs rely on it.
+
+   NOTE: kept in `@layer base` like the heading rule above so Tailwind
+   utilities can still override where the template explicitly does. */
+@layer base {
+  @media (min-width: 992px) {
+    p {
+      font-size: 16px;
+      line-height: 1.8 !important;
+    }
   }
 }
 

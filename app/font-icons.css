@@ -295,3 +295,24 @@ i[class*=" flaticon-"]:before {
 .flaticon-select:before {
   content: "\f151";
 }
+
+.flaticon-bed:before {
+  content: "\f10b";
+}
+
+.flaticon-clean:before {
+  content: "\f115";
+}
+
+.flaticon-car:before {
+  content: "\f113";
+}
+
+.flaticon-square-shape-design-interface-tool-symbol:before {
+  content: "\f155";
+}
+
+/* Used by Services: flaticon-right-arrow */
+.flaticon-right-arrow:before {
+  content: "\f14c";
+}
