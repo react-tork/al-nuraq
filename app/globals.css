@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
-/* Exclude the original template folder from Tailwind's automatic
-   content detection so its classes (e.g. bg-[url('../img/...')])
-   are not compiled into the Next.js build. */
-@source not "../quarter-rtl";
+/* Load the Tailwind config so its explicit `content` array overrides
+   Tailwind v4's automatic whole-project content detection. Without
+   this, Tailwind auto-scans the project root and compiles classes
+   from the original template folder (quarter-rtl) such as
+   bg-[url('../img/bg/14.jpg')], which reference non-existent paths
+   and break the build. The config restricts scanning to app/ and
+   components/ only. */
+@config "../tailwind.config.js";
 
 /* ============================================================
    Quarter Design Tokens (Tailwind v4 @theme)
@@ -14,53 +18,53 @@
    ============================================================ */
 @theme {
   /* ---------- Colors ---------- */
-  --color-primary-color: #000000;
-  --color-secondary-color: #ff5a3c;
-  --color-secondary-color-2: #cb3421;
-  --color-primary-color-3: #133236;
-  --color-heading-color: #071c1f;
-  --color-paragraph-color: #5c727d;
-  --color-color-1: #8cb2b2;
-  --color-color-6: #f5dfdc;
-  --color-color-7: #212529;
-  --color-section-bg-1: #f2f6f7;
-  --color-section-bg-2: #171b2a;
-  --color-section-bg-5: #fff2f0;
-  --color-section-bg-6: #0b2c3d;
-  --color-section-bg-7: #282b38;
-  --color-table-bg: #f7f8fa;
-  --color-border-color-1: #e5eaee;
-  --color-border-color-3: #5c617f;
-  --color-border-color-8: #f6f6f6;
-  --color-border-color-9: #e4ecf2;
-  --color-border-color-10: #ebecec;
-  --color-border-color-11: #ededed;
-  --color-border-color-12: #e1e6ff;
-  --color-border-color-13: #f1f8ff;
-  --color-border-color-14: #576466;
-  --color-border-color-15: #f4faff;
-  --color-border-color-16: #93959e;
-  --color-border-color-17: #dee2e6;
-  --color-border-color-18: #203336;
-  --color-border-dashed: #dddddd;
-  --color-border-primary: #eeeeee;
-  --color-white-4: #e6ecf0;
-  --color-white-5: #f0f4f7;
-  --color-white-6: #f1f1f1;
-  --color-white-7: #f7f7f7;
+  --color-primary-color: #30373D;
+  --color-secondary-color: #B58D4F;
+  --color-secondary-color-2: #9C7540;
+  --color-primary-color-3: #30373D;
+  --color-heading-color: #30373D;
+  --color-paragraph-color: #5C636B;
+  --color-color-1: #B58D4F;
+  --color-color-6: #F7F5F0;
+  --color-color-7: #30373D;
+  --color-section-bg-1: #F7F5F0;
+  --color-section-bg-2: #30373D;
+  --color-section-bg-5: #F7F5F0;
+  --color-section-bg-6: #30373D;
+  --color-section-bg-7: #30373D;
+  --color-table-bg: #F7F5F0;
+  --color-border-color-1: #E4DED4;
+  --color-border-color-3: #6B6F72;
+  --color-border-color-8: #F0EBE3;
+  --color-border-color-9: #E4DED4;
+  --color-border-color-10: #EAE5DD;
+  --color-border-color-11: #EAE5DD;
+  --color-border-color-12: #E4DED4;
+  --color-border-color-13: #F7F5F0;
+  --color-border-color-14: #5C636B;
+  --color-border-color-15: #F7F5F0;
+  --color-border-color-16: #93959E;
+  --color-border-color-17: #DEDAD3;
+  --color-border-color-18: #30373D;
+  --color-border-dashed: #DDDDDD;
+  --color-border-primary: #EEEEEE;
+  --color-white-4: #F0EBE3;
+  --color-white-5: #F7F5F0;
+  --color-white-6: #F7F5F0;
+  --color-white-7: #F7F5F0;
   --color-green: #77c720;
-  --color-ratings: #ffb800;
+  --color-ratings: #B58D4F;
 
   /* ---------- Fonts ---------- */
   --font-heading: "Poppins", sans-serif;
   --font-body: "Nunito Sans", sans-serif;
 
   /* ---------- Shadows ---------- */
-  --shadow-box-shadow-1: 0 16px 32px 0 rgba(7, 28, 31, 0.1);
-  --shadow-box-shadow-2: 0 0 4px rgba(0, 0, 0, 0.1);
-  --shadow-box-shadow-3: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-  --shadow-box-shadow-4: 0 5px 20px 0 rgba(23, 44, 82, 0.1);
-  --shadow-box-shadow-5: 0 8px 16px 0 rgba(93, 93, 93, 0.1);
+  --shadow-box-shadow-1: 0 16px 32px 0 rgba(48, 55, 61, 0.1);
+  --shadow-box-shadow-2: 0 0 4px rgba(48, 55, 61, 0.1);
+  --shadow-box-shadow-3: 0 1px 6px 0 rgba(48, 55, 61, 0.28);
+  --shadow-box-shadow-4: 0 5px 20px 0 rgba(48, 55, 61, 0.1);
+  --shadow-box-shadow-5: 0 8px 16px 0 rgba(48, 55, 61, 0.1);
 
   /* ---------- Z-index ---------- */
   --z-1: 1;
@@ -73,8 +77,8 @@
   --z-xxl: 9999999999;
 
   /* ---------- Spacing (pixel-based) ----------
-     Generates margin/padding/gap/width/height utilities
-     such as mb-10px, pt-100px, gap-15px, w-140px, h-350px. */
+  Generates margin/padding/gap/width/height utilities
+  such as mb-10px, pt-100px, gap-15px, w-140px, h-350px. */
   --spacing-1px: 1px;
   --spacing-3px: 3px;
   --spacing-5px: 5px;
@@ -144,12 +148,12 @@
   --text-80px: 80px;
 
   /* ---------- Fixed line-heights ----------
-     The original template's compiled `.text-sm/base/lg/...` use fixed
-     rem line-heights (1.25rem / 1.5rem / 1.75rem / ...). Tailwind v4
-     defaults to unitless ratios, which scale line-height when the
-     font-size is overridden (e.g. `text-lg xl:text-15px`, or the
-     counter heading `text-3xl md:text-4xl lg:text-42px`). These
-     overrides reproduce the original fixed behavior exactly. */
+  The original template's compiled .text-sm/base/lg/... use fixed
+  rem line-heights (1.25rem / 1.5rem / 1.75rem / ...). Tailwind v4
+  defaults to unitless ratios, which scale line-height when the
+  font-size is overridden (e.g. text-lg xl:text-15px, or the
+  counter heading text-3xl md:text-4xl lg:text-42px). These
+  overrides reproduce the original fixed behavior exactly. */
   --text-xs--line-height: 1rem;
   --text-sm--line-height: 1.25rem;
   --text-base--line-height: 1.5rem;
@@ -167,9 +171,9 @@
   --border-width-3px: 3px;
 
   /* ---------- Custom breakpoints ----------
-     Matches the original Quarter template's compiled Tailwind
-     breakpoints (sm:576px, md:768px, lg:992px, xl:1200px,
-     2xl:1300px, 3xl:1400px, 4xl:1600px). */
+  Matches the original Quarter template's compiled Tailwind
+  breakpoints (sm:576px, md:768px, lg:992px, xl:1200px,
+  2xl:1300px, 3xl:1400px, 4xl:1600px). */
   --breakpoint-sm: 36rem;
   --breakpoint-lg: 62rem;
   --breakpoint-xl: 75rem;
@@ -229,9 +233,9 @@
   --section-bg-2: #171b2a;
   --border-color-9: #e4ecf2;
   /* shadows */
-  --box-shadow-1: 0 16px 32px 0 rgba(7, 28, 31, 0.1);
-  --box-shadow-4: 0 5px 20px 0 rgba(23, 44, 82, 0.1);
-  --box-shadow-8: 0 10px 50px 0 rgba(46, 56, 220, 0.2);
+  --box-shadow-1: 0 16px 32px 0 rgba(48, 55, 61, 0.1);
+  --box-shadow-4: 0 5px 20px 0 rgba(48, 55, 61, 0.1);
+  --box-shadow-8: 0 10px 50px 0 rgba(48, 55, 61, 0.2);
   /* position */
   --left--5: -5px;
   --left-auto: auto;
@@ -440,6 +444,26 @@ body {
 @media (min-width: 1200px) {
   .container {
     max-width: 75rem;
+  }
+}
+
+.container-3 {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1400px) {
+  .container-3 {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container-3 {
+    padding-left: 7%;
+    padding-right: 7%;
   }
 }
 
@@ -738,6 +762,51 @@ body {
   animation-name: fadeInUp;
 }
 
+.primary-slider .swiper-button-next::after,
+.primary-slider .swiper-button-prev::after {
+  content: "" !important;
+  display: none !important;
+}
+
+.primary-slider .swiper-button-next svg,
+.primary-slider .swiper-button-prev svg {
+  display: none !important;
+}
+
+
+.featured-apartments-slider .swiper-button-next::after,
+.featured-apartments-slider .swiper-button-prev::after {
+  content: "" !important;
+  display: none !important;
+}
+
+.featured-apartments-slider .swiper-button-next svg,
+.featured-apartments-slider .swiper-button-prev svg {
+  display: none !important;
+}
+
+.testimonials-slider .swiper-button-next::after,
+.testimonials-slider .swiper-button-prev::after {
+  content: "" !important;
+  display: none !important;
+}
+
+.testimonials-slider .swiper-button-next svg,
+.testimonials-slider .swiper-button-prev svg {
+  display: none !important;
+}
+
+.news-slider .swiper-button-next::after,
+.news-slider .swiper-button-prev::after {
+  content: "" !important;
+  display: none !important;
+}
+
+.news-slider .swiper-button-next svg,
+.news-slider .swiper-button-prev svg {
+  display: none !important;
+}
+
 /* ---------- fadeInUp / fadeOutUp keyframes (from animate.css) ---------- */
 @keyframes fadeInUp {
   0% {
@@ -1007,6 +1076,21 @@ body {
   color: #000000;
 }
 
+.hidden-select {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 [dir="rtl"] .nice-select {
   text-align: right !important;
   direction: rtl !important;
@@ -1094,4 +1178,56 @@ body {
 
 .nice-select.disabled:after {
   border-color: #ccc;
+}
+
+/*============= tab  =============*/
+
+.plan-tab .active {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.plan-tab .active::after {
+  background-color: var(--secondary-color);
+}
+
+/* ---------- Nice Select: form-primary (Contact form) overrides ---------- */
+
+.form-primary .nice-select {
+  font-family: var(--body-font);
+  height: 65px;
+  border: 2px solid var(--border-color-9);
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--paragraph-color);
+  padding: 0 38px 0 18px;
+}
+
+.form-primary .nice-select .list {
+  max-height: 400px;
+}
+
+.form-primary .nice-select .option {
+  line-height: 45.2px;
+}
+
+.form-primary .nice-select::before {
+  content: "\f063";
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  right: var(--right-20);
+  transform: translateY(-50%);
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  color: var(--secondary-color);
+}
+
+[dir="rtl"] .form-primary .nice-select::before {
+  right: auto;
+  left: 20px;
+}
+
+.form-primary .nice-select::after {
+  display: none;
 }

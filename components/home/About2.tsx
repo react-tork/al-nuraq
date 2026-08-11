@@ -7,7 +7,6 @@ import Lightbox from "yet-another-react-lightbox";
 // yet-another-react-lightbox styles
 import "yet-another-react-lightbox/styles.css";
 
-/* Gallery thumbnails — original `assets/img/img-slide/11..13.jpg` */
 const galleryImages = [
     { src: "/images/img-slide/11.jpg", width: 800, height: 570 },
     { src: "/images/img-slide/12.jpg", width: 800, height: 570 },

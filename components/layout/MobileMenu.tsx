@@ -12,80 +12,22 @@ type AccordionItem = {
 
 const accordionItems: AccordionItem[] = [
   {
-    label: "Home",
+    label: "What We Buy",
     links: [
-      { href: "/", label: "Home" },
-      { href: "/index-2", label: "Home 02" },
-      { href: "/index-3", label: "Home 03" },
-      { href: "/index-4", label: "Home 04" },
-      { href: "/index-5", label: "Home 05" },
-      { href: "/index-6", label: "Home 06" },
-      { href: "/index-7", label: "Home 07" },
-      { href: "/index-8", label: "Home 08" },
-      { href: "/index-9", label: "Home 09" },
-      { href: "/index-10", label: "Home 10" },
-      { href: "/index-11", label: "Home 11" },
-    ],
-  },
-  {
-    label: "About",
-    links: [
-      { href: "/about", label: "About" },
-      { href: "/team", label: "Team" },
-      { href: "/team-details", label: "Team Details" },
-      { href: "/faq", label: "FAQ" },
-      { href: "/locations", label: "Google Map Locations" },
-    ],
-  },
-  {
-    label: "Shop",
-    links: [
-      { href: "/shop", label: "Property Grid" },
-      { href: "/shop-list", label: "Property List" },
-      { href: "/shop-grid", label: "Property No Sidebar" },
-      { href: "/shop-left-sidebar", label: "Property Left sidebar" },
-      { href: "/shop-right-sidebar", label: "Property right sidebar" },
-      { href: "/product-details", label: "Property details" },
-      { href: "/cart", label: "Cart" },
-      { href: "/wishlist", label: "Wishlist" },
-      { href: "/checkout", label: "Checkout" },
-      { href: "/order-tracking", label: "Order Tracking" },
-      { href: "/account", label: "My Account" },
-      { href: "/login", label: "Sign in" },
-      { href: "/register", label: "Register" },
-    ],
-  },
-  {
-    label: "News",
-    links: [
-      { href: "/blog", label: "News" },
-      { href: "/blog-grid", label: "News Grid" },
-      { href: "/blog-left-sidebar", label: "News Left sidebar" },
-      { href: "/blog-right-sidebar", label: "News Right sidebar" },
-      { href: "/blog-details", label: "News details" },
-    ],
-  },
-  {
-    label: "Pages",
-    links: [
-      { href: "/about", label: "About" },
-      { href: "/service", label: "Services" },
-      { href: "/service-details", label: "Service Details" },
-      { href: "/portfolio", label: "Portfolio" },
-      { href: "/portfolio-2", label: "Portfolio - 02" },
-      { href: "/portfolio-details", label: "Portfolio Details" },
-      { href: "/team", label: "Team" },
-      { href: "/team-details", label: "Team Details" },
-      { href: "/faq", label: "FAQ" },
-      { href: "/history", label: "History" },
-      { href: "/add-listing", label: "Add Listing" },
-      { href: "/locations", label: "Google Map Locations" },
-      { href: "/404", label: "404" },
-      { href: "/contact", label: "Contact" },
-      { href: "/coming-soon", label: "Coming Soon" },
+      { href: "/what-we-buy", label: "All Services" },
+      { href: "/what-we-buy/metal-scrap", label: "Metal Scrap" },
+      { href: "/what-we-buy/copper-scrap", label: "Copper Scrap" },
+      { href: "/what-we-buy/aluminium-scrap", label: "Aluminium Scrap" },
+      { href: "/what-we-buy/iron-steel", label: "Iron & Steel" },
+      { href: "/what-we-buy/cable-wire", label: "Cable & Wire" },
+      { href: "/what-we-buy/machinery-scrap", label: "Machinery Scrap" },
+      { href: "/what-we-buy/e-scrap", label: "E-Scrap" },
+      { href: "/what-we-buy/battery-scrap", label: "Battery Scrap" },
+      { href: "/what-we-buy/industrial-scrap", label: "Industrial Scrap" },
     ],
   },
 ];
+
 
 /* Single accordion row with expand/collapse */
 function AccordionRow({ item }: { item: AccordionItem }) {
@@ -216,9 +158,25 @@ export default function MobileMenu({
             {/* mobile menu accordions */}
             <div className="accordion-container">
               <ul>
+                <li className="mt-4">
+                  <Link
+                    href="/about"
+                    className="accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5"
+                  >
+                    ABOUT
+                  </Link>
+                </li>
                 {accordionItems.map((item) => (
                   <AccordionRow key={item.label} item={item} />
                 ))}
+                <li className="mt-4">
+                  <Link
+                    href="/service-areas"
+                    className="accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5"
+                  >
+                    SERVICE AREAS
+                  </Link>
+                </li>
                 <li className="mt-4">
                   <Link
                     href="/contact"
@@ -230,8 +188,9 @@ export default function MobileMenu({
               </ul>
             </div>
 
+
             {/* my account */}
-            <div>
+            {/* <div>
               <ul className="mb-30px pb-5 pt-5px border-b border-border-primary">
                 <li className="group mt-4">
                   <Link href="/account" className="text-sm lg:text-base">
@@ -260,7 +219,7 @@ export default function MobileMenu({
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Mobile menu social area */}
             <div>

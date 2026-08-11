@@ -78,13 +78,17 @@ export default function Banner() {
               effect="fade"
               loop
               speed={800}
-              navigation
+              navigation={{
+                nextEl: ".hero-slider-container .swiper-button-next",
+                prevEl: ".hero-slider-container .swiper-button-prev",
+              }}
               pagination={{ clickable: true }}
             >
+
               {/* Hero 1 */}
               <SwiperSlide>
                 <div className="relative z-0 py-100px 4xl:min-h-[780px] overflow-hidden flex items-center bg-section-bg-1">
-                  <div className="container w-full">
+                  <div className="container w-full ">
                     <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-30px">
                       {/* banner Left */}
                       <div className="slide-animation">
@@ -210,9 +214,18 @@ export default function Banner() {
                   </div>
                 </div>
               </SwiperSlide>
+
+              {/* custom prev / next navigation buttons */}
+              <div className="swiper-button-next bg-white z-1">
+                <i className="fas fa-arrow-left" />
+              </div>
+              <div className="swiper-button-prev bg-white z-1">
+                <i className="fas fa-arrow-right" />
+              </div>
             </Swiper>
           </div>
         </div>
+
 
         {/* pinned select area */}
         <div className="container mt-30 4xl:-mt-65px relative z-20">
