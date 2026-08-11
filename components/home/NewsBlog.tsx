@@ -6,64 +6,132 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 type NewsPost = {
   id: number;
   image: string;
-  category: string;
-  title: string;
-  date: string;
+  categoryKey: string;
+  titleKey: string;
+  dateKey: string;
 };
 
 const posts: NewsPost[] = [
   {
     id: 1,
     image: "/images/blog/1.jpg",
-    category: "Room",
-    title: "10 Brilliant Ways To Decorate Your Home",
-    date: "June 24, 2024",
+    categoryKey: "home.newsBlog.category1",
+    titleKey: "home.newsBlog.title1",
+    dateKey: "home.newsBlog.category1",
   },
   {
     id: 2,
     image: "/images/blog/2.jpg",
-    category: "Interior",
-    title: "The Most Inspiring Interior Design Of 2024",
-    date: "June 21, 2024",
+    categoryKey: "home.newsBlog.category2",
+    titleKey: "home.newsBlog.title2",
+    dateKey: "home.newsBlog.category2",
   },
   {
     id: 3,
     image: "/images/blog/3.jpg",
-    category: "Estate",
-    title: "Recent Commercial Real Estate Transactions",
-    date: "June 22, 2024",
+    categoryKey: "home.newsBlog.category3",
+    titleKey: "home.newsBlog.title3",
+    dateKey: "home.newsBlog.category3",
   },
   {
     id: 4,
     image: "/images/blog/4.jpg",
-    category: "Room",
-    title: "Renovating a Living Room? Experts Share Their Secrets",
-    date: "June 24, 2024",
+    categoryKey: "home.newsBlog.category4",
+    titleKey: "home.newsBlog.title4",
+    dateKey: "home.newsBlog.category4",
   },
   {
     id: 5,
     image: "/images/blog/5.jpg",
-    category: "Trends",
-    title: "7 home trends that will shape your house in 2024",
-    date: "June 24, 2024",
+    categoryKey: "home.newsBlog.category5",
+    titleKey: "home.newsBlog.title5",
+    dateKey: "home.newsBlog.category5",
+  },
+  {
+    id: 6,
+    image: "/images/blog/6.jpg",
+    categoryKey: "home.newsBlog.category6",
+    titleKey: "home.newsBlog.title6",
+    dateKey: "home.newsBlog.category6",
+  },
+  {
+    id: 7,
+    image: "/images/blog/7.jpg",
+    categoryKey: "home.newsBlog.category7",
+    titleKey: "home.newsBlog.title7",
+    dateKey: "home.newsBlog.category7",
+  },
+  {
+    id: 8,
+    image: "/images/blog/8.jpg",
+    categoryKey: "home.newsBlog.category8",
+    titleKey: "home.newsBlog.title8",
+    dateKey: "home.newsBlog.category8",
+  },
+  {
+    id: 9,
+    image: "/images/blog/9.jpg",
+    categoryKey: "home.newsBlog.category9",
+    titleKey: "home.newsBlog.title9",
+    dateKey: "home.newsBlog.category9",
+  },
+  {
+    id: 10,
+    image: "/images/blog/10.jpg",
+    categoryKey: "home.newsBlog.category10",
+    titleKey: "home.newsBlog.title10",
+    dateKey: "home.newsBlog.category10",
+  },
+  {
+    id: 11,
+    image: "/images/blog/11.jpg",
+    categoryKey: "home.newsBlog.category11",
+    titleKey: "home.newsBlog.title11",
+    dateKey: "home.newsBlog.category11",
+  },
+  {
+    id: 12,
+    image: "/images/blog/12.jpg",
+    categoryKey: "home.newsBlog.category12",
+    titleKey: "home.newsBlog.title12",
+    dateKey: "home.newsBlog.category12",
+  },
+  {
+    id: 13,
+    image: "/images/blog/13.jpg",
+    categoryKey: "home.newsBlog.category13",
+    titleKey: "home.newsBlog.title13",
+    dateKey: "home.newsBlog.category13",
+  },
+  {
+    id: 14,
+    image: "/images/blog/14.jpg",
+    categoryKey: "home.newsBlog.category14",
+    titleKey: "home.newsBlog.title14",
+    dateKey: "home.newsBlog.category14",
   },
 ];
 
 export default function NewsBlog() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname) as Locale;
   return (
     <section>
       <div className="container pb-70px">
         {/* section heading */}
         <div className="text-center mb-50px">
           <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
-            <span className="leading-1.3">News & Blogs</span>
+            <span className="leading-1.3">{getTranslation('home.newsBlog.subtitle', locale)}</span>
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold">
-            <span className="leading-1.3">Leatest News Feeds </span>
+            <span className="leading-1.3">{getTranslation('home.newsBlog.title', locale)}</span>
           </h2>
         </div>
 
@@ -100,7 +168,7 @@ export default function NewsBlog() {
                     <a href="/blog-details" className="overflow-hidden block">
                       <Image
                         src={post.image}
-                        alt={post.title}
+                        alt={getTranslation(post.titleKey, locale)}
                         width={470}
                         height={340}
                         className="w-full h-auto group-hover:scale-110 transition-all duration-700"
@@ -116,7 +184,7 @@ export default function NewsBlog() {
                           className="leading-1.8 hover:text-secondary-color flex gap-5px items-center"
                         >
                           <i className="far fa-user text-secondary-color" />
-                          by: Admin
+                          {getTranslation('home.newsBlog.byAdmin', locale)}
                         </a>
                       </li>
                       <li className="text-xs md:text-sm font-semibold">
@@ -125,7 +193,7 @@ export default function NewsBlog() {
                           className="leading-1.8 hover:text-secondary-color flex gap-5px items-center"
                         >
                           <i className="fas fa-tags text-secondary-color" />
-                          {post.category}
+                          {getTranslation(post.categoryKey, locale)}
                         </a>
                       </li>
                     </ul>
@@ -134,7 +202,7 @@ export default function NewsBlog() {
                         href="/blog-details"
                         className="hover:text-secondary-color leading-1.3"
                       >
-                        {post.title}
+                        {getTranslation(post.titleKey, locale)}
                       </a>
                     </h4>
                     <div className="pt-5 mt-5 lg:pt-5 border-t border-border-color-1">
@@ -142,7 +210,7 @@ export default function NewsBlog() {
                         <li className="text-xs md:text-sm font-semibold">
                           <p className="leading-1.8 flex gap-5px items-center">
                             <i className="far fa-calendar-alt text-secondary-color" />
-                            {post.date}
+                            {getTranslation(post.dateKey, locale)}
                           </p>
                         </li>
                         <li className="text-xs md:text-sm font-semibold">
@@ -150,7 +218,7 @@ export default function NewsBlog() {
                             href="/blog-details"
                             className="leading-1.8 text-secondary-color uppercase"
                           >
-                            Read more
+                            {getTranslation('home.newsBlog.readMore', locale)}
                           </a>
                         </li>
                       </ul>

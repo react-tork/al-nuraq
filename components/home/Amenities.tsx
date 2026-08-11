@@ -1,31 +1,41 @@
+"use client";
+
 type Amenity = {
   id: number;
   icon: string;
-  title: string;
+  key: string;
 };
 
 const amenities: Amenity[] = [
-  { id: 1, icon: "flaticon-car", title: "Parking Space" },
-  { id: 2, icon: "flaticon-swimming", title: "Swimming Pool" },
-  { id: 3, icon: "flaticon-secure-shield", title: "Private Security" },
-  { id: 4, icon: "flaticon-stethoscope", title: "Medical Center" },
-  { id: 5, icon: "flaticon-book", title: "Library Area" },
-  { id: 6, icon: "flaticon-bed-1", title: "King Size Beds" },
-  { id: 7, icon: "flaticon-home-2", title: "Smart Homes" },
-  { id: 8, icon: "flaticon-slider", title: "Slider" }, // NOTE: original HTML label was literally "flaticon-slider" — likely a placeholder typo in the source, verify real title
+  { id: 1, icon: "flaticon-car", key: "home.amenities.amenity1" },
+  { id: 2, icon: "flaticon-swimming", key: "home.amenities.amenity2" },
+  { id: 3, icon: "flaticon-secure-shield", key: "home.amenities.amenity3" },
+  { id: 4, icon: "flaticon-stethoscope", key: "home.amenities.amenity4" },
+  { id: 5, icon: "flaticon-book", key: "home.amenities.amenity5" },
+  { id: 6, icon: "flaticon-bed-1", key: "home.amenities.amenity6" },
+  { id: 7, icon: "flaticon-home-2", key: "home.amenities.amenity7" },
+  { id: 8, icon: "flaticon-slider", key: "home.amenities.amenity8" },
+  { id: 9, icon: "", key: "home.amenities.amenity9" },
+  { id: 10, icon: "", key: "home.amenities.amenity10" },
 ];
 
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
+
 export default function Amenities() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname) as Locale;
   return (
     <section>
       <div className="container pt-115px pb-90px">
         {/* section heading */}
         <div className="text-center mb-50px">
           <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
-            <span className="leading-1.3">Our Aminities</span>
+            <span className="leading-1.3">{getTranslation('home.amenities.subtitle', locale)}</span>
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold">
-            <span className="leading-1.3">Building Aminities </span>
+            <span className="leading-1.3">{getTranslation('home.amenities.title', locale)}</span>
           </h2>
         </div>
 
@@ -43,7 +53,7 @@ export default function Amenities() {
                   <i className={`${item.icon} leading-65px md:leading-90px xl:leading-110px`} />
                 </span>
                 <span className="block text-13px md:text-lg xl:text-22px transition-all duration-300 text-heading-color group-hover:text-white mb-10px font-poppins font-semibold leading-1.8 capitalize">
-                  {item.title}
+                  {getTranslation(item.key, locale)}
                 </span>
 
                 <span className="text-lg w-45px h-45px border border-border-color-8 shadow-box-shadow-2 rounded-100% bg-white group-hover:text-secondary-color transition-all duration-300 text-center block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">

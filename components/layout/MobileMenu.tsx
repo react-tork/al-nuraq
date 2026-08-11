@@ -3,34 +3,36 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
-/* Accordion item: label + list of links */
+/* Accordion item: label key + list of links */
 type AccordionItem = {
-  label: string;
-  links: { href: string; label: string }[];
+  labelKey: string;
+  links: { href: string; labelKey: string }[];
 };
 
 const accordionItems: AccordionItem[] = [
   {
-    label: "What We Buy",
+    labelKey: "header.whatWeBuy",
     links: [
-      { href: "/what-we-buy", label: "All Services" },
-      { href: "/what-we-buy/metal-scrap", label: "Metal Scrap" },
-      { href: "/what-we-buy/copper-scrap", label: "Copper Scrap" },
-      { href: "/what-we-buy/aluminium-scrap", label: "Aluminium Scrap" },
-      { href: "/what-we-buy/iron-steel", label: "Iron & Steel" },
-      { href: "/what-we-buy/cable-wire", label: "Cable & Wire" },
-      { href: "/what-we-buy/machinery-scrap", label: "Machinery Scrap" },
-      { href: "/what-we-buy/e-scrap", label: "E-Scrap" },
-      { href: "/what-we-buy/battery-scrap", label: "Battery Scrap" },
-      { href: "/what-we-buy/industrial-scrap", label: "Industrial Scrap" },
+      { href: "/what-we-buy", labelKey: "header.allServices" },
+      { href: "/what-we-buy/metal-scrap", labelKey: "header.metalScrap" },
+      { href: "/what-we-buy/copper-scrap", labelKey: "header.copperScrap" },
+      { href: "/what-we-buy/aluminium-scrap", labelKey: "header.aluminiumScrap" },
+      { href: "/what-we-buy/iron-steel", labelKey: "header.ironSteel" },
+      { href: "/what-we-buy/cable-wire", labelKey: "header.cableWire" },
+      { href: "/what-we-buy/machinery-scrap", labelKey: "header.machineryScrap" },
+      { href: "/what-we-buy/e-scrap", labelKey: "header.eScrap" },
+      { href: "/what-we-buy/battery-scrap", labelKey: "header.batteryScrap" },
+      { href: "/what-we-buy/industrial-scrap", labelKey: "header.industrialScrap" },
     ],
   },
 ];
 
-
 /* Single accordion row with expand/collapse */
-function AccordionRow({ item }: { item: AccordionItem }) {
+function AccordionRow({ item, locale }: { item: AccordionItem; locale: Locale }) {
   const [open, setOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -62,8 +64,8 @@ function AccordionRow({ item }: { item: AccordionItem }) {
         className="accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5"
         onClick={toggle}
       >
-        {item.label}
-        <button className="px-3 h-full" aria-label={`Toggle ${item.label}`}>
+        {getTranslation(item.labelKey, locale)}
+        <button className="px-3 h-full" aria-label={`Toggle ${getTranslation(item.labelKey, locale)}`}>
           <span className="w-[10px] h-0.5 bg-gray1 block dark:bg-whiteColor bg-opacity-75"></span>
           <span
             className={`w-[10px] h-0.5 bg-gray1 block dark:bg-whiteColor bg-opacity-75 -mt-[2px] transition-all duration-500 ${
@@ -81,10 +83,10 @@ function AccordionRow({ item }: { item: AccordionItem }) {
             {item.links.map((link) => (
               <li key={link.href} className="mt-4">
                 <Link
-                  href={link.href}
+                  href={locale === 'en' ? `/en${link.href}` : link.href}
                   className="!leading-22px text-darkdeep1 text-sm lg:text-base hover:text-secondary-color"
                 >
-                  {link.label}
+                  {getTranslation(link.labelKey, locale)}
                 </Link>
               </li>
             ))}
@@ -102,6 +104,9 @@ export default function MobileMenu({
   open: boolean;
   onClose: () => void;
 }) {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname) as Locale;
+
   return (
     <div
       className={`drawer-container mobile-menu-container ${open ? "active" : ""}`}
@@ -110,19 +115,19 @@ export default function MobileMenu({
         className="drawer-overlay fixed top-0 left-0 w-full h-full bg-black -z-1 close-drawer opacity-0 transition-all duration-300 invisible cursor-zoom-out block xl:hidden"
         onClick={onClose}
       ></div>
-      <div className="drawer mobile-menu fixed top-0 ltr:-left-[300px] ltr:xs:-left-[400px] rtl:-right-[300px] rtl:xs:-right-[400px] px-5 xs:px-10 py-50px w-300px xs:w-100 h-full transition-all duration-500 shadow-dropdown-secodary bg-whiteColor z-high block xl:hidden bg-white">
-        <div className="pl-15px overflow-auto h-full">
+      <div className="drawer mobile-menu fixed top-0 ltr:-left-[300px] ltr:xs:-left-[400px] rtl:-right-[300px] rtl:xs:-right-[400px] px-5 xs:px-10 py-50px w-300px xs:w-100 h-full transition-all duration-500 shadow-dropdown-secodary bg-whiteColor z-50 block xl:hidden bg-white">
+        <div className="pl-15px overflow-auto h-full flex flex-col justify-between">
           {/* mobile menu wrapper */}
           <div>
             {/* mobile menu logo */}
             <div className="flex justify-between items-center mb-30px">
               <div>
-                <Link href="/">
+                <Link href={locale === 'en' ? '/en' : '/'}>
                   <Image
                     src="/images/logo.png"
                     alt="logo"
-                    width={170}
-                    height={43}
+                    width={125}
+                    height={20}
                   />
                 </Link>
 
@@ -137,12 +142,13 @@ export default function MobileMenu({
               </div>
             </div>
 
+
             {/* mobile menu search */}
             <div className="mb-30px">
               <form action="#" className="relative">
                 <input
                   type="text"
-                  placeholder="Search..."
+                  placeholder={getTranslation('mobileMenu.searchPlaceholder', locale)}
                   className="w-full h-50px border border-border-color-1 pl-15px pr-50px focus:outline-none focus:border-secondary-color transition-all duration-300"
                 />
                 <button
@@ -160,29 +166,29 @@ export default function MobileMenu({
               <ul>
                 <li className="mt-4">
                   <Link
-                    href="/about"
+                    href={locale === 'en' ? '/en/about' : '/about'}
                     className="accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5"
                   >
-                    ABOUT
+                    {getTranslation('header.about', locale)}
                   </Link>
                 </li>
                 {accordionItems.map((item) => (
-                  <AccordionRow key={item.label} item={item} />
+                  <AccordionRow key={item.labelKey} item={item} locale={locale} />
                 ))}
                 <li className="mt-4">
                   <Link
-                    href="/service-areas"
+                    href={locale === 'en' ? '/en/service-areas' : '/service-areas'}
                     className="accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5"
                   >
-                    SERVICE AREAS
+                    {getTranslation('header.serviceAreas', locale)}
                   </Link>
                 </li>
                 <li className="mt-4">
                   <Link
-                    href="/contact"
+                    href={locale === 'en' ? '/en/contact' : '/contact'}
                     className="accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5"
                   >
-                    CONTACT
+                    {getTranslation('header.contact', locale)}
                   </Link>
                 </li>
               </ul>
@@ -221,12 +227,13 @@ export default function MobileMenu({
               </ul>
             </div> */}
 
+          </div>
             {/* Mobile menu social area */}
-            <div>
+            <div className="flex justify-center">
               <ul className="flex gap-3 items-center pt-4">
                 <li>
                   <a
-                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base"
+                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
                     href="https://www.facebook.com"
                   >
                     <i className="fab fa-facebook-f leading-10"></i>
@@ -234,7 +241,7 @@ export default function MobileMenu({
                 </li>
                 <li>
                   <a
-                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base"
+                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
                     href="https://www.twiter.com"
                   >
                     <i className="fab fab fa-twitter leading-10"></i>
@@ -242,7 +249,7 @@ export default function MobileMenu({
                 </li>
                 <li>
                   <a
-                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base"
+                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
                     href="https://www.linkedin.com"
                   >
                     <i className="fab fa-linkedin leading-10"></i>
@@ -250,7 +257,7 @@ export default function MobileMenu({
                 </li>
                 <li>
                   <a
-                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base"
+                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
                     href="https://www.instagram.com"
                   >
                     <i className="fab fa-instagram leading-10"></i>
@@ -258,7 +265,7 @@ export default function MobileMenu({
                 </li>
               </ul>
             </div>
-          </div>
+
         </div>
       </div>
     </div>

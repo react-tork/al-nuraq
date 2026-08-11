@@ -4,6 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 // yet-another-react-lightbox styles
 import "yet-another-react-lightbox/styles.css";
@@ -18,6 +21,8 @@ import "yet-another-react-lightbox/styles.css";
 /*  are preserved via the shared globals.css.                          */
 /* ------------------------------------------------------------------ */
 export default function About() {
+    const pathname = usePathname();
+    const locale = getLocaleFromPathname(pathname) as Locale;
     const [lightboxOpen, setLightboxOpen] = useState(false);
 
     return (
@@ -27,7 +32,7 @@ export default function About() {
                 <div className="container pt-30 pb-90px">
                     <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-30px">
                         {/* about left */}
-                        <div className="lg:ml-30px relative mb-10 lg:mb-0">
+                        <div className="lg:ms-30px relative mb-10 lg:mb-0">
                             <Image
                                 src="/images/others/7.png"
                                 alt=""
@@ -63,46 +68,42 @@ export default function About() {
                         <div>
                             <div className="mb-5">
                                 <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-1px px-5 rounded-full inline-block font-semibold">
-                                    <span className="leading-1.3">about us</span>
+                                    <span className="leading-1.3">{getTranslation('home.about.subtitle', locale)}</span>
                                 </p>
                                 <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
                                     <span className="leading-1.3">
-                                        The Leading Real Estate Rental Marketplace
+                                        {getTranslation('home.about.title', locale)}
                                     </span>
                                 </h2>
                                 <p className="text-sm lg:text-base max-w-500px">
                                     <span className="leading-1.8 lg:leading-1.8">
-                                        Over 39,000 people work for us in more than 70 countries
-                                        all over the This breadth of global coverage, combined with
-                                        specialist services
+                                        {getTranslation('home.about.description', locale)}
                                     </span>
                                 </p>
                             </div>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-4 pt-4">
                                 <li className="text-sm lg:text-base flex items-center">
-                                    <i className="flaticon-home-2 text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center rtl:ml-25px rounded-100%" />
-                                    <span className="leading-1.8">Smart Home Design</span>
+                                    <i className="flaticon-home-2 text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center rtl:ms-25px rounded-100%" />
+                                    <span className="leading-1.8">{getTranslation('home.about.feature1', locale)}</span>
                                 </li>
                                 <li className="text-sm lg:text-base flex items-center">
-                                    <i className="flaticon-mountain text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center rtl:ml-25px rounded-100%" />
-                                    <span className="leading-1.8">Beautiful Scene Around</span>
+                                    <i className="flaticon-mountain text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center rtl:ms-25px rounded-100%" />
+                                    <span className="leading-1.8">{getTranslation('home.about.feature2', locale)}</span>
                                 </li>
                                 <li className="text-sm lg:text-base flex items-center">
-                                    <i className="flaticon-heart text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center rtl:ml-25px rounded-100%" />
-                                    <span className="leading-1.8">Exceptional Lifestyle</span>
+                                    <i className="flaticon-heart text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center rtl:ms-25px rounded-100%" />
+                                    <span className="leading-1.8">{getTranslation('home.about.feature3', locale)}</span>
                                 </li>
                                 <li className="text-sm lg:text-base flex items-center">
-                                    <i className="flaticon-secure text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center rtl:ml-25px rounded-100%" />
-                                    <span className="leading-1.8">Complete 24/7 Security</span>
+                                    <i className="flaticon-secure text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center rtl:ms-25px rounded-100%" />
+                                    <span className="leading-1.8">{getTranslation('home.about.feature4', locale)}</span>
                                 </li>
                             </ul>
 
                             <div className="bg-secondary-color/5 mt-30px mb-10">
                                 <p className="text-sm lg:text-base p-5 rtl:border-r-4 border-secondary-color">
                                     <span className="leading-1.8">
-                                        &quot;Enimad minim veniam quis nostrud exercitation{" "}
-                                        <br />
-                                        llamco laboris. Lorem ipsum dolor sit amet&quot;
+                                        &quot;{getTranslation('home.about.quote', locale)}&quot;
                                     </span>
                                 </p>
                             </div>
@@ -110,10 +111,10 @@ export default function About() {
                                 <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
                                     <span className="inline-block absolute top-0 right-0 w-full h-full bg-secondary-color group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
                                     <a
-                                        href="service.html"
+                                        href={locale === 'en' ? '/en/service.html' : 'service.html'}
                                         className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px"
                                     >
-                                        OUR SERVICES
+                                        {getTranslation('home.about.ctaButton', locale)}
                                     </a>
                                 </h5>
                             </div>

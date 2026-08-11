@@ -5,14 +5,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 interface HeroSlide {
   id: number;
   videoSrc: string;
   posterSrc?: string;
-  tagline: string;
-  titleLine1: string;
-  titleLine2: string;
 }
 
 const heroSlides: HeroSlide[] = [
@@ -20,15 +20,15 @@ const heroSlides: HeroSlide[] = [
     id: 1,
     videoSrc: "/media/3.mp4",
     posterSrc: "/images/hero/hero-poster.jpg",
-    tagline: "Real Estate Agency",
-    titleLine1: "Find Your Dream",
-    titleLine2: "House By Us",
   },
 ];
 
 export default function HeroBanner5() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname) as Locale;
+
   return (
-    <section>
+    <section className="hero hero-primary overflow-hidden relative z-0">
       <div className="hero hero-primary overflow-hidden relative z-0">
         <Swiper
           modules={[Autoplay, EffectFade]}
@@ -59,14 +59,14 @@ export default function HeroBanner5() {
               <div className="container w-full sm:w-[880px] px-5 sm:px-0 relative z-xl">
                 <div className="slide-animation flex flex-col justify-center items-center text-center">
                   <p className="text-xs sm:text-sm md:text-15px lg:text-base font-bold mb-15px text-white animated">
-                    <i className="fas fa-home text-secondary-color ml-1" />
-                    {slide.tagline}
+                    <i className="fas fa-home text-secondary-color ms-1" />
+                    {getTranslation('home.hero.tagline', locale)}
                   </p>
                   <h1 className="text-2xl sm:text-3xl md:text-40px lg:text-6xl xl:text-50px 4xl:text-90px text-white font-bold mb-5 animated uppercase hyphens-none">
                     <span className="leading-1 md:leading-1 lg:leading-1 xl:leading-1 4xl:leading-1">
-                      {slide.titleLine1}
+                      {getTranslation('home.hero.titleLine1', locale)}
                       <br className=" leading-[0]" />
-                      {slide.titleLine2}
+                      {getTranslation('home.hero.titleLine2', locale)}
                     </span>
                   </h1>
                 </div>

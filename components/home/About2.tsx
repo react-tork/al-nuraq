@@ -3,6 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 // yet-another-react-lightbox styles
 import "yet-another-react-lightbox/styles.css";
@@ -15,18 +18,18 @@ const galleryImages = [
 
 /* Feature list (dashed bullet items) */
 const features = [
-    "Live Music Cocerts at Luviana",
-    "Our SecretIsland Boat Tour is Just for You",
-    "Live Music Cocerts at Luviana",
-    "Live Music Cocerts at Luviana",
+    "home.about2.feature1",
+    "home.about2.feature2",
+    "home.about2.feature3",
+    "home.about2.feature4",
 ];
 
-/* Property stats (flaticon icons + count + label) */
+/* Business stats (flaticon icons + count + label) */
 const stats = [
-    { count: "3", icon: "flaticon-bed", label: "Bedrooms" },
-    { count: "2", icon: "flaticon-clean", label: "Bedrooms" },
-    { count: "2", icon: "flaticon-car", label: "Car parking" },
-    { count: "3450", icon: "flaticon-square-shape-design-interface-tool-symbol", label: "square Ft" },
+    { count: "10+", icon: "flaticon-home-2", key: "home.about2.stat1Label" },
+    { count: "500+", icon: "flaticon-heart", key: "home.about2.stat2Label" },
+    { count: "1000+", icon: "flaticon-mountain", key: "home.about2.stat3Label" },
+    { count: "5+", icon: "flaticon-secure", key: "home.about2.stat4Label" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -37,6 +40,8 @@ const stats = [
 /*  matching the existing About/Banner migration.                      */
 /* ------------------------------------------------------------------ */
 export default function About2() {
+    const pathname = usePathname();
+    const locale = getLocaleFromPathname(pathname) as Locale;
     const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
     return (
@@ -49,22 +54,20 @@ export default function About2() {
                         <div className="mb-5">
                             <div className="mb-30px">
                                 <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-1px px-5 rounded-full inline-block font-semibold">
-                                    <span className="leading-1.3">about us</span>
+                                    <span className="leading-1.3">{getTranslation('home.about2.subtitle', locale)}</span>
                                 </p>
                                 <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
-                                    <span className="leading-1.3"> Today Sells Properties </span>
+                                    <span className="leading-1.3"> {getTranslation('home.about2.title', locale)} </span>
                                 </h2>
                                 <p className="text-sm lg:text-base max-w-500px">
-                                    Houzez allow you to design unlimited panels and real estate
-                                    custom forms to capture leads and keep record of all
-                                    information
+                                    {getTranslation('home.about2.description', locale)}
                                 </p>
                             </div>
                             <ul className="space-y-4 pb-4">
                                 {features.map((f, i) => (
                                     <li key={i} className="text-sm lg:text-base flex items-center">
-                                        <span className="w-15px h-0.5 bg-secondary-color opacity-50 inline-block ml-15px" />
-                                        <span className="leading-1.8">{f}</span>
+                                        <span className="w-15px h-0.5 bg-secondary-color opacity-50 inline-block ms-15px" />
+                                        <span className="leading-1.8">{getTranslation(f, locale)}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -81,9 +84,9 @@ export default function About2() {
                                     >
                                         <p className="leading-1.8 font-bold">
                                             {s.count}
-                                            <i className={`${s.icon} ml-1`} />
+                                            <i className={`${s.icon} ms-1`} />
                                         </p>
-                                        <p className="leading-1.8">{s.label}</p>
+                                        <p className="leading-1.8">{getTranslation(s.key, locale)}</p>
                                     </li>
                                 ))}
                             </ul>

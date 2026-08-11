@@ -2,8 +2,14 @@
 
 import { useState } from "react";
 import NiceSelectField from "@/components/common/NiceSelectField";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 export default function ContactForm() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname) as Locale;
+  
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -29,6 +35,19 @@ export default function ContactForm() {
     console.log(form);
   };
 
+  const serviceOptions = [
+    { value: "Metal Scrap", label: getTranslation('contact.form.serviceMetalScrap', locale) },
+    { value: "Copper Scrap", label: getTranslation('contact.form.serviceCopperScrap', locale) },
+    { value: "Aluminium Scrap", label: getTranslation('contact.form.serviceAluminiumScrap', locale) },
+    { value: "Iron & Steel", label: getTranslation('contact.form.serviceIronSteel', locale) },
+    { value: "Cable & Wire", label: getTranslation('contact.form.serviceCableWire', locale) },
+    { value: "Machinery Scrap", label: getTranslation('contact.form.serviceMachineryScrap', locale) },
+    { value: "E-Scrap", label: getTranslation('contact.form.serviceEScrap', locale) },
+    { value: "Battery Scrap", label: getTranslation('contact.form.serviceBatteryScrap', locale) },
+    { value: "Industrial Scrap", label: getTranslation('contact.form.serviceIndustrialScrap', locale) },
+  ];
+
+
   return (
     <section>
       <div className="container">
@@ -37,8 +56,8 @@ export default function ContactForm() {
             onSubmit={handleSubmit}
             className="form-primary bg-white shadow-box-shadow-2 px-25px pt-10 pb-50px md:p-50px md:pt-10"
           >
-            <h4 className="text-22px font-semibold leading-1.3 pr-10px border-r-2 border-secondary-color text-heading-color mb-30px">
-              Get A Quote
+            <h4 className="text-22px font-semibold leading-1.3 pe-10px border-e-2 border-secondary-color text-heading-color mb-30px rtl:ps-10px rtl:pe-0 rtl:border-s-2 rtl:border-e-0">
+              {getTranslation('contact.form.title', locale)}
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-30px">
               {/* name */}
@@ -48,10 +67,10 @@ export default function ContactForm() {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Enter your name"
-                  className="text-paragraph-color pr-5 pl-50px outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block w-full rounded-none placeholder:opacity-60 placeholder:text-sm placeholder:text-paragraph-color"
+                  placeholder={getTranslation('contact.form.namePlaceholder', locale)}
+                  className="text-paragraph-color pe-5 ps-50px outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block w-full rounded-none placeholder:opacity-60 placeholder:text-sm placeholder:text-paragraph-color rtl:ps-5 rtl:pe-50px"
                 />
-                <span className="absolute top-1/2 -translate-y-1/2 left-4">
+                <span className="absolute top-1/2 -translate-y-1/2 start-4 rtl:end-4 rtl:start-auto">
                   <i className="fas fa-user text-sm lg:text-base text-secondary-color font-bold" />
                 </span>
               </div>
@@ -62,10 +81,10 @@ export default function ContactForm() {
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="Enter email address"
-                  className="text-paragraph-color pr-5 pl-50px outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block w-full rounded-none placeholder:opacity-60 placeholder:text-sm placeholder:text-paragraph-color"
+                  placeholder={getTranslation('contact.form.emailPlaceholder', locale)}
+                  className="text-paragraph-color pe-5 ps-50px outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block w-full rounded-none placeholder:opacity-60 placeholder:text-sm placeholder:text-paragraph-color rtl:ps-5 rtl:pe-50px"
                 />
-                <span className="absolute top-1/2 -translate-y-1/2 left-4">
+                <span className="absolute top-1/2 -translate-y-1/2 start-4 rtl:end-4 rtl:start-auto">
                   <i className="fas fa-envelope text-sm lg:text-base text-secondary-color font-bold" />
                 </span>
               </div>
@@ -75,15 +94,8 @@ export default function ContactForm() {
                   name="serviceType"
                   value={form.serviceType}
                   onChange={(val) => setForm((prev) => ({ ...prev, serviceType: val }))}
-                  placeholder="Select Service Type"
-                  options={[
-                    { value: "Property Management", label: "Property Management" },
-                    { value: "Mortgage Service", label: "Mortgage Service" },
-                    { value: "Consulting Service", label: "Consulting Service" },
-                    { value: "Home Buying", label: "Home Buying" },
-                    { value: "Home Selling", label: "Home Selling" },
-                    { value: "Escrow Services", label: "Escrow Services" },
-                  ]}
+                  placeholder={getTranslation('contact.form.servicePlaceholder', locale)}
+                  options={serviceOptions}
                 />
               </div>
               {/* number */}
@@ -93,10 +105,10 @@ export default function ContactForm() {
                   name="phone"
                   value={form.phone}
                   onChange={handleChange}
-                  placeholder="Enter phone number"
-                  className="text-paragraph-color pr-5 pl-50px outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block w-full rounded-none placeholder:opacity-60 placeholder:text-sm placeholder:text-paragraph-color"
+                  placeholder={getTranslation('contact.form.phonePlaceholder', locale)}
+                  className="text-paragraph-color pe-5 ps-50px outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block w-full rounded-none placeholder:opacity-60 placeholder:text-sm placeholder:text-paragraph-color rtl:ps-5 rtl:pe-50px"
                 />
-                <span className="absolute top-1/2 -translate-y-1/2 left-4">
+                <span className="absolute top-1/2 -translate-y-1/2 start-4 rtl:end-4 rtl:start-auto">
                   <i className="fas fa-phone text-sm lg:text-base text-secondary-color font-bold" />
                 </span>
               </div>
@@ -106,10 +118,10 @@ export default function ContactForm() {
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="Enter message"
-                  className="min-h-[150px] text-paragraph-color pr-5 pl-50px py-15px outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block w-full rounded-none placeholder:opacity-60 placeholder:text-sm placeholder:text-paragraph-color"
+                  placeholder={getTranslation('contact.form.messagePlaceholder', locale)}
+                  className="min-h-[150px] text-paragraph-color pe-5 ps-50px py-15px outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block w-full rounded-none placeholder:opacity-60 placeholder:text-sm placeholder:text-paragraph-color rtl:ps-5 rtl:pe-50px"
                 />
-                <span className="absolute top-[30px] -translate-y-1/2 left-4">
+                <span className="absolute top-[30px] -translate-y-1/2 start-4 rtl:end-4 rtl:start-auto">
                   <i className="fas fa-pencil text-sm lg:text-base text-secondary-color font-bold" />
                 </span>
               </div>
@@ -123,21 +135,20 @@ export default function ContactForm() {
                 checked={form.agree}
                 onChange={handleChange}
               />
-              <label htmlFor="agree" className="text-sm mr-1">
-                Save my name, email, and website in this browser for the next
-                time I comment.
+              <label htmlFor="agree" className="text-sm ms-1 rtl:me-1 rtl:ms-0">
+                {getTranslation('contact.form.agreeLabel', locale)}
               </label>
             </div>
 
             {/* submit button */}
             <div className="pb-5">
               <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block z-0">
-                <span className="inline-block absolute top-0 right-0 w-full h-full bg-secondary-color group-hover:bg-black -z-1 group-hover:w-0 transition-all duration-300" />
+                <span className="inline-block absolute top-0 end-0 w-full h-full bg-secondary-color group-hover:bg-black -z-1 group-hover:w-0 transition-all duration-300 rtl:start-0 rtl:end-auto" />
                 <button
                   type="submit"
                   className="relative z-1 px-5 md:px-25px lg:px-10 py-10px md:py-15px lg:py-17px group-hover:text-heading-color leading-23px uppercase"
                 >
-                  get an free service
+                  {getTranslation('contact.form.submitButtonText', locale)}
                 </button>
               </h5>
             </div>

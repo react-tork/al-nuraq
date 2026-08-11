@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "animate.css";
-import "./font-icons.css";
-import "./globals.css";
+import "../font-icons.css";
+import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { getLocaleFromPathname, localeDirection } from "@/lib/i18n";
 
 
 const geistSans = Geist({
@@ -19,15 +18,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "مشتري سكراب محترف في الدمام والرياض",
-  description: "مشتري سكراب محترف في الدمام والرياض",
+  title: "Professional Scrap Buyer in Dammam and Riyadh",
+  description: "Professional Scrap Buyer in Dammam and Riyadh",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function EnglishLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="ar"
-      dir="rtl"
+      lang="en"
+      dir="ltr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

@@ -7,12 +7,14 @@ type PageBannerProps = {
   title: string;
   breadcrumbs: BreadcrumbItem[];
   bgImage?: string; // defaults to the shared banner background
+  homeLabel?: string; // optional translation for "Home" breadcrumb
 };
 
 export default function PageBanner({
   title,
   breadcrumbs,
   bgImage = "/images/bg/14.jpg",
+  homeLabel = "Home",
 }: PageBannerProps) {
   return (
     <section>
@@ -32,7 +34,7 @@ export default function PageBanner({
           <ul className="breadcrumb flex gap-30px items-center text-sm lg:text-base font-bold pt-4">
             <li className="home relative leading-1.8 lg:leading-1.8">
               <a href="/">
-                <i className="fas fa-home text-secondary-color pr-1.5" /> Home
+                <i className="fas fa-home text-secondary-color pr-1.5" /> {homeLabel}
               </a>
             </li>
             {breadcrumbs.map((item, idx) => {

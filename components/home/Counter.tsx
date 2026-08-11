@@ -1,17 +1,23 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 /* ------------------------------------------------------------------ */
 /*  Counter — homepage counter section                                 */
 /*  Reproduced from quarter-rtl/index.html (counter section).          */
 /* ------------------------------------------------------------------ */
 export default function Counter() {
+    const pathname = usePathname();
+    const locale = getLocaleFromPathname(pathname) as Locale;
+    
     const items = [
-        { icon: "flaticon-select", target: 560, suffix: "+", label: "Total Area Sq" },
-        { icon: "flaticon-office", target: 197, suffix: "K+", label: "Apartments Sold" },
-        { icon: "flaticon-excavator", target: 268, suffix: "+", label: "Total Constructions" },
-        { icon: "flaticon-armchair", target: 340, suffix: "+", label: "Apartio Rooms" },
+        { icon: "flaticon-select", target: 560, suffix: "+", key: "home.counter.label1" },
+        { icon: "flaticon-office", target: 197, suffix: "K+", key: "home.counter.label2" },
+        { icon: "flaticon-excavator", target: 268, suffix: "+", key: "home.counter.label3" },
+        { icon: "flaticon-armchair", target: 340, suffix: "+", key: "home.counter.label4" },
     ];
 
     return (
@@ -21,7 +27,7 @@ export default function Counter() {
                 <div className="container pt-30 pb-70px">
                     <div className="text-center counter grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-30px mb-45px -mt-3">
                         {items.map((item) => (
-                            <div key={item.label}>
+                            <div key={item.key}>
                                 <div className="text-65px text-secondary-color">
                                     <i className={`${item.icon} leading-1`} />
                                 </div>
@@ -30,7 +36,7 @@ export default function Counter() {
                                     <span>{item.suffix}</span>
                                 </h5>
                                 <p className="text-sm lg:text-base font-bold">
-                                    <span className="leading-1.8">{item.label}</span>
+                                    <span className="leading-1.8">{getTranslation(item.key, locale)}</span>
                                 </p>
                             </div>
                         ))}

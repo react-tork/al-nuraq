@@ -6,51 +6,52 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 type Testimonial = {
   id: number;
   image: string;
-  name: string;
-  role: string;
-  quote: string;
+  nameKey: string;
+  roleKey: string;
+  quoteKey: string;
 };
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
     image: "/images/testimonial/1.jpg",
-    name: "Jacob William",
-    role: "Selling Agents",
-    quote:
-      "Precious ipsum dolor sit amet consectetur adipisicing elit, sed dos mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad min veniam, quis nostrud Precious ips um dolor sit amet, consecte",
+    nameKey: "home.testimonials.testimonial1Name",
+    roleKey: "home.testimonials.testimonial1Role",
+    quoteKey: "home.testimonials.testimonial1Quote",
   },
   {
     id: 2,
     image: "/images/testimonial/2.jpg",
-    name: "Kelian Anderson",
-    role: "Selling Agents",
-    quote:
-      "Precious ipsum dolor sit amet consectetur adipisicing elit, sed dos mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad min veniam, quis nostrud Precious ips um dolor sit amet, consecte",
+    nameKey: "home.testimonials.testimonial2Name",
+    roleKey: "home.testimonials.testimonial2Role",
+    quoteKey: "home.testimonials.testimonial2Quote",
   },
   {
     id: 3,
     image: "/images/testimonial/3.jpg",
-    name: "Adam Joseph",
-    role: "Selling Agents",
-    quote:
-      "Precious ipsum dolor sit amet consectetur adipisicing elit, sed dos mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad min veniam, quis nostrud Precious ips um dolor sit amet, consecte",
+    nameKey: "home.testimonials.testimonial3Name",
+    roleKey: "home.testimonials.testimonial3Role",
+    quoteKey: "home.testimonials.testimonial3Quote",
   },
   {
     id: 4,
     image: "/images/testimonial/4.jpg",
-    name: "James Carter",
-    role: "Selling Agents",
-    quote:
-      "Precious ipsum dolor sit amet consectetur adipisicing elit, sed dos mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad min veniam, quis nostrud Precious ips um dolor sit amet, consecte",
+    nameKey: "home.testimonials.testimonial4Name",
+    roleKey: "home.testimonials.testimonial4Role",
+    quoteKey: "home.testimonials.testimonial4Quote",
   },
 ];
 
 export default function Testimonials() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname) as Locale;
   return (
     <section>
       <div className="bg-[url('/images/bg/20.jpg')] bg-top bg-no-repeat">
@@ -58,10 +59,10 @@ export default function Testimonials() {
           {/* section heading */}
           <div className="text-center mb-50px">
             <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
-                <span className="leading-1.3">Our Testimonial</span>
+                <span className="leading-1.3">{getTranslation('home.testimonials.subtitle', locale)}</span>
               </p>
             <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold">
-              <span className="leading-1.3">Clients Feedback </span>
+              <span className="leading-1.3">{getTranslation('home.testimonials.title', locale)}</span>
             </h2>
           </div>
 
@@ -92,10 +93,10 @@ export default function Testimonials() {
                     {/* card body */}
                     <div>
                       <p className="text-sm md:text-base mb-5 md:mb-6 xl:mb-27px">
-                        <span className="text-3xl mr-0.5 translate-y-2 inline-block">
+                        <span className="text-3xl me-0.5 translate-y-2 inline-block">
                           <i className="flaticon-left-quote-1 group-hover:text-secondary-color transition-all duration-300" />
                         </span>
-                        <span className="leading-1.8">{t.quote}</span>
+                        <span className="leading-1.8">{getTranslation(t.quoteKey, locale)}</span>
                       </p>
                     </div>
                     {/* card footer */}
@@ -103,7 +104,7 @@ export default function Testimonials() {
                       <div className="w-60px h-60px flex-shrink-0">
                         <Image
                           src={t.image}
-                          alt={t.name}
+                          alt={getTranslation(t.nameKey, locale)}
                           width={60}
                           height={60}
                           className="w-full h-full rounded-100%"
@@ -112,10 +113,10 @@ export default function Testimonials() {
                       <div>
                         <h4 className="text-base lg:text-lg font-semibold text-heading-color mb-0">
                           <span className="leading-1.3 hover:text-secondary-color">
-                            {t.name}
+                            {getTranslation(t.nameKey, locale)}
                           </span>
                         </h4>
-                        <span className="text-sm uppercase">{t.role}</span>
+                        <span className="text-sm uppercase">{getTranslation(t.roleKey, locale)}</span>
                       </div>
                     </div>
                     <span className="hover-line absolute bottom-0 left-0 w-0 group-hover:w-full h-1 bg-secondary-color transition-all duration-300 block" />

@@ -3,36 +3,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 
 /* "Company" footer link column */
 const companyLinks = [
-  { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
-  { href: "/shop", label: "All Products" },
-  { href: "/locations", label: "Locations Map" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact us" },
+  { href: "/about", key: "footer.about" },
+  { href: "/blog", key: "footer.blog" },
+  { href: "/shop", key: "footer.allProducts" },
+  { href: "/locations", key: "footer.locationsMap" },
+  { href: "/faq", key: "footer.faq" },
+  { href: "/contact", key: "footer.contact" },
 ];
 
 /* "Services" footer link column */
 const servicesLinks = [
-  { href: "/order-tracking", label: "Order tracking" },
-  { href: "/wishlist", label: "Wish List" },
-  { href: "/login", label: "Login" },
-  { href: "/account", label: "My account" },
-  { href: "/about", label: "Terms & Conditions" },
-  { href: "/about", label: "Promotional Offers" },
+  { href: "/order-tracking", key: "footer.orderTracking" },
+  { href: "/wishlist", key: "footer.wishList" },
+  { href: "/login", key: "footer.login" },
+  { href: "/account", key: "footer.myAccount" },
+  { href: "/about", key: "footer.termsAndConditionsLink" },
+  { href: "/about", key: "footer.promotionalOffers" },
 ];
 
 /* "Customer Care" footer link column */
 const customerCareLinks = [
-  { href: "/login", label: "Login" },
-  { href: "/account", label: "My account" },
-  { href: "/wishlist", label: "Wish List" },
-  { href: "/order-tracking", label: "Order tracking" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact us" },
+  { href: "/login", key: "footer.login" },
+  { href: "/account", key: "footer.myAccount" },
+  { href: "/wishlist", key: "footer.wishList" },
+  { href: "/order-tracking", key: "footer.orderTracking" },
+  { href: "/faq", key: "footer.faq" },
+  { href: "/contact", key: "footer.contact" },
 ];
 
 /* Footer social icons */
@@ -47,9 +50,11 @@ const socialLinks = [
 function FooterLinkColumn({
   title,
   links,
+  locale,
 }: {
   title: string;
-  links: { href: string; label: string }[];
+  links: { href: string; key: string }[];
+  locale: Locale;
 }) {
   return (
     <div className="xl:col-span-2 mb-60px">
@@ -57,25 +62,31 @@ function FooterLinkColumn({
         <span className="leading-1.3"> {title} </span>
       </h3>
       <ul className="space-y-[15px]">
-        {links.map((item) => (
-          <li key={item.label}>
-            <a
-              href={item.href}
-              className="hover:text-secondary-color translate-x-5 hover:translate-x-0 group leading-1.8"
-            >
-              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
-                //
-              </span>
-              {item.label}
-            </a>
-          </li>
-        ))}
+        {links.map((item) => {
+          const label = getTranslation(item.key, locale);
+          const href = locale === 'en' ? `/en${item.href}` : item.href;
+          return (
+            <li key={label}>
+              <a
+                href={href}
+                className="hover:text-secondary-color translate-x-5 hover:translate-x-0 group leading-1.8"
+              >
+                <span className="text-secondary-color pe-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  //
+                </span>
+                {label}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
 }
 
 export default function Footer() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname) as Locale;
   const [showScrollUp, setShowScrollUp] = useState(false);
 
   /* Show scroll-up button after scrolling past 300px */
@@ -103,20 +114,20 @@ export default function Footer() {
             <div className="px-25px lg:px-60px py-50px bg-secondary-color text-white flex justify-center lg:justify-between items-center flex-col lg:flex-row gap-y-30px lg:gap-0 sm:whitespace-nowrap">
               <div>
                 <h5 className="text-xl md:text-26px lg:text-3xl xl:text-4xl text-white font-bold mb-15px">
-                  <span className="leading-1.3">Looking for a dream home?</span>
+                  <span className="leading-1.3">{getTranslation('footer.ctaTitle', locale)}</span>
                 </h5>
                 <p className="text-white leading-1.8">
-                  We can help you realize your dream of a new home
+                  {getTranslation('footer.ctaDescription', locale)}
                 </p>
               </div>
               <div>
                 <h5 className="capitalize inline-block text-sm md:text-base text-primary-color hover:text-white hover:bg-primary-color relative group whitespace-nowrap font-normal transition-all duration-300 shadow-box-shadow-3 mb-0">
                   <span className="inline-block absolute top-0 right-0 w-full h-full bg-white group-hover:bg-secondary-color z-1 group-hover:w-0 transition-all duration-300"></span>
                   <a
-                    href="/contact"
+                    href={locale === 'en' ? '/en/contact' : '/contact'}
                     className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-white leading-23px"
                   >
-                    Explore Properties <i className="icon-next"></i>
+                    {getTranslation('footer.exploreProperties', locale)} <i className="icon-next"></i>
                   </a>
                 </h5>
               </div>
@@ -128,9 +139,9 @@ export default function Footer() {
             {/* footer about */}
             <div className="xl:col-start-1 xl:col-span-3 mb-60px lg:pl-35px">
               <div className="mb-15px">
-                <Link href="/">
+                <Link href={locale === 'en' ? '/en' : '/'}>
                   <Image
-                    src="/images/logo-2.png"
+                    src="/images/logo.png"
                     alt=""
                     width={170}
                     height={43}
@@ -138,32 +149,41 @@ export default function Footer() {
                 </Link>
 
                 <p className="leading-1.8 mb-5 lg:mb-25px text-white">
-                  Lorem Ipsum is simply dummy text of the and typesetting
-                  industry. Lorem Ipsum is dummy text of the printing.
+                  {getTranslation('footer.aboutDescription', locale)}
                 </p>
 
                 <ul className="space-y-2">
                   <li>
                     <p className="leading-1.8 text-white flex">
                       <i className="icon-placeholder ml-15px mt-1"></i>
-                      <span>Brooklyn, New York, United States</span>
+                      <span>{getTranslation('footer.address', locale)}</span>
                     </p>
                   </li>
                   <li>
-                    <a href="tel:+0123-456789" className="leading-1.8 flex">
+                    <a href="tel:+966510679737" className="leading-1.8 flex">
                       <i className="icon-call ml-15px mt-1"></i>
-                      <span>+0123-456789</span>
+                      <span>+966 51 067 9737</span>
                     </a>
                   </li>
                   <li>
                     <a
-                      href="mailto:example@example.com"
+                      href="mailto:mohishinhossen@gmail.com"
                       className="leading-1.8 flex"
                     >
                       <i className="icon-mail ml-15px mt-1"></i>
-                      <span>example@example.com</span>
+                      <span>mohishinhossen@gmail.com</span>
                     </a>
                   </li>
+                  <li>
+                    <a
+                      href="https://wa.me/966510679737"
+                      className="leading-1.8 flex"
+                    >
+                      <i className="icon-whatsapp ml-15px mt-1"></i>
+                      <span>WhatsApp Us</span>
+                    </a>
+                  </li>
+
                 </ul>
                 <ul className="flex items-center gap-x-5 mt-5">
                   {socialLinks.map((item) => (
@@ -177,27 +197,26 @@ export default function Footer() {
               </div>
             </div>
             {/* footer company */}
-            <FooterLinkColumn title="Company" links={companyLinks} />
+            <FooterLinkColumn title={getTranslation('footer.company', locale)} links={companyLinks} locale={locale} />
             {/* footer services */}
-            <FooterLinkColumn title="Services" links={servicesLinks} />
+            <FooterLinkColumn title={getTranslation('footer.services', locale)} links={servicesLinks} locale={locale} />
             {/* footer customer care */}
-            <FooterLinkColumn title="Customer Care" links={customerCareLinks} />
+            <FooterLinkColumn title={getTranslation('footer.customerCare', locale)} links={customerCareLinks} locale={locale} />
             {/* footer newsletter */}
             <div className="xl:col-start-10 xl:col-span-3 mb-60px">
-              <h3 className="text-22px font-bold mb-25px text-white">
-                <span className="leading-1.3"> Newsletter </span>
+              {/* <h3 className="text-22px font-bold mb-25px text-white">
+                <span className="leading-1.3"> {getTranslation('footer.newsletter', locale)} </span>
               </h3>
               <p className="leading-1.8 mb-5 lg:mb-25px text-white">
-                Subscribe to our weekly Newsletter and receive updates via
-                email.
-              </p>
+                {getTranslation('footer.newsletterDescription', locale)}
+              </p> */}
 
               {/* subscription input */}
-              <div>
+              {/* <div>
                 <form className="w-full relative">
                   <input
                     type="text"
-                    placeholder="Email*"
+                    placeholder={getTranslation('footer.emailPlaceholder', locale)}
                     className="w-full text-sm text-paragraph-color pr-5 pl-50px placeholder:text-paragraph-color outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block rounded-none"
                   />
                   <button
@@ -207,11 +226,11 @@ export default function Footer() {
                     <i className="fas fa-location-arrow text-lg font-bold"></i>
                   </button>
                 </form>
-              </div>
+              </div> */}
               {/* payment methods */}
-              <div>
+              {/* <div>
                 <h3 className="text-base lg:text-lg font-bold mt-30px mb-15px text-white">
-                  <span className="leading-1.3"> We Accept </span>
+                  <span className="leading-1.3"> {getTranslation('footer.weAccept', locale)} </span>
                 </h3>
                 <Image
                   src="/images/icons/payment-4.png"
@@ -220,7 +239,7 @@ export default function Footer() {
                   height={42}
                 />
 
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -231,26 +250,26 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div>
               <p className="leading-1.8 text-center lg:text-start text-white">
-                All Rights Reserved @ Company 2024
+                {getTranslation('footer.allRightsReserved', locale)} @ {getTranslation('footer.companyName', locale)} 2024
               </p>
             </div>
 
             <ul className="flex gap-x-25px items-center justify-center lg:justify-end capitalize font-semibold font-poppins text-sm">
               <li>
                 <a href="#" className="leading-1.8">
-                  Terms & Conditions
+                  {getTranslation('footer.termsAndConditions', locale)}
                 </a>
               </li>
               <li>
                 <a href="#" className="leading-1.8">
                   {" "}
-                  Claim
+                  {getTranslation('footer.claim', locale)}
                 </a>
               </li>
               <li>
                 <a href="#" className="leading-1.8">
                   {" "}
-                  Privacy & Policy
+                  {getTranslation('footer.privacyAndPolicy', locale)}
                 </a>
               </li>
             </ul>
@@ -272,5 +291,3 @@ export default function Footer() {
     </>
   );
 }
-
-
