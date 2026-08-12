@@ -1,24 +1,11 @@
-import Link from "next/link";
-
-type BreadcrumbItem = {
-  label: string;
-  href?: string; // omit for the current/active page (last item)
-};
-
 type PageBannerProps = {
   title: string;
-  breadcrumbs: BreadcrumbItem[];
   bgImage?: string; // defaults to the shared banner background
-  homeLabel?: string; // optional translation for "Home" breadcrumb
-  homeHref?: string; // locale-aware home URL
 };
 
 export default function PageBanner({
   title,
-  breadcrumbs,
-  bgImage = "/images/bg/14.jpg",
-  homeLabel = "Home",
-  homeHref = "/",
+  bgImage = "/images/bg/test.png",
 }: PageBannerProps) {
   return (
     <section>
@@ -26,41 +13,23 @@ export default function PageBanner({
         className="relative w-full bg-no-repeat bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: `url('${bgImage}')` }}
       >
-        {/* white overlay — sits above the background image, below the content */}
-        <div className="absolute inset-0 bg-white/30 " />
+        {/* gradient overlay — darker at bottom for text contrast, lighter at top */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/40 to-white/10" />
+
+        {/* decorative accent — soft gold circle, top-right */}
+        <div className="absolute -right-50px -top-50px w-[220px] h-[220px] rounded-full bg-secondary-color/10 blur-2xl -z-1" />
+
+        {/* decorative accent — thin gold line under content */}
+        <div className="absolute left-0 bottom-0 w-full h-3px bg-gradient-to-r from-secondary-color via-secondary-color/40 to-transparent" />
 
         <div className="relative container py-110px">
-          <h1 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-4xl font-bold text-heading-color mb-15px">
-            <span className="leading-1.3 md:leading-1.3 lg:leading-1.3 xl:leading-1.3">
+          <h1 className="animate__animated animate__fadeInUp text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-[48px] font-bold text-heading-color mb-0">
+            <span className="relative inline-block leading-[1.2] text-center">
               {title}
+              <span className="absolute -bottom-4 left-0 w-20 h-[3px] rounded-full bg-secondary-color" />
+              <span className="absolute -bottom-4 left-[84px] w-2 h-[3px] rounded-full bg-secondary-color/40" />
             </span>
           </h1>
-          <ul className="breadcrumb flex gap-30px items-center text-sm lg:text-base font-bold pt-4">
-            <li className="home relative leading-1.8 lg:leading-1.8">
-              <Link href={homeHref}>
-                <i className="fas fa-home text-secondary-color pr-1.5" /> {homeLabel}
-              </Link>
-            </li>
-            {breadcrumbs.map((item, idx) => {
-              const isLast = idx === breadcrumbs.length - 1;
-              return (
-                <li
-                  key={item.label}
-                  className={
-                    isLast
-                      ? "leading-1.8 lg:leading-1.8 text-heading-color"
-                      : "home relative leading-1.8 lg:leading-1.8"
-                  }
-                >
-                  {item.href && !isLast ? (
-                    <Link href={item.href}>{item.label}</Link>
-                  ) : (
-                    item.label
-                  )}
-                </li>
-              );
-            })}
-          </ul>
         </div>
       </div>
     </section>

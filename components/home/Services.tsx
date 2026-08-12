@@ -58,8 +58,8 @@ export default function Services() {
     return (
         <>
             {/* ==================== services section ==================== */}
-            <section className="bg-section-bg-1">
-                <div className="container pt-30 pb-90px">
+            <section className="bg-section-bg-1 mb-8 md:mb-12">
+                <div className="container pt-24 pb-90px  ">
                     {/* section heading */}
                     <div className="text-center mb-50px">
                         <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
@@ -93,14 +93,14 @@ export default function Services() {
                                         </div>
                                         <h6 className="text-lg md:text-xl lg:text-22px xl:text-2xl text-heading-color font-bold">
                                             <a
-                                                className="hover:text-secondary-color leading-1.3 mb-1"
+                                                className="hover:text-secondary-color leading-1.3 mb-1 line-clamp-1"
                                                 href="service-details.html"
                                             >
                                                 {getTranslation(service.titleKey, locale)}
                                             </a>
                                         </h6>
-                                        <p className="text-sm mb-25px">
-                                            <span className="leading-1.8">{getTranslation(service.descKey, locale)}</span>
+                                        <p className="text-sm mb-25px line-clamp-3">
+                                            <span className="leading-1.8 line-clamp-3">{getTranslation(service.descKey, locale)}</span>
                                         </p>
                                         <div className="text-sm text-color-1 font-bold">
                                             <a

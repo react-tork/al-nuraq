@@ -57,7 +57,7 @@ export default function HeroBanner5() {
               </video>
 
               <div className="container w-full sm:w-[880px] px-5 sm:px-0 relative z-xl">
-                <div className="slide-animation flex flex-col justify-center items-center text-center">
+                <div className="slide-animation flex flex-col justify-center items-center text-center mt-2">
                   <p className="text-xs sm:text-sm md:text-15px lg:text-base font-bold mb-15px text-white animated">
                     <i className="fas fa-home text-secondary-color ms-1" />
                     {getTranslation('home.hero.tagline', locale)}

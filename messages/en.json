@@ -19,7 +19,7 @@
     "industrialScrap": "Industrial Scrap",
     "serviceAreas": "Service Areas",
     "contact": "Contact",
-    "languageSwitcher": "AR"
+    "languageSwitcher": "العربية"
   },
   "mobileMenu": {
     "searchPlaceholder": "Search..."
@@ -263,5 +263,62 @@
       "agreeLabel": "Save my name, email, and website in this browser for the next time I comment.",
       "submitButtonText": "get an free service"
     }
+  },
+  "serviceAreas": {
+    "subtitle": "Locations",
+    "title": "Where We Operate",
+    "description": "Al Nuraq provides scrap collection and evaluation services across the Eastern and Central provinces of Saudi Arabia, serving individuals, businesses and industrial customers in each location.",
+    "primary": "Primary",
+    "viewPage": "View {city} Page",
+    "easternProvince": "Eastern Province",
+    "centralProvince": "Central Province",
+    "dammam": {
+      "city": "Dammam",
+      "description": "Our primary service hub in the Eastern Province. Serving individuals, factories, contractors and commercial businesses across the Dammam industrial and residential areas."
+    },
+    "riyadh": {
+      "city": "Riyadh",
+      "description": "Serving customers in the Saudi capital — from residential pickups to full factory and warehouse clearances. A major service area for industrial and commercial customers."
+    },
+    "khobar": {
+      "city": "Khobar",
+      "description": "Serving customers in Khobar and surrounding areas, subject to collection availability. Contact us to confirm service in your specific location."
+    },
+    "qatif": {
+      "city": "Qatif",
+      "description": "Al Nuraq serves customers in Qatif and nearby areas, subject to collection availability. Contact us to confirm your location."
+    },
+    "materials": {
+      "metalScrap": "Metal Scrap",
+      "industrialScrap": "Industrial Scrap",
+      "copperCables": "Copper & Cables",
+      "machinery": "Machinery",
+      "eScrap": "E-Scrap",
+      "constructionScrap": "Construction Scrap"
+    }
+  },
+  "team": {
+    "subtitle": "Team",
+    "title": "Property Agents",
+    "member1": {
+      "name": "Rosalina D. William",
+      "role": "Real Estate Broker"
+    },
+    "member2": {
+      "name": "Kelian Anderson",
+      "role": "Selling Agents"
+    },
+    "member3": {
+      "name": "Miranda H. Halim",
+      "role": "Property Seller"
+    }
+  },
+  "blogSidebar": {
+    "subscribe": "Subscribe",
+    "getNewsletter": "Get Newsletter",
+    "emailPlaceholder": "Your email address",
+    "successMessage": "Subscribed successfully!",
+    "errorMessage": "Something went wrong. Please try again."
   }
 }
+

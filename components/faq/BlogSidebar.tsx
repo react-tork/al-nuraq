@@ -4,8 +4,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 export default function BlogSidebar() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname) as Locale;
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -35,11 +40,11 @@ export default function BlogSidebar() {
       <div className="px-5 xl:px-35px pt-35px pb-10 xl:py-50px bg-primary-color relative z-0">
         <h4 className="text-sm md:text-15px lg:text-base text-secondary-color font-bold mb-5px">
           <span className="leading-1.3 md:leading-1.3 lg:leading-1.3">
-            // subscribe
+            {getTranslation("blogSidebar.subscribe", locale)}
           </span>
         </h4>
         <h4 className="text-4xl text-white font-bold mb-25px">
-          <span className="leading-1.3">Get Newsletter</span>
+          <span className="leading-1.3">{getTranslation("blogSidebar.getNewsletter", locale)}</span>
         </h4>
 
         <form
@@ -51,7 +56,7 @@ export default function BlogSidebar() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Your email address"
+            placeholder={getTranslation("blogSidebar.emailPlaceholder", locale)}
             className="text-sm font-semibold h-full flex-grow pr-25px bg-primary-color-3 focus:outline-none outline-none px-15px"
           />
           <button
@@ -64,11 +69,11 @@ export default function BlogSidebar() {
         </form>
 
         {status === "success" && (
-          <p className="text-sm text-white mt-3">Subscribed successfully!</p>
+          <p className="text-sm text-white mt-3">{getTranslation("blogSidebar.successMessage", locale)}</p>
         )}
         {status === "error" && (
           <p className="text-sm text-red-300 mt-3">
-            Something went wrong. Please try again.
+            {getTranslation("blogSidebar.errorMessage", locale)}
           </p>
         )}
 

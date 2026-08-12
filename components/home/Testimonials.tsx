@@ -53,9 +53,9 @@ export default function Testimonials() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
   return (
-    <section>
-      <div className="bg-[url('/images/bg/20.jpg')] bg-top bg-no-repeat">
-        <div className="container pt-115px pb-55px">
+    <section className="mb-8 md:mb-12">
+      <div className="bg-[url('/images/bg/8.jpg')] bg-top bg-no-repeat">
+        <div className="container pt-50px pb-55px">
           {/* section heading */}
           <div className="text-center mb-50px">
             <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">

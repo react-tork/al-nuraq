@@ -11,19 +11,15 @@ import { getTranslation } from "@/lib/translations";
 export default function ContactPage() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
-  const homeHref = locale === "en" ? "/en" : "/";
 
   return (
     <main>
-      <PageBanner
-        title={getTranslation("contact.pageTitle", locale)}
-        breadcrumbs={[{ label: getTranslation("contact.breadcrumb", locale) }]}
-        homeLabel={getTranslation("common.home", locale)}
-        homeHref={homeHref}
-      />
+      <PageBanner title={getTranslation("contact.pageTitle", locale)} />
       <ContactIcons />
       <ContactForm />
       <ContactMap />
     </main>
   );
 }
+
+
