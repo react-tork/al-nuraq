@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getLocaleFromPathname, getPathnameWithoutLocale, type Locale } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
 
 /* Accordion item: label key + list of links */
@@ -32,8 +32,20 @@ const accordionItems: AccordionItem[] = [
 ];
 
 /* Single accordion row with expand/collapse */
-function AccordionRow({ item, locale }: { item: AccordionItem; locale: Locale }) {
-  const [open, setOpen] = useState(false);
+function AccordionRow({
+  item,
+  locale,
+  activeHref,
+  onClose,
+}: {
+  item: AccordionItem;
+  locale: Locale;
+  activeHref: string;
+  onClose: () => void;
+}) {
+  const [open, setOpen] = useState(
+    () => item.links.some((link) => link.href === activeHref)
+  );
   const contentRef = useRef<HTMLDivElement>(null);
 
   const toggle = () => {
@@ -66,13 +78,13 @@ function AccordionRow({ item, locale }: { item: AccordionItem; locale: Locale })
       >
         {getTranslation(item.labelKey, locale)}
         <button className="px-3 h-full" aria-label={`Toggle ${getTranslation(item.labelKey, locale)}`}>
-          <span className="w-[10px] h-0.5 bg-gray1 block dark:bg-whiteColor bg-opacity-75"></span>
-          <span
-            className={`w-[10px] h-0.5 bg-gray1 block dark:bg-whiteColor bg-opacity-75 -mt-[2px] transition-all duration-500 ${
-              open ? "rotate-0" : "rotate-90"
+          <i
+            className={`fas fa-chevron-down text-gray1 transition-all duration-500 ${
+              open ? "rotate-180" : ""
             }`}
-          ></span>
+          ></i>
         </button>
+
       </div>
       <div
         ref={contentRef}
@@ -80,16 +92,22 @@ function AccordionRow({ item, locale }: { item: AccordionItem; locale: Locale })
       >
         <div className="content-wrapper pr-15px">
           <ul>
-            {item.links.map((link) => (
-              <li key={link.href} className="mt-4">
-                <Link
-                  href={locale === 'en' ? `/en${link.href}` : link.href}
-                  className="!leading-22px text-darkdeep1 text-sm lg:text-base hover:text-secondary-color"
-                >
-                  {getTranslation(link.labelKey, locale)}
-                </Link>
-              </li>
-            ))}
+            {item.links.map((link) => {
+              const isActive = link.href === activeHref;
+              return (
+                <li key={link.href} className="mt-4">
+                  <Link
+                    href={locale === 'en' ? `/en${link.href}` : link.href}
+                    onClick={onClose}
+                    className={`!leading-22px text-sm lg:text-base hover:text-secondary-color ${
+                      isActive ? "text-secondary-color font-semibold" : "text-darkdeep1"
+                    }`}
+                  >
+                    {getTranslation(link.labelKey, locale)}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -106,6 +124,7 @@ export default function MobileMenu({
 }) {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
+  const activeHref = getPathnameWithoutLocale(pathname);
 
   return (
     <div
@@ -122,7 +141,7 @@ export default function MobileMenu({
             {/* mobile menu logo */}
             <div className="flex justify-between items-center mb-30px">
               <div>
-                <Link href={locale === 'en' ? '/en' : '/'}>
+                <Link href={locale === 'en' ? '/en' : '/'} onClick={onClose}>
                   <Image
                     src="/images/logo.png"
                     alt="logo"
@@ -159,18 +178,30 @@ export default function MobileMenu({
                 <li className="mt-4">
                   <Link
                     href={locale === 'en' ? '/en/about' : '/about'}
-                    className="accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5"
+                    onClick={onClose}
+                    className={`accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5 ${
+                      activeHref === "/about" ? "text-secondary-color font-semibold" : ""
+                    }`}
                   >
                     {getTranslation('header.about', locale)}
                   </Link>
                 </li>
                 {accordionItems.map((item) => (
-                  <AccordionRow key={item.labelKey} item={item} locale={locale} />
+                  <AccordionRow
+                    key={item.labelKey}
+                    item={item}
+                    locale={locale}
+                    activeHref={activeHref}
+                    onClose={onClose}
+                  />
                 ))}
                 <li className="mt-4">
                   <Link
                     href={locale === 'en' ? '/en/service-areas' : '/service-areas'}
-                    className="accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5"
+                    onClick={onClose}
+                    className={`accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5 ${
+                      activeHref === "/service-areas" ? "text-secondary-color font-semibold" : ""
+                    }`}
                   >
                     {getTranslation('header.serviceAreas', locale)}
                   </Link>
@@ -178,7 +209,10 @@ export default function MobileMenu({
                 <li className="mt-4">
                   <Link
                     href={locale === 'en' ? '/en/contact' : '/contact'}
-                    className="accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5"
+                    onClick={onClose}
+                    className={`accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5 ${
+                      activeHref === "/contact" ? "text-secondary-color font-semibold" : ""
+                    }`}
                   >
                     {getTranslation('header.contact', locale)}
                   </Link>

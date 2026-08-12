@@ -6,7 +6,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import CartDrawer from "./CartDrawer";
 import MobileMenu from "./MobileMenu";
-import { getLocaleFromPathname, getPathnameWithLocale, type Locale } from "@/lib/i18n";
+import { getLocaleFromPathname, getPathnameWithLocale, getPathnameWithoutLocale, type Locale } from "@/lib/i18n";
+
 import arTranslations from "@/messages/ar.json";
 import enTranslations from "@/messages/en.json";
 
@@ -47,6 +48,8 @@ export default function Header() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
   const isHome = pathname === "/" || pathname === "/en";
+  const activeHref = getPathnameWithoutLocale(pathname);
+
 
   const [cartOpen, setCartOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -106,14 +109,16 @@ export default function Header() {
   }, [cartOpen, mobileOpen]);
 
   return (
-    <header className={isHome ? "relative z-xl" : ""}>
+    <header className="relative z-xl">
+
       {/* navbar main */}
       <div
         ref={stickyRef}
         style={stickyStyle}
         className={`sticky-header z-sm transition-all duration-700 ${
-          stickyActive || !isHome ? "active bg-white" : "bg-gradient-color-2"
-        }`}
+          stickyActive ? "active" : ""
+        } ${!isHome || stickyActive ? "bg-white" : "bg-gradient-color-2"}`}
+
       >
         <div className="container flex md:flex-row md:justify-between items-center relative py-21px">
           {/* logo area */}
@@ -133,29 +138,49 @@ export default function Header() {
 
           <nav className="flex-grow hidden xl:block">
             <ul className="flex items-center justify-center gap-15px xl:gap-5">
-              {navigation.map((item) =>
-                item.children ? (
+              {navigation.map((item) => {
+                const isParentActive =
+                  item.children &&
+                  (activeHref === item.children[0].slug ||
+                    activeHref.startsWith(item.children[0].slug + "/"));
+                return item.children ? (
                   <li key={item.label} className="relative group">
                     <a
                       href="#"
                       className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${
-                        isOverlay ? "text-white" : "text-heading-color"
+                        isOverlay
+                          ? "text-white"
+                          : isParentActive
+                            ? "text-secondary-color"
+                            : "text-heading-color"
                       }`}
                     >
                       {getTranslation(item.key, locale)}{" "}
-                      <span className="text-sm font-extrabold -ms-0.5">+</span>
+                      <i
+                        className={`fas fa-chevron-down text-xs -ms-0.5 transition-all duration-300 group-hover:rotate-180 ${
+                          isOverlay ? "text-white" : ""
+                        }`}
+                      ></i>
                     </a>
+
                     <ul className="py-15px border-t-[5px] border-secondary-color bg-white w-dropdown shadow-box-shadow-4 absolute start-0 top-full opacity-0 invisible translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-xl">
-                      {item.children.map((child) => (
-                        <li key={child.slug}>
-                          <Link
-                            className="whitespace-nowrap px-30px py-2 text-heading-color hover:text-secondary-color"
-                            href={locale === 'en' ? `/en${child.slug}` : child.slug}
-                          >
-                            {getTranslation(child.key, locale)}
-                          </Link>
-                        </li>
-                      ))}
+                      {item.children.map((child) => {
+                        const isChildActive = activeHref === child.slug;
+                        return (
+                          <li key={child.slug}>
+                            <Link
+                              className={`whitespace-nowrap px-30px py-2 hover:text-secondary-color ${
+                                isChildActive
+                                  ? "text-secondary-color font-semibold"
+                                  : "text-heading-color"
+                              }`}
+                              href={locale === 'en' ? `/en${child.slug}` : child.slug}
+                            >
+                              {getTranslation(child.key, locale)}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </li>
                 ) : (
@@ -163,14 +188,19 @@ export default function Header() {
                     <Link
                       href={locale === 'en' ? `/en${item.slug}` : item.slug}
                       className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${
-                        isOverlay ? "text-white" : "text-heading-color"
+                        isOverlay
+                          ? "text-white"
+                          : activeHref === item.slug
+                            ? "text-secondary-color"
+                            : "text-heading-color"
                       }`}
                     >
                       {getTranslation(item.key, locale)}
                     </Link>
                   </li>
-                )
-              )}
+                );
+              })}
+
             </ul>
           </nav>
 
