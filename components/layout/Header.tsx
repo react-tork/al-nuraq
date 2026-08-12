@@ -148,26 +148,26 @@ export default function Header() {
                     <ul className="py-15px border-t-[5px] border-secondary-color bg-white w-dropdown shadow-box-shadow-4 absolute start-0 top-full opacity-0 invisible translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-xl">
                       {item.children.map((child) => (
                         <li key={child.slug}>
-                          <a
+                          <Link
                             className="whitespace-nowrap px-30px py-2 text-heading-color hover:text-secondary-color"
                             href={locale === 'en' ? `/en${child.slug}` : child.slug}
                           >
                             {getTranslation(child.key, locale)}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   </li>
                 ) : (
                   <li key={item.label} className="relative group">
-                    <a
+                    <Link
                       href={locale === 'en' ? `/en${item.slug}` : item.slug}
                       className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${
                         isOverlay ? "text-white" : "text-heading-color"
                       }`}
                     >
                       {getTranslation(item.key, locale)}
-                    </a>
+                    </Link>
                   </li>
                 )
               )}

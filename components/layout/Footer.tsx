@@ -11,31 +11,17 @@ import { getTranslation } from "@/lib/translations";
 /* "Company" footer link column */
 const companyLinks = [
   { href: "/about", key: "footer.about" },
+  { href: "/what-we-buy", key: "footer.whatWeBuy" },
+  { href: "/industrial-solutions", key: "footer.industrialSolutions" },
+  { href: "/scrap-pickup", key: "footer.scrapPickup" },
+  { href: "/service-areas", key: "footer.serviceAreas" },
+  { href: "/how-it-works", key: "footer.howItWorks" },
+];
+
+/* "Resources" footer link column */
+const resourcesLinks = [
   { href: "/blog", key: "footer.blog" },
-  { href: "/shop", key: "footer.allProducts" },
-  { href: "/locations", key: "footer.locationsMap" },
   { href: "/faq", key: "footer.faq" },
-  { href: "/contact", key: "footer.contact" },
-];
-
-/* "Services" footer link column */
-const servicesLinks = [
-  { href: "/order-tracking", key: "footer.orderTracking" },
-  { href: "/wishlist", key: "footer.wishList" },
-  { href: "/login", key: "footer.login" },
-  { href: "/account", key: "footer.myAccount" },
-  { href: "/about", key: "footer.termsAndConditionsLink" },
-  { href: "/about", key: "footer.promotionalOffers" },
-];
-
-/* "Customer Care" footer link column */
-const customerCareLinks = [
-  { href: "/login", key: "footer.login" },
-  { href: "/account", key: "footer.myAccount" },
-  { href: "/wishlist", key: "footer.wishList" },
-  { href: "/order-tracking", key: "footer.orderTracking" },
-  { href: "/faq", key: "footer.faq" },
-  { href: "/contact", key: "footer.contact" },
 ];
 
 /* Footer social icons */
@@ -46,7 +32,7 @@ const socialLinks = [
   { href: "https://www.youtube.com", icon: "fab fa-youtube", label: "YouTube" },
 ];
 
-/* Footer link column renderer (shared markup for Company/Services/Customer Care) */
+/* Footer link column renderer (shared markup for Company/Resources) */
 function FooterLinkColumn({
   title,
   links,
@@ -67,7 +53,7 @@ function FooterLinkColumn({
           const href = locale === 'en' ? `/en${item.href}` : item.href;
           return (
             <li key={label}>
-              <a
+              <Link
                 href={href}
                 className="hover:text-secondary-color translate-x-5 hover:translate-x-0 group leading-1.8"
               >
@@ -75,10 +61,64 @@ function FooterLinkColumn({
                   //
                 </span>
                 {label}
-              </a>
+              </Link>
             </li>
           );
         })}
+      </ul>
+    </div>
+  );
+}
+
+/* "Contact" footer column renderer (link + contact details) */
+function FooterContactColumn({ locale }: { locale: Locale }) {
+  return (
+    <div className="xl:col-span-2 mb-60px">
+      <h3 className="text-22px font-bold mb-25px text-white">
+        <span className="leading-1.3"> {getTranslation('footer.contact', locale)} </span>
+      </h3>
+      <ul className="space-y-[15px]">
+        <li>
+          <Link
+            href={locale === 'en' ? '/en/contact' : '/contact'}
+            className="hover:text-secondary-color translate-x-5 hover:translate-x-0 group leading-1.8"
+          >
+            <span className="text-secondary-color pe-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+              //
+            </span>
+            {getTranslation('footer.contactUs', locale)}
+          </Link>
+        </li>
+        <li>
+          <p className="leading-1.8 text-white flex">
+            <i className="icon-placeholder ml-15px mt-1"></i>
+            <span>{getTranslation('footer.address', locale)}</span>
+          </p>
+        </li>
+        <li>
+          <a href="tel:+966510679737" className="leading-1.8 flex">
+            <i className="icon-call ml-15px mt-1"></i>
+            <span>{getTranslation('footer.phone', locale)}</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://wa.me/966510679737"
+            className="leading-1.8 flex"
+          >
+            <i className="icon-whatsapp ml-15px mt-1"></i>
+            <span>{getTranslation('footer.whatsapp', locale)}</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:mohishinhossen@gmail.com"
+            className="leading-1.8 flex"
+          >
+            <i className="icon-mail ml-15px mt-1"></i>
+            <span>{getTranslation('footer.email', locale)}</span>
+          </a>
+        </li>
       </ul>
     </div>
   );
@@ -123,12 +163,12 @@ export default function Footer() {
               <div>
                 <h5 className="capitalize inline-block text-sm md:text-base text-primary-color hover:text-white hover:bg-primary-color relative group whitespace-nowrap font-normal transition-all duration-300 shadow-box-shadow-3 mb-0">
                   <span className="inline-block absolute top-0 right-0 w-full h-full bg-white group-hover:bg-secondary-color z-1 group-hover:w-0 transition-all duration-300"></span>
-                  <a
+                  <Link
                     href={locale === 'en' ? '/en/contact' : '/contact'}
                     className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-white leading-23px"
                   >
                     {getTranslation('footer.exploreProperties', locale)} <i className="icon-next"></i>
-                  </a>
+                  </Link>
                 </h5>
               </div>
             </div>
@@ -152,39 +192,6 @@ export default function Footer() {
                   {getTranslation('footer.aboutDescription', locale)}
                 </p>
 
-                <ul className="space-y-2">
-                  <li>
-                    <p className="leading-1.8 text-white flex">
-                      <i className="icon-placeholder ml-15px mt-1"></i>
-                      <span>{getTranslation('footer.address', locale)}</span>
-                    </p>
-                  </li>
-                  <li>
-                    <a href="tel:+966510679737" className="leading-1.8 flex">
-                      <i className="icon-call ml-15px mt-1"></i>
-                      <span>+966 51 067 9737</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:mohishinhossen@gmail.com"
-                      className="leading-1.8 flex"
-                    >
-                      <i className="icon-mail ml-15px mt-1"></i>
-                      <span>mohishinhossen@gmail.com</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://wa.me/966510679737"
-                      className="leading-1.8 flex"
-                    >
-                      <i className="icon-whatsapp ml-15px mt-1"></i>
-                      <span>WhatsApp Us</span>
-                    </a>
-                  </li>
-
-                </ul>
                 <ul className="flex items-center gap-x-5 mt-5">
                   {socialLinks.map((item) => (
                     <li key={item.label}>
@@ -198,10 +205,10 @@ export default function Footer() {
             </div>
             {/* footer company */}
             <FooterLinkColumn title={getTranslation('footer.company', locale)} links={companyLinks} locale={locale} />
-            {/* footer services */}
-            <FooterLinkColumn title={getTranslation('footer.services', locale)} links={servicesLinks} locale={locale} />
-            {/* footer customer care */}
-            <FooterLinkColumn title={getTranslation('footer.customerCare', locale)} links={customerCareLinks} locale={locale} />
+            {/* footer resources */}
+            <FooterLinkColumn title={getTranslation('footer.resources', locale)} links={resourcesLinks} locale={locale} />
+            {/* footer contact */}
+            <FooterContactColumn locale={locale} />
             {/* footer newsletter */}
             <div className="xl:col-start-10 xl:col-span-3 mb-60px">
               {/* <h3 className="text-22px font-bold mb-25px text-white">

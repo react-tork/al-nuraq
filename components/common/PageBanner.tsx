@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type BreadcrumbItem = {
   label: string;
   href?: string; // omit for the current/active page (last item)
@@ -8,6 +10,7 @@ type PageBannerProps = {
   breadcrumbs: BreadcrumbItem[];
   bgImage?: string; // defaults to the shared banner background
   homeLabel?: string; // optional translation for "Home" breadcrumb
+  homeHref?: string; // locale-aware home URL
 };
 
 export default function PageBanner({
@@ -15,6 +18,7 @@ export default function PageBanner({
   breadcrumbs,
   bgImage = "/images/bg/14.jpg",
   homeLabel = "Home",
+  homeHref = "/",
 }: PageBannerProps) {
   return (
     <section>
@@ -33,9 +37,9 @@ export default function PageBanner({
           </h1>
           <ul className="breadcrumb flex gap-30px items-center text-sm lg:text-base font-bold pt-4">
             <li className="home relative leading-1.8 lg:leading-1.8">
-              <a href="/">
+              <Link href={homeHref}>
                 <i className="fas fa-home text-secondary-color pr-1.5" /> {homeLabel}
-              </a>
+              </Link>
             </li>
             {breadcrumbs.map((item, idx) => {
               const isLast = idx === breadcrumbs.length - 1;
@@ -49,7 +53,7 @@ export default function PageBanner({
                   }
                 >
                   {item.href && !isLast ? (
-                    <a href={item.href}>{item.label}</a>
+                    <Link href={item.href}>{item.label}</Link>
                   ) : (
                     item.label
                   )}
