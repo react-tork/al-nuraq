@@ -180,8 +180,8 @@ export default function Header() {
               <li>
                 <button
                   onClick={() => switchLocale(locale === 'ar' ? 'en' : 'ar')}
-                  className={`px-3 py-2 text-sm font-semibold transition-all duration-300 ${
-                    isOverlay ? "text-white" : "text-heading-color"
+                  className={`px-3 py-2 text-sm font-semibold transition-all duration-300 rounded-md ${
+                    isOverlay ? "text-white bg-white/10" : "text-heading-color bg-heading-color/5"
                   }`}
                   aria-label="Switch language"
                 >

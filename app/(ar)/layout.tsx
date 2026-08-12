@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "animate.css";
-import "./font-icons.css";
-import "./globals.css";
+import "../font-icons.css";
+import "../globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 
 const geistSans = Geist({
@@ -20,11 +22,17 @@ export const metadata: Metadata = {
   description: "مشتري سكراب محترف في الدمام والرياض",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function ArabicLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="ar"
+      dir="rtl"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

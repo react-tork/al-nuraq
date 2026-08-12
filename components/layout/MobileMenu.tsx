@@ -132,14 +132,6 @@ export default function MobileMenu({
                 </Link>
 
               </div>
-              <div>
-                <button
-                  className="close-drawer text-black text-3xl px-15px py-2"
-                  onClick={onClose}
-                >
-                  ×
-                </button>
-              </div>
             </div>
 
 
