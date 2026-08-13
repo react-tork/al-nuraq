@@ -18,10 +18,13 @@ const galleryImages = [
 
 /* Feature list (dashed bullet items) */
 const features = [
-    "home.about2.feature1",
-    "home.about2.feature2",
-    "home.about2.feature3",
-    "home.about2.feature4",
+    "Clear and straightforward communication",
+    "Transparent material evaluation process",
+    "Professional collection service",
+    "Solutions for both individuals and businesses",
+    "Experience handling different scrap categories",
+    "Flexible arrangements for larger quantities",
+    "Focus on responsible material recovery"
 ];
 
 /* Business stats (flaticon icons + count + label) */
@@ -54,66 +57,20 @@ export default function About2() {
                         <div className="mb-5">
                             <div className="mb-30px">
                                 <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-1px px-5 rounded-full inline-block font-semibold">
-                                    <span className="leading-1.3">{getTranslation('home.about2.subtitle', locale)}</span>
+                                    <span className="leading-1.3">WHY AL NURAQ</span>
                                 </p>
                                 <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
-                                    <span className="leading-1.3"> {getTranslation('home.about2.title', locale)} </span>
+                                    <span className="leading-1.3"> Why Choose Al Nuraq?</span>
                                 </h2>
-                                <p className="text-sm lg:text-base max-w-500px">
-                                    {getTranslation('home.about2.description', locale)}
-                                </p>
                             </div>
                             <ul className="space-y-4 pb-4">
                                 {features.map((f, i) => (
-                                    <li key={i} className="text-sm lg:text-base flex items-center">
-                                        <span className="w-15px h-0.5 bg-secondary-color opacity-50 inline-block ms-15px" />
+                                    <li key={i} className="text-xl lg:text-2xl flex items-center gap-3">
+                                        <i className="fas fa-check-circle text-secondary-color text-xl lg:text-2xl flex-shrink-0" />
                                         <span className="leading-1.8">{getTranslation(f, locale)}</span>
                                     </li>
                                 ))}
                             </ul>
-
-                            <ul className="flex gap-x-15px py-4">
-                                {stats.map((s, i) => (
-                                    <li
-                                        key={i}
-                                        className={
-                                            i < stats.length - 1
-                                                ? "text-sm pr-4 border-r border-primary-color/20"
-                                                : "text-sm"
-                                        }
-                                    >
-                                        <p className="leading-1.8 font-bold">
-                                            {s.count}
-                                            <i className={`${s.icon} ms-1`} />
-                                        </p>
-                                        <p className="leading-1.8">{getTranslation(s.key, locale)}</p>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div>
-                                <ul className="flex gap-15px pt-4">
-                                    {galleryImages.map((img, i) => (
-                                        <li key={img.src}>
-                                            <a
-                                                className="glightbox2"
-                                                href="#"
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    setLightboxIndex(i);
-                                                }}
-                                            >
-                                                <Image
-                                                    src={img.src}
-                                                    alt=""
-                                                    width={img.width}
-                                                    height={img.height}
-                                                />
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
                         </div>
 
                         {/* about 2 right */}

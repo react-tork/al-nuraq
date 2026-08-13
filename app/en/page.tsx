@@ -6,54 +6,58 @@ import About2 from "@/components/home/About2";
 import Services from "@/components/home/Services";
 import HowItWorks from "@/components/home/HowItWorks";
 // import FeaturedApartments from "@/components/home/FeaturedApartments";
-import VideoCta from "@/components/home/VideoCta";
-import ApartmentsPlan from "@/components/home/ApartmentsPlan";
+// import VideoCta from "@/components/home/VideoCta";
+// import ApartmentsPlan from "@/components/home/ApartmentsPlan";
 import Amenities from "@/components/home/Amenities";
 import Testimonials from "@/components/home/Testimonials";
-import NewsBlog from "@/components/home/NewsBlog";
 import FaqAccordion from "@/components/faq/FaqAccordion";
 import LocationArea from "@/components/service-areas/LocationArea";
+import NewsBlog from "@/components/home/NewsBlog";
+import { getTranslation } from "@/lib/translations";
+
+const locale = "en" as const;
 
 export default function Home() {
   return (
     <main>
       <HeroBanner5 />
-      <Services />
-      <WhatWeBuy />
+      {/* <Services /> */}
       <About />
+      <WhatWeBuy />
       <HowItWorks />
       {/* <Counter /> */}
       <About2 />
       {/* <FeaturedApartments /> */}
-      <ApartmentsPlan />
-      <VideoCta />
+      {/* <ApartmentsPlan /> */}
+      {/* <VideoCta /> */}
       <Amenities />
-      <NewsBlog />
       <Testimonials />
       <div className="container pb-70px">
         {/* section heading */}
         <div className="text-center mb-50px">
           <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
-            <span className="leading-1.3">Locations</span>
+            <span className="leading-1.3">{getTranslation("home.locations.subtitle", locale)}</span>
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold">
-            <span className="leading-1.3">Serving Dammam, Riyadh & Surrounding Areas</span>
+            <span className="leading-1.3">{getTranslation("home.locations.title", locale)}</span>
           </h2>
         </div>
         <LocationArea />
       </div>
+      <NewsBlog />
       <div className="container pb-70px">
         {/* section heading */}
         <div className="text-center mb-50px">
           <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
-            <span className="leading-1.3">Common Questions</span>
+            <span className="leading-1.3">{getTranslation("home.faq.subtitle", locale)}</span>
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold">
-            <span className="leading-1.3">Frequently Asked Questions</span>
+            <span className="leading-1.3">{getTranslation("home.faq.title", locale)}</span>
           </h2>
         </div>
         <FaqAccordion />
       </div>
+
     </main>
   );
 }

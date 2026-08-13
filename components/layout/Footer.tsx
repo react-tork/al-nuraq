@@ -186,7 +186,7 @@ export default function Footer() {
               <div className="mb-15px">
                 <Link href={locale === 'en' ? '/en' : '/'}>
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logo-white.png"
                     alt=""
                     width={170}
                     height={43}

@@ -12,7 +12,9 @@
     "copperScrap": "Copper Scrap",
     "aluminiumScrap": "Aluminium Scrap",
     "ironSteel": "Iron & Steel",
+    "ironSteelScrap": "Iron & Steel Scrap",
     "cableWire": "Cable & Wire",
+    "cableWireScrap": "Cable & Wire Scrap",
     "machineryScrap": "Machinery Scrap",
     "eScrap": "E-Scrap",
     "batteryScrap": "Battery Scrap",
@@ -24,7 +26,6 @@
   "mobileMenu": {
     "searchPlaceholder": "Search..."
   },
-
   "footer": {
     "about": "About",
     "contact": "Contact",
@@ -52,7 +53,6 @@
     "privacyAndPolicy": "Privacy & Policy",
     "companyName": "Al Nuraq"
   },
-
   "home": {
     "hero": {
       "tagline": "SCRAP BUYING & COLLECTION IN SAUDI ARABIA",
@@ -165,6 +165,14 @@
       "testimonial4Role": "Riyadh, Industrial Client",
       "testimonial4Quote": "Very reliable for household scrap. Team arrived on time and gave clear guidance on separation and pricing. Highly recommended."
     },
+    "locations": {
+      "subtitle": "Locations",
+      "title": "Serving Dammam, Riyadh & Surrounding Areas"
+    },
+    "faq": {
+      "subtitle": "Common Questions",
+      "title": "Frequently Asked Questions"
+    },
     "newsBlog": {
       "subtitle": "What we Buy",
       "title": "What Scrap Does Al Nuraq Buy?",
@@ -216,10 +224,145 @@
       "title14": "Old appliances, household metal items and domestic scrap materials."
     }
   },
+  "metalScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Metal Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys all types of metal scrap including ferrous and non-ferrous metals from individuals, businesses and industrial facilities."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Aluminium profiles and sections",
+      "item2": "Aluminium sheets and plates",
+      "item3": "Aluminium cans and containers",
+      "item4": "Industrial aluminium components",
+      "item5": "Cast and wrought aluminium",
+      "item6": "Mixed aluminium scrap"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Construction contractors",
+      "item2": "Factories and manufacturing plants",
+      "item3": "Packaging and food industry",
+      "item4": "Fabrication workshops",
+      "item5": "Individuals with aluminium items"
+    }
+  },
+  "copperScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Copper Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys copper scrap including copper cables, wires, pipes, industrial copper and other recoverable copper materials, subject to evaluation."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Copper cables and wires",
+      "item2": "Copper pipes and tubing",
+      "item3": "Copper busbars and terminals",
+      "item4": "Industrial copper components",
+      "item5": "Copper motor windings",
+      "item6": "Mixed copper scrap"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Electrical contractors",
+      "item2": "Construction companies",
+      "item3": "Factories and industrial facilities",
+      "item4": "Maintenance and service companies",
+      "item5": "Individuals with copper items"
+    }
+  },
+  "aluminiumScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Aluminium Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys aluminium scrap including profiles, sheets, cans, structural aluminium and industrial aluminium materials, subject to evaluation."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Aluminium profiles and sections",
+      "item2": "Aluminium sheets and plates",
+      "item3": "Aluminium cans and containers",
+      "item4": "Industrial aluminium components",
+      "item5": "Cast and wrought aluminium",
+      "item6": "Mixed aluminium scrap"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Construction contractors",
+      "item2": "Factories and manufacturing plants",
+      "item3": "Packaging and food industry",
+      "item4": "Fabrication workshops",
+      "item5": "Individuals with aluminium items"
+    }
+  },
+  "ironSteelScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Iron & Steel Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys iron and steel scrap including structural steel, rebar, iron beams, plates, and heavy ferrous metal materials."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Structural steel beams and sections",
+      "item2": "Reinforcement bar (rebar)",
+      "item3": "Iron plates and sheets",
+      "item4": "Cast iron components",
+      "item5": "Heavy steel scrap",
+      "item6": "Mixed ferrous metal"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Construction companies",
+      "item2": "Demolition contractors",
+      "item3": "Fabrication workshops",
+      "item4": "Factories and industrial plants",
+      "item5": "Heavy equipment operators"
+    }
+  },
+  "cableWireScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Cable & Wire Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys cable and wire scrap including copper cables, aluminium cables, electrical wiring and wiring harnesses."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Copper power cables",
+      "item2": "Aluminium power cables",
+      "item3": "Electrical wiring and harnesses",
+      "item4": "Armoured cables",
+      "item5": "Coaxial and communication cables",
+      "item6": "Mixed cable scrap"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Electrical contractors",
+      "item2": "Telecom companies",
+      "item3": "Construction projects",
+      "item4": "Factories and industrial sites",
+      "item5": "Government and commercial facilities"
+    }
+  },
   "faq": {
     "stillNeedHelp": "Still need help? Reach out to support 24/7:",
     "contactUs": "Contact Us",
-    "phone": "+0123-456-789",
+    "phone": "+966 51 067 9737",
     "items": {
       "faq1": {
         "question": "How to buy a product?",
@@ -265,7 +408,6 @@
       "address2": "Saudi Arabia",
       "whatsapp1": "WhatsApp Us"
     },
-
     "form": {
       "title": "Get A Quote",
       "namePlaceholder": "Enter your name",
@@ -282,7 +424,6 @@
       "serviceEScrap": "E-Scrap",
       "serviceBatteryScrap": "Battery Scrap",
       "serviceIndustrialScrap": "Industrial Scrap",
-
       "agreeLabel": "Save my name, email, and website in this browser for the next time I comment.",
       "submitButtonText": "get an free service"
     }
@@ -344,4 +485,3 @@
     "errorMessage": "Something went wrong. Please try again."
   }
 }
-

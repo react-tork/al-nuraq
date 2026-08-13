@@ -22,8 +22,8 @@ const navigation = [
       { label: "Metal Scrap", slug: "/scrap/metal-scrap", key: "header.metalScrap" },
       { label: "Copper Scrap", slug: "/scrap/copper-scrap", key: "header.copperScrap" },
       { label: "Aluminium Scrap", slug: "/scrap/aluminium-scrap", key: "header.aluminiumScrap" },
-      { label: "Iron & Steel", slug: "/scrap/iron-steel", key: "header.ironSteel" },
-      { label: "Cable & Wire", slug: "/scrap/cable-wire", key: "header.cableWire" },
+      { label: "Iron & Steel", slug: "/scrap/iron-steel-scrap", key: "header.ironSteelScrap" },
+      { label: "Cable & Wire", slug: "/scrap/cable-wire-scrap", key: "header.cableWireScrap" },
       { label: "Machinery Scrap", slug: "/scrap/machinery-scrap", key: "header.machineryScrap" },
       { label: "E-Scrap", slug: "/scrap/e-scrap", key: "header.eScrap" },
       { label: "Battery Scrap", slug: "/scrap/battery-scrap", key: "header.batteryScrap" },
@@ -124,7 +124,7 @@ export default function Header() {
           <div className="mt-10px mb-22px md:mt-0 md:mb-0 leading-1 flex-1">
             <Link href={locale === 'en' ? '/en' : '/'}>
               <Image
-                src="/images/logo.png"
+                src={!isHome || stickyActive ? "/images/logo.png" : "/images/logo-white.png"}
                 alt=""
                 width={170}
                 height={43}

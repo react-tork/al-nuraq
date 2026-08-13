@@ -74,10 +74,10 @@ export default function HowItWorks({
                 <div className="relative flex items-center justify-center mb-[25px]">
                   {/* connecting line + arrowhead behind the circle */}
                   {index < steps.length - 1 && (
-                    <span className="absolute top-1/2 left-1/2 w-full -translate-y-1/2 -z-1 hidden md:flex items-center">
-                      <span className="flex-1 h-[3px] bg-gradient-to-r from-secondary-color via-secondary-color/40 to-secondary-color/40" />
+                    <span className="absolute top-1/2 left-1/2 w-full -translate-y-1/2 rtl:-translate-x-full -z-1 hidden md:flex items-center">
+                      <span className="flex-1 h-[3px] bg-gradient-to-r rtl:bg-gradient-to-l from-secondary-color via-secondary-color/40 to-secondary-color/40" />
                       <svg
-                        className="w-[14px] h-[14px] text-secondary-color/50 flex-shrink-0"
+                        className="w-[14px] h-[14px] text-secondary-color/50 flex-shrink-0 rtl:rotate-180"
                         viewBox="0 0 14 14"
                         fill="currentColor"
                       >

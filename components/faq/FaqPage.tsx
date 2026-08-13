@@ -6,7 +6,7 @@ import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getPageBannerProps, pageDefinitions } from "@/lib/pages";
 import FaqAccordion from "@/components/faq/FaqAccordion";
 import BlogSidebar from "@/components/faq/BlogSidebar";
-import Counter from "@/components/home/Counter";
+// import Counter from "@/components/home/Counter";
 import NewsBlog from "@/components/home/NewsBlog";
 
 export default function FaqPage() {
@@ -22,7 +22,7 @@ export default function FaqPage() {
             <BlogSidebar />
         </div>
       </section>
-      <Counter />
+      {/* <Counter /> */}
       <div className="mt-10 md:mt-20">
       <NewsBlog />
       </div>

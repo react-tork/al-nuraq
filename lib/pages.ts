@@ -30,8 +30,14 @@ export const pageDefinitions = {
   ironSteel: {
     titleKey: "header.ironSteel",
   },
+  ironSteelScrap: {
+    titleKey: "header.ironSteelScrap",
+  },
   cableWire: {
     titleKey: "header.cableWire",
+  },
+  cableWireScrap: {
+    titleKey: "header.cableWireScrap",
   },
   machineryScrap: {
     titleKey: "header.machineryScrap",

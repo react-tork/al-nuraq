@@ -1,30 +1,53 @@
 "use client";
 
 import PageBanner from "@/components/common/PageBanner";
+import InfoListSection from "@/components/common/InfoListSection";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getPageBannerProps, pageDefinitions } from "@/lib/pages";
+import { getTranslation } from "@/lib/translations";
 
 export default function MetalScrapPage() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
 
+  const materialsItems = [1, 2, 3, 4, 5, 6].map((i) =>
+    getTranslation(`metalScrap.materials.item${i}`, locale)
+  );
+  const customersItems = [1, 2, 3, 4, 5].map((i) =>
+    getTranslation(`metalScrap.customers.item${i}`, locale)
+  );
+
   return (
     <main>
       <PageBanner
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-          { label: "Metal Scrap" },
+          { label: getTranslation("common.home", locale), href: "/" },
+          { label: getTranslation("metalScrap.banner.breadcrumbServices", locale), href: "/services" },
+          { label: getTranslation("header.metalScrap", locale) },
         ]}
-        subtitle="Scrap Buying"
-        title="Metal Scrap Buyer in Dammam & Riyadh"
+        subtitle={getTranslation("metalScrap.banner.subtitle", locale)}
+        title={getTranslation("metalScrap.banner.title", locale)}
         bgImage="https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format"
-        description="Al Nuraq buys all types of metal scrap including ferrous and non-ferrous metals from individuals, businesses and industrial facilities."
-        primaryCta={{ label: "Get a Quote", href: "/contact" }}
-        secondaryCta={{ label: "WhatsApp Us", href: "https://wa.me/966510679737" }}
+        description={getTranslation("metalScrap.banner.description", locale)}
+        primaryCta={{ label: getTranslation("contact.form.title", locale), href: "/contact" }}
+        secondaryCta={{ label: getTranslation("footer.whatsapp", locale), href: "https://wa.me/966510679737" }}
       />
-      <section className="container py-60px" />
+      <InfoListSection
+        title={getTranslation("metalScrap.materials.title", locale)}
+        subtitle={getTranslation("metalScrap.materials.subtitle", locale)}
+        items={materialsItems}
+        image={{ src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format", alt: "Materials we buy" }}
+        imagePosition="start"
+      />
+      <InfoListSection
+        title={getTranslation("metalScrap.customers.title", locale)}
+        subtitle={getTranslation("metalScrap.customers.subtitle", locale)}
+        items={customersItems}
+        image={{ src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format", alt: "Customers we serve" }}
+        imagePosition="end"
+        className="bg-section-bg-1"
+      />
     </main>
   );
 }
