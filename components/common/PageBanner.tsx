@@ -50,7 +50,7 @@ export default function PageBanner({
         style={{ backgroundImage: `url('${bgImage}')` }}
       >
         {/* gradient overlay — darker at bottom for text contrast, lighter at top */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/40 to-white/10" />
+        <div className="absolute inset-0 absolute inset-0 -z-1 bg-gradient-to-b from-black/60 via-black/45 to-black/70" />
 
         {/* decorative accent — soft gold circle, top-right */}
         <div className="absolute -right-50px -top-50px w-[220px] h-[220px] rounded-full bg-secondary-color/10 blur-2xl -z-1" />
@@ -58,9 +58,9 @@ export default function PageBanner({
         {/* decorative accent — thin gold line under content */}
         <div className="absolute left-0 bottom-0 w-full h-3px bg-gradient-to-r from-secondary-color via-secondary-color/40 to-transparent" />
 
-        <div className="relative container py-110px">
+        <div className="relative container py-60px">
           {/* breadcrumbs */}
-          <nav className="mb-4 text-sm text-heading-color/70">
+          <nav className="mb-4 text-sm text-secondary-color-light">
             {breadcrumbs.map((item, i) => (
               <span key={i}>
                 {item.href ? (
@@ -68,9 +68,9 @@ export default function PageBanner({
                     {item.label}
                   </a>
                 ) : (
-                  <span className="text-heading-color font-medium">{item.label}</span>
+                  <span className="text-secondary-color-light font-medium">{item.label}</span>
                 )}
-                {i < breadcrumbs.length - 1 && <span className="mx-2 text-heading-color/40">/</span>}
+                {i < breadcrumbs.length - 1 && <span className="mx-2 text-secondary-color-light">/</span>}
               </span>
             ))}
           </nav>
@@ -80,7 +80,7 @@ export default function PageBanner({
             {subtitle}
           </p>
 
-          <h1 className="animate__animated animate__fadeInUp text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-[48px] font-bold text-heading-color mb-0">
+          <h1 className="animate__animated animate__fadeInUp text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-[48px] font-bold text-secondary-color mb-0">
             <span className="relative inline-block leading-[1.2]">
               {title}
               <span className="absolute -bottom-4 left-0 w-20 h-[3px] rounded-full bg-secondary-color" />
@@ -89,24 +89,31 @@ export default function PageBanner({
           </h1>
 
           {/* description */}
-          <p className="animate__animated animate__fadeInUp mt-8 max-w-2xl text-heading-color/80 text-base sm:text-lg">
+          <p className="animate__animated animate__fadeInUp mt-8 max-w-2xl text-secondary-color-light text-base sm:text-lg">
             {description}
           </p>
 
           {/* CTAs */}
-          <div className="animate__animated animate__fadeInUp mt-6 flex flex-wrap gap-4">
-            <a
-              href={localizedHref(primaryCta.href)}
-              className="inline-flex items-center px-6 py-3 rounded-full bg-secondary-color text-white font-semibold hover:opacity-90 transition-opacity"
-            >
-              {primaryCta.label}
-            </a>
-            <a
-              href={localizedHref(secondaryCta.href)}
-              className="inline-flex items-center px-6 py-3 rounded-full border border-secondary-color text-secondary-color font-semibold hover:bg-secondary-color/10 transition-colors"
-            >
-              {secondaryCta.label}
-            </a>
+          <div className="tab-links flex gap-x-10px mb-4 md:mb-6 animated mt-4 md:mt-6">
+            <div className="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold">
+              <a
+                href={localizedHref(primaryCta.href)}
+                className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
+              >
+                <i className="fas fa-phone-alt transition-transform duration-300 group-hover:rotate-12" />
+                {primaryCta.label}
+              </a>
+            </div>
+
+            <div className="text-sm lg:text-base text-secondary-color-light relative group whitespace-nowrap transition-all duration-300 inline-block font-bold bg-secondary-color">
+              <a
+                href={localizedHref(secondaryCta.href)}
+                className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
+              >
+                <i className="fab fa-whatsapp text-lg transition-transform duration-300 group-hover:rotate-12" />
+                {secondaryCta.label}
+              </a>
+            </div>
           </div>
         </div>
       </div>

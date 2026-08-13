@@ -20,6 +20,7 @@
   /* ---------- Colors ---------- */
   --color-primary-color: #30373D;
   --color-secondary-color: #B58D4F;
+  --color-secondary-color-light: #E4DED4;
   --color-secondary-color-2: #9C7540;
   --color-primary-color-3: #30373D;
   --color-heading-color: #30373D;
@@ -1234,4 +1235,19 @@ body {
 
 .bg-gradient-color-2{
   background-image: linear-gradient(to top, rgba(7,28,31,0) 0%, rgba(7,28,31,1) 90%);
+}
+
+/* ============================================================
+   Quarter scrollbar-hide utility
+   Hides the scrollbar on horizontal scroll containers (e.g. the
+   How It Works timeline on mobile) while keeping native
+   keyboard/touch scrolling intact.
+   ============================================================ */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
 }

@@ -78,9 +78,9 @@ export default function HeroBanner5() {
                 muted
                 loop
                 playsInline
-                preload="none"
+                preload="auto"
                 poster={slide.posterSrc}
-                id="myVideo"
+                id="herobanner"
                 className="w-screen max-w-full h-full absolute left-0 top-0 -z-1 object-cover"
               >
 
@@ -117,7 +117,7 @@ export default function HeroBanner5() {
                           class="tab-links flex justify-center gap-x-10px items-center mb-10px"
                         >
                           <div
-                            class="active text-sm lg:text-base text-heading-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold"
+                            class="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold"
                           >
                             <button
                               class="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase"
@@ -126,7 +126,7 @@ export default function HeroBanner5() {
                             </button>
                           </div>
                           <div
-                            class="text-sm lg:text-base text-heading-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold"
+                            class="text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold"
                           >
                             <button
                               class="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase"
@@ -136,7 +136,7 @@ export default function HeroBanner5() {
                           </div>
                         </div> */}
                   <div className="tab-links flex justify-center gap-x-10px items-center mb-4 md:mb-6 animated">
-                    <div className="active text-sm lg:text-base text-heading-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold">
+                    <div className="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold">
                       <a
                         href="tel:+966510679737"
                         className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"

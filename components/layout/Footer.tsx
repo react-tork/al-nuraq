@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
+import { getLocaleFromPathname, getPathnameWithLocale, type Locale } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
 
 
@@ -140,6 +140,11 @@ export default function Footer() {
 
   const scrollToTop = () => {
     window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  const switchLocale = (newLocale: Locale) => {
+    const newPathname = getPathnameWithLocale(pathname, newLocale);
+    window.location.href = newPathname;
   };
 
   return (
