@@ -19,15 +19,15 @@ const navigation = [
     key: "header.whatWeBuy",
     children: [
       { label: "All Services", slug: "/what-we-buy", key: "header.allServices" },
-      { label: "Metal Scrap", slug: "/what-we-buy/metal-scrap", key: "header.metalScrap" },
-      { label: "Copper Scrap", slug: "/what-we-buy/copper-scrap", key: "header.copperScrap" },
-      { label: "Aluminium Scrap", slug: "/what-we-buy/aluminium-scrap", key: "header.aluminiumScrap" },
-      { label: "Iron & Steel", slug: "/what-we-buy/iron-steel", key: "header.ironSteel" },
-      { label: "Cable & Wire", slug: "/what-we-buy/cable-wire", key: "header.cableWire" },
-      { label: "Machinery Scrap", slug: "/what-we-buy/machinery-scrap", key: "header.machineryScrap" },
-      { label: "E-Scrap", slug: "/what-we-buy/e-scrap", key: "header.eScrap" },
-      { label: "Battery Scrap", slug: "/what-we-buy/battery-scrap", key: "header.batteryScrap" },
-      { label: "Industrial Scrap", slug: "/what-we-buy/industrial-scrap", key: "header.industrialScrap" },
+      { label: "Metal Scrap", slug: "/scrap/metal-scrap", key: "header.metalScrap" },
+      { label: "Copper Scrap", slug: "/scrap/copper-scrap", key: "header.copperScrap" },
+      { label: "Aluminium Scrap", slug: "/scrap/aluminium-scrap", key: "header.aluminiumScrap" },
+      { label: "Iron & Steel", slug: "/scrap/iron-steel", key: "header.ironSteel" },
+      { label: "Cable & Wire", slug: "/scrap/cable-wire", key: "header.cableWire" },
+      { label: "Machinery Scrap", slug: "/scrap/machinery-scrap", key: "header.machineryScrap" },
+      { label: "E-Scrap", slug: "/scrap/e-scrap", key: "header.eScrap" },
+      { label: "Battery Scrap", slug: "/scrap/battery-scrap", key: "header.batteryScrap" },
+      { label: "Industrial Scrap", slug: "/scrap/industrial-scrap", key: "header.industrialScrap" },
     ],
   },
   { label: "Service Areas", slug: "/service-areas", key: "header.serviceAreas" },
@@ -115,9 +115,8 @@ export default function Header() {
       <div
         ref={stickyRef}
         style={stickyStyle}
-        className={`sticky-header z-sm transition-all duration-700 ${
-          stickyActive ? "active" : ""
-        } ${!isHome || stickyActive ? "bg-white" : "bg-gradient-color-2"}`}
+        className={`sticky-header z-sm transition-all duration-700 ${stickyActive ? "active" : ""
+          } ${!isHome || stickyActive ? "bg-white" : "bg-gradient-color-2"}`}
 
       >
         <div className="container flex md:flex-row md:justify-between items-center relative py-21px">
@@ -125,7 +124,7 @@ export default function Header() {
           <div className="mt-10px mb-22px md:mt-0 md:mb-0 leading-1 flex-1">
             <Link href={locale === 'en' ? '/en' : '/'}>
               <Image
-                src= "/images/logo.png"
+                src="/images/logo.png"
                 alt=""
                 width={170}
                 height={43}
@@ -147,19 +146,17 @@ export default function Header() {
                   <li key={item.label} className="relative group">
                     <a
                       href="#"
-                      className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${
-                        isOverlay
+                      className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${isOverlay
                           ? "text-white"
                           : isParentActive
                             ? "text-secondary-color"
                             : "text-heading-color"
-                      }`}
+                        }`}
                     >
                       {getTranslation(item.key, locale)}{" "}
                       <i
-                        className={`fas fa-chevron-down text-xs -ms-0.5 transition-all duration-300 group-hover:rotate-180 ${
-                          isOverlay ? "text-white" : ""
-                        }`}
+                        className={`fas fa-chevron-down text-xs -ms-0.5 transition-all duration-300 group-hover:rotate-180 ${isOverlay ? "text-white" : ""
+                          }`}
                       ></i>
                     </a>
 
@@ -169,11 +166,10 @@ export default function Header() {
                         return (
                           <li key={child.slug}>
                             <Link
-                              className={`whitespace-nowrap px-30px py-2 hover:text-secondary-color ${
-                                isChildActive
+                              className={`whitespace-nowrap px-30px py-2 hover:text-secondary-color ${isChildActive
                                   ? "text-secondary-color font-semibold"
                                   : "text-heading-color"
-                              }`}
+                                }`}
                               href={locale === 'en' ? `/en${child.slug}` : child.slug}
                             >
                               {getTranslation(child.key, locale)}
@@ -187,13 +183,12 @@ export default function Header() {
                   <li key={item.label} className="relative group">
                     <Link
                       href={locale === 'en' ? `/en${item.slug}` : item.slug}
-                      className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${
-                        isOverlay
+                      className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${isOverlay
                           ? "text-white"
                           : activeHref === item.slug
                             ? "text-secondary-color"
                             : "text-heading-color"
-                      }`}
+                        }`}
                     >
                       {getTranslation(item.key, locale)}
                     </Link>
@@ -210,9 +205,8 @@ export default function Header() {
               <li>
                 <button
                   onClick={() => switchLocale(locale === 'ar' ? 'en' : 'ar')}
-                  className={`px-3 py-2 text-sm font-semibold transition-all duration-300 rounded-md ${
-                    isOverlay ? "text-white bg-white/10" : "text-heading-color bg-heading-color/5"
-                  }`}
+                  className={`px-3 py-2 text-sm font-semibold transition-all duration-300 rounded-md ${isOverlay ? "text-white bg-white/10" : "text-heading-color bg-heading-color/5"
+                    }`}
                   aria-label="Switch language"
                 >
                   {getTranslation('header.languageSwitcher', locale)}
@@ -220,17 +214,15 @@ export default function Header() {
               </li>
               <li className="block xl:hidden">
                 <button
-                  className={`show-drawer h-50px w-50px shadow-box-shadow-1 flex justify-center items-center transition-all duration-300 relative ${
-                    isOverlay ? "bg-white" : "text-heading-color"
-                  }`}
+                  className={`show-drawer h-50px w-50px shadow-box-shadow-1 flex justify-center items-center transition-all duration-300 relative ${isOverlay ? "bg-white" : "text-heading-color"
+                    }`}
                   onClick={() => setMobileOpen((prev) => !prev)}
                   aria-label="Toggle menu"
 
                 >
                   <span
-                    className={`utilize-toggle ${
-                      mobileOpen ? "close" : ""
-                    }`}
+                    className={`utilize-toggle ${mobileOpen ? "close" : ""
+                      }`}
                   >
                     <svg viewBox="0 0 800 600">
                       <path

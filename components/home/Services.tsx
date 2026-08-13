@@ -40,7 +40,7 @@ const services: ServiceCard[] = [
         descKey: "home.services.service3Desc",
     },
     {
-        icon: "/images/icons/icon-img/23.png",
+        icon: "/images/icons/icon-img/24.png",
         titleKey: "home.services.service4Title",
         descKey: "home.services.service4Desc",
     },

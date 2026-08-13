@@ -18,15 +18,15 @@ const accordionItems: AccordionItem[] = [
     labelKey: "header.whatWeBuy",
     links: [
       { href: "/what-we-buy", labelKey: "header.allServices" },
-      { href: "/what-we-buy/metal-scrap", labelKey: "header.metalScrap" },
-      { href: "/what-we-buy/copper-scrap", labelKey: "header.copperScrap" },
-      { href: "/what-we-buy/aluminium-scrap", labelKey: "header.aluminiumScrap" },
-      { href: "/what-we-buy/iron-steel", labelKey: "header.ironSteel" },
-      { href: "/what-we-buy/cable-wire", labelKey: "header.cableWire" },
-      { href: "/what-we-buy/machinery-scrap", labelKey: "header.machineryScrap" },
-      { href: "/what-we-buy/e-scrap", labelKey: "header.eScrap" },
-      { href: "/what-we-buy/battery-scrap", labelKey: "header.batteryScrap" },
-      { href: "/what-we-buy/industrial-scrap", labelKey: "header.industrialScrap" },
+      { href: "/scrap/metal-scrap", labelKey: "header.metalScrap" },
+      { href: "/scrap/copper-scrap", labelKey: "header.copperScrap" },
+      { href: "/scrap/aluminium-scrap", labelKey: "header.aluminiumScrap" },
+      { href: "/scrap/iron-steel", labelKey: "header.ironSteel" },
+      { href: "/scrap/cable-wire", labelKey: "header.cableWire" },
+      { href: "/scrap/machinery-scrap", labelKey: "header.machineryScrap" },
+      { href: "/scrap/e-scrap", labelKey: "header.eScrap" },
+      { href: "/scrap/battery-scrap", labelKey: "header.batteryScrap" },
+      { href: "/scrap/industrial-scrap", labelKey: "header.industrialScrap" },
     ],
   },
 ];
@@ -79,9 +79,8 @@ function AccordionRow({
         {getTranslation(item.labelKey, locale)}
         <button className="px-3 h-full" aria-label={`Toggle ${getTranslation(item.labelKey, locale)}`}>
           <i
-            className={`fas fa-chevron-down text-gray1 transition-all duration-500 ${
-              open ? "rotate-180" : ""
-            }`}
+            className={`fas fa-chevron-down text-gray1 transition-all duration-500 ${open ? "rotate-180" : ""
+              }`}
           ></i>
         </button>
 
@@ -99,9 +98,8 @@ function AccordionRow({
                   <Link
                     href={locale === 'en' ? `/en${link.href}` : link.href}
                     onClick={onClose}
-                    className={`!leading-22px text-sm lg:text-base hover:text-secondary-color ${
-                      isActive ? "text-secondary-color font-semibold" : "text-darkdeep1"
-                    }`}
+                    className={`!leading-22px text-sm lg:text-base hover:text-secondary-color ${isActive ? "text-secondary-color font-semibold" : "text-darkdeep1"
+                      }`}
                   >
                     {getTranslation(link.labelKey, locale)}
                   </Link>
@@ -179,9 +177,8 @@ export default function MobileMenu({
                   <Link
                     href={locale === 'en' ? '/en/about' : '/about'}
                     onClick={onClose}
-                    className={`accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5 ${
-                      activeHref === "/about" ? "text-secondary-color font-semibold" : ""
-                    }`}
+                    className={`accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5 ${activeHref === "/about" ? "text-secondary-color font-semibold" : ""
+                      }`}
                   >
                     {getTranslation('header.about', locale)}
                   </Link>
@@ -199,9 +196,8 @@ export default function MobileMenu({
                   <Link
                     href={locale === 'en' ? '/en/service-areas' : '/service-areas'}
                     onClick={onClose}
-                    className={`accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5 ${
-                      activeHref === "/service-areas" ? "text-secondary-color font-semibold" : ""
-                    }`}
+                    className={`accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5 ${activeHref === "/service-areas" ? "text-secondary-color font-semibold" : ""
+                      }`}
                   >
                     {getTranslation('header.serviceAreas', locale)}
                   </Link>
@@ -210,9 +206,8 @@ export default function MobileMenu({
                   <Link
                     href={locale === 'en' ? '/en/contact' : '/contact'}
                     onClick={onClose}
-                    className={`accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5 ${
-                      activeHref === "/contact" ? "text-secondary-color font-semibold" : ""
-                    }`}
+                    className={`accordion-controller flex items-center justify-between cursor-pointer hover:text-secondary-color uppercase text-sm lg:text-base py-2 lg:py-2.5 ${activeHref === "/contact" ? "text-secondary-color font-semibold" : ""
+                      }`}
                   >
                     {getTranslation('header.contact', locale)}
                   </Link>
@@ -254,43 +249,43 @@ export default function MobileMenu({
             </div> */}
 
           </div>
-            {/* Mobile menu social area */}
-            <div className="flex justify-center">
-              <ul className="flex gap-3 items-center pt-4">
-                <li>
-                  <a
-                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
-                    href="https://www.facebook.com"
-                  >
-                    <i className="fab fa-facebook-f leading-10"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
-                    href="https://www.twiter.com"
-                  >
-                    <i className="fab fab fa-twitter leading-10"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
-                    href="https://www.linkedin.com"
-                  >
-                    <i className="fab fa-linkedin leading-10"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
-                    href="https://www.instagram.com"
-                  >
-                    <i className="fab fa-instagram leading-10"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Mobile menu social area */}
+          <div className="flex justify-center">
+            <ul className="flex gap-3 items-center pt-4">
+              <li>
+                <a
+                  className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
+                  href="https://www.facebook.com"
+                >
+                  <i className="fab fa-facebook-f leading-10"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
+                  href="https://www.twiter.com"
+                >
+                  <i className="fab fab fa-twitter leading-10"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
+                  href="https://www.linkedin.com"
+                >
+                  <i className="fab fa-linkedin leading-10"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
+                  href="https://www.instagram.com"
+                >
+                  <i className="fab fa-instagram leading-10"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
 
         </div>
       </div>

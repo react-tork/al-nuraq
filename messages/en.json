@@ -56,8 +56,15 @@
   "home": {
     "hero": {
       "tagline": "SCRAP BUYING & COLLECTION IN SAUDI ARABIA",
-      "titleLine1": "Professional Scrap Buyer",
-      "titleLine2": "in Dammam & Riyadh"
+      "titleLine1": "Turn Your Scrap",
+      "titleLine2": "Into",
+      "titleHighlight": "Instant Cash",
+      "description": "Al Nuraq buys metal, copper, aluminium, cables, machinery and industrial scrap from businesses, factories, contractors and individuals. We provide professional scrap evaluation and convenient collection services across Dammam, Riyadh and surrounding areas.",
+      "callNow": "Call Now",
+      "whatsapp": "WhatsApp",
+      "feature1": "Fast collection",
+      "feature2": "Transparent evaluation",
+      "feature3": "Reliable service"
     },
     "about": {
       "subtitle": "about us",
@@ -161,6 +168,8 @@
     "newsBlog": {
       "subtitle": "What we Buy",
       "title": "What Scrap Does Al Nuraq Buy?",
+      "description": "We buy a wide range of metal, industrial and recyclable materials, from copper and aluminium to machinery, cables and electronic scrap. Our services are available for individuals, businesses, factories, construction sites and warehouses.",
+      "learnMore": "Learn More",
       "byAdmin": "by: Admin",
       "readMore": "Read more",
       "category1": "Metal Scrap",
@@ -177,6 +186,20 @@
       "category12": "Construction Scrap",
       "category13": "Car Scrap",
       "category14": "Household Scrap",
+      "badge1": "All Types",
+      "badge2": "Copper",
+      "badge3": "Aluminium",
+      "badge4": "Heavy Metal",
+      "badge5": "Electrical",
+      "badge6": "Industrial",
+      "badge7": "Electronics",
+      "badge8": "Batteries",
+      "badge9": "Bulk",
+      "badge10": "Electrical",
+      "badge11": "Equipment",
+      "badge12": "Construction",
+      "badge13": "Automotive",
+      "badge14": "Household",
       "title1": "All types of ferrous and non-ferrous metal scrap for buying and collection.",
       "title2": "Copper cables, pipes, industrial copper and recoverable copper materials.",
       "title3": "Aluminium profiles, sheets, cans, industrial and structural aluminium.",
