@@ -359,10 +359,92 @@
       "item5": "Government and commercial facilities"
     }
   },
+  "machineryScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Machinery Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys machinery scrap including industrial machines, motors, pumps, gearboxes and other heavy mechanical equipment."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Industrial motors and generators",
+      "item2": "Pumps and compressors",
+      "item3": "Gearboxes and drive components",
+      "item4": "Machine tools and presses",
+      "item5": "Processing and production equipment",
+      "item6": "Mixed mechanical scrap"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Factories and manufacturing plants",
+      "item2": "Industrial facilities",
+      "item3": "Workshops and service centres",
+      "item4": "Construction equipment companies",
+      "item5": "Businesses updating equipment"
+    }
+  },
+  "eScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "E-Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys electronic scrap including computer components, circuit boards, IT equipment and recoverable electronic materials."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Computer and server components",
+      "item2": "Circuit boards and PCBs",
+      "item3": "Monitors and display units",
+      "item4": "Network and telecom equipment",
+      "item5": "Electronic control units",
+      "item6": "Mixed e-waste and electronics"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "IT companies and data centres",
+      "item2": "Offices and commercial businesses",
+      "item3": "Industrial facilities with PLCs",
+      "item4": "Telecom and network operators",
+      "item5": "Government and institutional facilities"
+    }
+  },
+  "batteryScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Battery Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys battery scrap including lead-acid batteries, industrial batteries and automotive batteries for responsible material recovery."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Automotive lead-acid batteries",
+      "item2": "Industrial batteries (UPS, forklift)",
+      "item3": "Stationary telecom batteries",
+      "item4": "Mixed battery scrap",
+      "item5": "Battery cells and packs",
+      "item6": "Old and non-working batteries"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Automotive workshops",
+      "item2": "Industrial and manufacturing plants",
+      "item3": "Telecom companies",
+      "item4": "Data centres (UPS batteries)",
+      "item5": "Individuals with old batteries"
+    }
+  },
   "faq": {
     "stillNeedHelp": "Still need help? Reach out to support 24/7:",
     "contactUs": "Contact Us",
     "phone": "+966 51 067 9737",
+
     "items": {
       "faq1": {
         "question": "How to buy a product?",

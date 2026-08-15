@@ -50,10 +50,10 @@ export default function PageBanner({
         style={{ backgroundImage: `url('${bgImage}')` }}
       >
         {/* gradient overlay — darker at bottom for text contrast, lighter at top */}
-        <div className="absolute inset-0 absolute inset-0 -z-1 bg-gradient-to-b from-black/60 via-black/45 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/70" />
 
         {/* decorative accent — soft gold circle, top-right */}
-        <div className="absolute -right-50px -top-50px w-[220px] h-[220px] rounded-full bg-secondary-color/10 blur-2xl -z-1" />
+        <div className="absolute -right-50px -top-50px w-[220px] h-[220px] rounded-full bg-secondary-color/10 blur-2xl" />
 
         {/* decorative accent — thin gold line under content */}
         <div className="absolute left-0 bottom-0 w-full h-3px bg-gradient-to-r from-secondary-color via-secondary-color/40 to-transparent" />
