@@ -78,7 +78,7 @@ export default function About2() {
                             {/* left — large image, spans both rows */}
                             <div className="row-span-2 h-full">
                                 <img
-                                    src="https://images.unsplash.com/photo-1702388247780-fedec1db0b5d?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0"
+                                    src="/images/own/why-al-nuraq-1.jpg"
                                     alt="Stacked steel bars at industrial facility"
                                     className="w-full h-full object-cover rounded-lg"
                                 />
@@ -87,7 +87,7 @@ export default function About2() {
                             {/* top-right */}
                             <div>
                                 <img
-                                    src="https://images.unsplash.com/photo-1697698532634-ea59b636ccea?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0"
+                                    src="/images/own/why-al-nuraq-2.jpg"
                                     alt="Rolls of steel lined up in a warehouse"
                                     className="w-full h-auto rounded-lg"
                                 />
@@ -96,7 +96,7 @@ export default function About2() {
                             {/* bottom-right */}
                             <div>
                                 <img
-                                    src="https://images.unsplash.com/photo-1702388247745-14431714d32f?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0"
+                                    src="/images/own/why-al-nuraq-3.jpg"
                                     alt="Welder working on metal with sparks"
                                     className="w-full h-auto rounded-lg"
                                 />
