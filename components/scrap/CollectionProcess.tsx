@@ -48,7 +48,7 @@ export default function HowItWorks({
   const resolvedHeading = heading ?? getTranslation("home.collectionProcess.title", locale);
 
   return (
-    <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
+    <section className="container pt-16 md:pt-20 pb-12 md:pb-18">
       {/* section heading */}
       <div className="text-center mb-[50px]">
         <p className="animate__animated animate__fadeInUp text-sm md:text-[15px] lg:text-base text-secondary-color bg-secondary-color/10 uppercase mb-[15px] py-0.5 px-5 rounded-full inline-block font-semibold tracking-wide">

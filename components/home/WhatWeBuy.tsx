@@ -87,7 +87,7 @@ export default function WhatWeBuy() {
     locale === "en" ? `/en${href}` : href;
 
   return (
-    <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
+    <section className="container pt-16 md:pt-20 pb-12 md:pb-18">
       <div className="text-center mb-50px">
         <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
           <span className="leading-1.3">{getTranslation("home.newsBlog.subtitle", locale)}</span>

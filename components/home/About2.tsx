@@ -50,7 +50,7 @@ export default function About2() {
     return (
         <>
             {/* ==================== about 2 section ==================== */}
-            <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
+            <section className="container pt-16 md:pt-20 pb-12 md:pb-18">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-5 lg:gap-30px items-center">
                     {/* about 2 left */}
                     <div className="mb-5">
