@@ -22,8 +22,8 @@ import "yet-another-react-lightbox/styles.css";
 /* ------------------------------------------------------------------ */
 
 interface YouTubeSlide {
-  type: "youtube";
-  src: string;
+    type: "youtube";
+    src: string;
 }
 
 type CustomSlide = Slide | YouTubeSlide;
@@ -39,7 +39,7 @@ export default function About() {
             <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-30px">
                     {/* about left */}
-                    <div className="lg:ms-30px relative mb-10 lg:mb-0">
+                    <div className=" relative mb-10 lg:mb-0">
                         <Image
                             src="https://images.unsplash.com/photo-1777364701676-b70698be404d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0"
                             alt=""
@@ -56,7 +56,7 @@ export default function About() {
                                     width={339}
                                     height={253}
                                 />
-                                <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center">
+                                {/* <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center">
                                     <a
                                         className="glightbox2 w-50px h-50px lg:w-20 lg:h-20 text-center lg:text-lg text-secondary-color shadow-box-shadow-2 rounded-full bg-white flex items-center justify-center animate-pulse1"
                                         href="#"
@@ -67,7 +67,7 @@ export default function About() {
                                     >
                                         <i className="icon-play"></i>
                                     </a>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -130,38 +130,38 @@ export default function About() {
             </section>
 
             {/* video lightbox (replaces GLightbox `.glightbox2`) */}
-<Lightbox
-  open={lightboxOpen}
-  close={() => setLightboxOpen(false)}
-  slides={[
-    {
-      type: "video" as const,
-      // custom field attach করার জন্য
-      embedUrl: "https://www.youtube.com/embed/A0LCbgtkOfo?autoplay=1&showinfo=0&controls=1",
-      sources: [],
-    } as any,
-  ]}
-  render={{
-    slide: ({ slide }) => {
-      const s = slide as any;
-      if (s.embedUrl) {
-        return (
-          <iframe
-            width="100%"
-            height="100%"
-            src={s.embedUrl}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            style={{ maxWidth: "80%", maxHeight: "80%", aspectRatio: "16/9" }}
-          />
-        );
-      }
-      return null;
-    },
-  }}
-/>
+            {/* <Lightbox
+                open={lightboxOpen}
+                close={() => setLightboxOpen(false)}
+                slides={[
+                    {
+                        type: "video" as const,
+                        // custom field attach করার জন্য
+                        embedUrl: "https://www.youtube.com/embed/A0LCbgtkOfo?autoplay=1&showinfo=0&controls=1",
+                        sources: [],
+                    } as any,
+                ]}
+                render={{
+                    slide: ({ slide }) => {
+                        const s = slide as any;
+                        if (s.embedUrl) {
+                            return (
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    src={s.embedUrl}
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                    style={{ maxWidth: "80%", maxHeight: "80%", aspectRatio: "16/9" }}
+                                />
+                            );
+                        }
+                        return null;
+                    },
+                }}
+            /> */}
         </>
     );
 }
