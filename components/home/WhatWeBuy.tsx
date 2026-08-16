@@ -2,39 +2,43 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { getLocaleFromPathname, getPathnameWithLocale, type Locale } from "@/lib/i18n";
+import {
+  getLocaleFromPathname,
+  getPathnameWithLocale,
+  type Locale,
+} from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
 
 /* Scrap items mapped to translation keys */
 const scrapItems = [
   {
     key: "1",
-    img: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/metal-scrap.jpg",
     link: "/scrap/metal-scrap",
   },
   {
     key: "2",
-    img: "https://images.unsplash.com/photo-1717667745852-a5bd6876c1de?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/copper-scrap.jpg",
     link: "/scrap/copper-scrap",
   },
   {
     key: "3",
-    img: "https://images.unsplash.com/photo-1561503412-852800622772?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/alumunium-scrap.jpg",
     link: "/scrap/aluminium-scrap",
   },
   {
     key: "4",
-    img: "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=900&h=600&fit=crop&auto=format",
+    img: "/images/own/iron&steel-scrap.jpg",
     link: "/scrap/iron-steel",
   },
   {
     key: "5",
-    img: "https://images.unsplash.com/photo-1687038520563-2310e8b06ed2?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/cable&wire-scrap.jpg",
     link: "/scrap/cable-wire",
   },
   {
     key: "6",
-    img: "https://images.unsplash.com/photo-1720036236855-9a1a2e4d3f26?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/machinery-scrap.jpg",
     link: "/scrap/machinery-scrap",
   },
   // {
@@ -44,17 +48,17 @@ const scrapItems = [
   // },
   {
     key: "8",
-    img: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/battery-scrap.jpg",
     link: "/scrap/battery-scrap",
   },
   {
     key: "9",
-    img: "https://images.unsplash.com/photo-1722842895153-ba7bf9d53dfb?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/industrial-scrap.jpg",
     link: "/scrap/industrial-scrap",
   },
   {
     key: "10",
-    img: "https://images.unsplash.com/photo-1720036236855-9a1a2e4d3f26?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/electrical-panels-scrap.jpg",
     link: "/scrap/electrical-panels",
   },
   // {
@@ -64,17 +68,17 @@ const scrapItems = [
   // },
   {
     key: "12",
-    img: "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=900&h=600&fit=crop&auto=format",
+    img: "/images/own/construction-scrap.jpg",
     link: "/scrap/construction",
   },
   {
     key: "13",
-    img: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/car-scrap.jpg",
     link: "/scrap/cars",
   },
   {
     key: "14",
-    img: "https://images.unsplash.com/photo-1561503412-852800622772?w=600&h=400&fit=crop&auto=format",
+    img: "/images/own/household-scrap.jpg",
     link: "/scrap/household",
   },
 ];
@@ -90,10 +94,14 @@ export default function WhatWeBuy() {
     <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
       <div className="text-center mb-50px">
         <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
-          <span className="leading-1.3">{getTranslation("home.newsBlog.subtitle", locale)}</span>
+          <span className="leading-1.3">
+            {getTranslation("home.newsBlog.subtitle", locale)}
+          </span>
         </p>
         <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold">
-          <span className="leading-1.3">{getTranslation("home.newsBlog.title", locale)}</span>
+          <span className="leading-1.3">
+            {getTranslation("home.newsBlog.title", locale)}
+          </span>
         </h2>
         <p>{getTranslation("home.newsBlog.description", locale)}</p>
       </div>
@@ -105,12 +113,15 @@ export default function WhatWeBuy() {
             className="group p-15px shadow-box-shadow-4 bg-white"
           >
             {/* Card Thumb */}
-            <div className="relative leading-1 overflow-hidden">
-              <Link href={localizedHref(item.link)} className="block">
+            <div className="relative leading-1 overflow-hidden aspect-square">
+              <Link href={localizedHref(item.link)} className="block h-full">
                 <img
                   src={item.img}
-                  className="w-full group-hover:scale-110 transition-all duration-700"
-                  alt={getTranslation(`home.newsBlog.category${item.key}`, locale)}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
+                  alt={getTranslation(
+                    `home.newsBlog.category${item.key}`,
+                    locale,
+                  )}
                 />
               </Link>
 
