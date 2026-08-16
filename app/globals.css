@@ -1237,8 +1237,8 @@ body {
   display: none;
 }
 
-.bg-gradient-color-2{
-  background-image: linear-gradient(to top, rgba(7,28,31,0) 0%, rgba(7,28,31,1) 90%);
+.bg-gradient-color-2 {
+  background-image: linear-gradient(to top, rgba(7, 28, 31, 0) 0%, rgba(7, 28, 31, 1) 90%);
 }
 
 /* ============================================================
@@ -1248,10 +1248,13 @@ body {
    keyboard/touch scrolling intact.
    ============================================================ */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari and Opera */
+  display: none;
+  /* Chrome, Safari and Opera */
 }
