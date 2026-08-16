@@ -11,7 +11,6 @@ import {
 } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
 
-
 /* "Company" footer link column */
 const companyLinks = [
   { href: "/about", key: "footer.about" },
@@ -80,10 +79,11 @@ function FooterLinkColumn({
             <li key={label}>
               <Link
                 href={href}
-                className={`hover:text-secondary-color group leading-1.8 inline-flex items-center transition-all duration-300 ${isRTL
+                className={`hover:text-secondary-color group leading-1.8 inline-flex items-center transition-all duration-300 ${
+                  isRTL
                     ? "translate-x-5 hover:translate-x-0"
                     : "-translate-x-5 hover:translate-x-0"
-                  }`}
+                }`}
               >
                 <span
                   className={`text-secondary-color opacity-0 group-hover:opacity-100 transition-all duration-300 pe-15px`}
@@ -119,12 +119,14 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
         {/* Address */}
         <li>
           <p
-            className={`leading-1.8 text-white flex items-start ${isRTL ? "flex-row-reverse" : "flex-row"
-              }`}
+            className={`leading-1.8 text-white flex items-start ${
+              isRTL ? "flex-row-reverse" : "flex-row"
+            }`}
           >
             <i
-              className={`icon-placeholder mt-1 shrink-0 ${isRTL ? "ml-15px" : "mr-15px"
-                }`}
+              className={`icon-placeholder mt-1 shrink-0 ${
+                isRTL ? "ml-15px" : "mr-15px"
+              }`}
             ></i>
 
             <span>{getTranslation("footer.address", locale)}</span>
@@ -133,13 +135,11 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
 
         {/* Phone */}
         <li>
-          <a
-            href="tel:+966510679737"
-            className="leading-1.8 flex items-start"
-          >
+          <a href="tel:+966510679737" className="leading-1.8 flex items-start">
             <i
-              className={`icon-call mt-1 shrink-0 ${isRTL ? "ml-15px" : "mr-15px"
-                }`}
+              className={`icon-call mt-1 shrink-0 ${
+                isRTL ? "ml-15px" : "mr-15px"
+              }`}
             ></i>
 
             <span>{getTranslation("footer.phone", locale)}</span>
@@ -153,8 +153,9 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
             className="leading-1.8 flex items-start"
           >
             <i
-              className={`icon-whatsapp mt-1 shrink-0 ${isRTL ? "ml-15px" : "mr-15px"
-                }`}
+              className={`icon-whatsapp mt-1 shrink-0 ${
+                isRTL ? "ml-15px" : "mr-15px"
+              }`}
             ></i>
 
             <span>{getTranslation("footer.whatsapp", locale)}</span>
@@ -164,12 +165,13 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
         {/* Email */}
         <li>
           <a
-            href="mailto:mohishinhossen@gmail.com"
+            href="mailto:alnuraqscrap@gmail.com"
             className="leading-1.8 flex items-start"
           >
             <i
-              className={`icon-mail mt-1 shrink-0 ${isRTL ? "ml-15px" : "mr-15px"
-                }`}
+              className={`icon-mail mt-1 shrink-0 ${
+                isRTL ? "ml-15px" : "mr-15px"
+              }`}
             ></i>
 
             <span>{getTranslation("footer.email", locale)}</span>
@@ -235,8 +237,9 @@ export default function Footer() {
                 <div>
                   <h5 className="capitalize inline-block text-sm md:text-base text-primary-color hover:text-white hover:bg-primary-color relative group whitespace-nowrap font-normal transition-all duration-300 shadow-box-shadow-3 mb-0">
                     <span
-                      className={`inline-block absolute top-0 w-full h-full bg-white group-hover:bg-secondary-color z-1 group-hover:w-0 transition-all duration-300 ${isRTL ? "right-0" : "left-0"
-                        }`}
+                      className={`inline-block absolute top-0 w-full h-full bg-white group-hover:bg-secondary-color z-1 group-hover:w-0 transition-all duration-300 ${
+                        isRTL ? "right-0" : "left-0"
+                      }`}
                     ></span>
 
                     <Link
@@ -246,8 +249,7 @@ export default function Footer() {
                       {getTranslation("footer.exploreProperties", locale)}
 
                       <i
-                        className={`icon-next ${isRTL ? "rotate-180" : ""
-                          }`}
+                        className={`icon-next ${isRTL ? "rotate-180" : ""}`}
                       ></i>
                     </Link>
                   </h5>
@@ -273,9 +275,7 @@ export default function Footer() {
                     {getTranslation("footer.aboutDescription", locale)}
                   </p>
 
-                  <ul
-                    className={`flex items-center gap-x-5 mt-5`}
-                  >
+                  <ul className={`flex items-center gap-x-5 mt-5`}>
                     {socialLinks.map((item) => (
                       <li key={item.label}>
                         <a href={item.href} className="leading-1.8">
@@ -319,8 +319,9 @@ export default function Footer() {
               </div>
 
               <ul
-                className={`flex gap-x-25px items-center justify-center lg:justify-end capitalize font-semibold font-poppins text-sm ${isRTL ? "flex-row-reverse" : "flex-row"
-                  }`}
+                className={`flex gap-x-25px items-center justify-center lg:justify-end capitalize font-semibold font-poppins text-sm ${
+                  isRTL ? "flex-row-reverse" : "flex-row"
+                }`}
               >
                 <li>
                   <a href="#" className="leading-1.8">
@@ -347,8 +348,9 @@ export default function Footer() {
 
       {/* Scroll top */}
       <button
-        className={`scroll-up w-30px h-30px lg:w-10 lg:h-10 lg:text-xl bg-section-bg-1 text-heading-color hover:bg-secondary-color hover:text-white rotate-[45deg] shadow-box-shadow-3 fixed bottom-[50px] lg:bottom-[70px] flex justify-center items-center z-xl ${isRTL ? "right-[3%]" : "left-[3%]"
-          } ${showScrollUp ? "active" : ""}`}
+        className={`scroll-up w-30px h-30px lg:w-10 lg:h-10 lg:text-xl bg-section-bg-1 text-heading-color hover:bg-secondary-color hover:text-white rotate-[45deg] shadow-box-shadow-3 fixed bottom-[50px] lg:bottom-[70px] flex justify-center items-center z-xl ${
+          isRTL ? "right-[3%]" : "left-[3%]"
+        } ${showScrollUp ? "active" : ""}`}
         onClick={scrollToTop}
         aria-label="Scroll to top"
       >

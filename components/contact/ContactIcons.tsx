@@ -20,7 +20,7 @@ const cards: IconCard[] = [
     icon: "/images/icons/10.png",
     titleKey: "contact.icons.emailTitle",
     lineKeys: ["contact.icons.email1"],
-    href: "mailto:mohishinhossen@gmail.com",
+    href: "mailto:alnuraqscrap@gmail.com",
   },
   {
     id: 2,
@@ -62,19 +62,30 @@ export default function ContactIcons() {
                 {card.isFontIcon ? (
                   <i className={`${card.icon} text-6xl text-secondary-color`} />
                 ) : (
-                  <Image src={card.icon} alt={getTranslation(card.titleKey, locale)} width={80} height={80} />
+                  <Image
+                    src={card.icon}
+                    alt={getTranslation(card.titleKey, locale)}
+                    width={80}
+                    height={80}
+                  />
                 )}
               </div>
               <div>
                 <h2 className="text-lg md:text-xl lg:text-22px xl:text-2xl text-heading-color font-bold mb-15px">
-                  <span className="leading-1.3"> {getTranslation(card.titleKey, locale)} </span>
+                  <span className="leading-1.3">
+                    {" "}
+                    {getTranslation(card.titleKey, locale)}{" "}
+                  </span>
                 </h2>
                 <p className="text-sm lg:text-base">
                   <span className="leading-1.8">
                     {card.lineKeys.map((lineKey, i) => (
                       <span key={i}>
                         {card.href ? (
-                          <a href={card.href} className="hover:text-secondary-color transition-colors">
+                          <a
+                            href={card.href}
+                            className="hover:text-secondary-color transition-colors"
+                          >
                             {getTranslation(lineKey, locale)}
                           </a>
                         ) : (
