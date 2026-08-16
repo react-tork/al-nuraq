@@ -11,9 +11,11 @@ import {
 } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
 
+
 /* "Company" footer link column */
 const companyLinks = [
   { href: "/about", key: "footer.about" },
+  { href: "/contact", key: "footer.contactUs" },
   { href: "/services", key: "footer.whatWeBuy" },
   { href: "/industrial-solutions", key: "footer.industrialSolutions" },
   { href: "/scrap-pickup", key: "footer.scrapPickup" },
@@ -113,24 +115,6 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
 
       <ul className="space-y-[15px]">
         {/* Contact */}
-        <li>
-          <Link
-            href={locale === "en" ? "/en/contact" : "/contact"}
-            className={`hover:text-secondary-color group leading-1.8 inline-flex items-center transition-all duration-300 ${isRTL
-                ? "translate-x-5 hover:translate-x-0"
-                : "-translate-x-5 hover:translate-x-0"
-              }`}
-          >
-            <span
-              className={`text-secondary-color opacity-0 group-hover:opacity-100 transition-all duration-300 ${isRTL ? "pe-15px" : "ps-15px"
-                }`}
-            >
-              //
-            </span>
-
-            {getTranslation("footer.contactUs", locale)}
-          </Link>
-        </li>
 
         {/* Address */}
         <li>
