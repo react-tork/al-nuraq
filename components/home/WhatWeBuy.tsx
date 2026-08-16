@@ -37,11 +37,11 @@ const scrapItems = [
     img: "https://images.unsplash.com/photo-1720036236855-9a1a2e4d3f26?w=600&h=400&fit=crop&auto=format",
     link: "/scrap/machinery-scrap",
   },
-  {
-    key: "7",
-    img: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format",
-    link: "/scrap/e-scrap",
-  },
+  // {
+  //   key: "7",
+  //   img: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format",
+  //   link: "/scrap/e-scrap",
+  // },
   {
     key: "8",
     img: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format",
@@ -57,11 +57,11 @@ const scrapItems = [
     img: "https://images.unsplash.com/photo-1720036236855-9a1a2e4d3f26?w=600&h=400&fit=crop&auto=format",
     link: "/scrap/electrical-panels",
   },
-  {
-    key: "11",
-    img: "https://images.unsplash.com/photo-1720036236855-9a1a2e4d3f26?w=600&h=400&fit=crop&auto=format",
-    link: "/scrap/compressors",
-  },
+  // {
+  //   key: "11",
+  //   img: "https://images.unsplash.com/photo-1720036236855-9a1a2e4d3f26?w=600&h=400&fit=crop&auto=format",
+  //   link: "/scrap/compressors",
+  // },
   {
     key: "12",
     img: "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=900&h=600&fit=crop&auto=format",
