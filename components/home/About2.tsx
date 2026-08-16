@@ -73,34 +73,36 @@ export default function About2() {
                     </div>
 
                     {/* about 2 right */}
-                    <div className="lg:ml-[30px] relative mb-10 lg:mb-0">
+                    <div className="lg:ms-[30px] relative mb-10 lg:mb-0">
                         <div className="grid grid-cols-2 gap-[15px]">
-                            {/* left — large image, spans both rows */}
-                            <div className="row-span-2 h-full">
+
+                            {/* large image */}
+                            <div className="row-span-2 overflow-hidden min-h-0">
                                 <img
                                     src="/images/own/why-al-nuraq-1.jpg"
                                     alt="Stacked steel bars at industrial facility"
+                                    className="w-full h-full min-h-[300px] object-cover rounded-lg"
+                                />
+                            </div>
+
+                            {/* top image */}
+                            <div className="aspect-[3/2] overflow-hidden">
+                                <img
+                                    src="/images/own/why-al-nuraq-2.jpg"
+                                    alt="Rolls of steel lined up in a warehouse"
                                     className="w-full h-full object-cover rounded-lg"
                                 />
                             </div>
 
-                            {/* top-right */}
-                            <div>
-                                <img
-                                    src="/images/own/why-al-nuraq-2.jpg"
-                                    alt="Rolls of steel lined up in a warehouse"
-                                    className="w-full h-auto rounded-lg"
-                                />
-                            </div>
-
-                            {/* bottom-right */}
-                            <div>
+                            {/* bottom image */}
+                            <div className="aspect-[3/2] overflow-hidden">
                                 <img
                                     src="/images/own/why-al-nuraq-3.jpg"
                                     alt="Welder working on metal with sparks"
-                                    className="w-full h-auto rounded-lg"
+                                    className="w-full h-full object-cover rounded-lg"
                                 />
                             </div>
+
                         </div>
                     </div>
                 </div>

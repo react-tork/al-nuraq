@@ -147,10 +147,10 @@ export default function Header() {
                     <a
                       href="#"
                       className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${isOverlay
-                          ? "text-white"
-                          : isParentActive
-                            ? "text-secondary-color"
-                            : "text-heading-color"
+                        ? "text-white"
+                        : isParentActive
+                          ? "text-secondary-color"
+                          : "text-heading-color"
                         }`}
                     >
                       {getTranslation(item.key, locale)}{" "}
@@ -167,8 +167,8 @@ export default function Header() {
                           <li key={child.slug}>
                             <Link
                               className={`whitespace-nowrap px-30px py-2 hover:text-secondary-color ${isChildActive
-                                  ? "text-secondary-color font-semibold"
-                                  : "text-heading-color"
+                                ? "text-secondary-color font-semibold"
+                                : "text-heading-color"
                                 }`}
                               href={locale === 'en' ? `/en${child.slug}` : child.slug}
                             >
@@ -184,10 +184,10 @@ export default function Header() {
                     <Link
                       href={locale === 'en' ? `/en${item.slug}` : item.slug}
                       className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${isOverlay
-                          ? "text-white"
-                          : activeHref === item.slug
-                            ? "text-secondary-color"
-                            : "text-heading-color"
+                        ? "text-white"
+                        : activeHref === item.slug
+                          ? "text-secondary-color"
+                          : "text-heading-color"
                         }`}
                     >
                       {getTranslation(item.key, locale)}
@@ -203,14 +203,48 @@ export default function Header() {
           <div>
             <ul className="flex gap-10px items-center">
               <li>
-                <button
-                  onClick={() => switchLocale(locale === 'ar' ? 'en' : 'ar')}
-                  className={`px-3 py-2 text-sm font-semibold transition-all duration-300 rounded-md ${isOverlay ? "text-white bg-white/10" : "text-heading-color bg-heading-color/5"
+                <div
+                  className={`relative flex items-center p-1 rounded-full transition-all duration-300 ${isOverlay
+                      ? "bg-white/10 border border-white/20"
+                      : "bg-heading-color/5 border border-heading-color/10"
                     }`}
-                  aria-label="Switch language"
                 >
-                  {getTranslation('header.languageSwitcher', locale)}
-                </button>
+                  {/* Active background */}
+                  <span
+                    className={`absolute top-1 bottom-1 w-[34px] rounded-full bg-secondary-color transition-all duration-300 ${locale === "ar" ? "rtl:right-1 ltr:left-1" : "rtl:left-1 ltr:right-1"
+                      }`}
+                  />
+
+                  {/* Arabic */}
+                  <button
+                    type="button"
+                    onClick={() => locale !== "ar" && switchLocale("ar")}
+                    className={`relative z-10 w-9 h-6 pb-1 flex items-center justify-center text-xs font-bold rounded-full transition-colors duration-300 ${locale === "ar"
+                        ? "text-white"
+                        : isOverlay
+                          ? "text-white/70 hover:text-white"
+                          : "text-heading-color/60 hover:text-heading-color"
+                      }`}
+                    aria-label="Switch to Arabic"
+                  >
+                    ع
+                  </button>
+
+                  {/* English */}
+                  <button
+                    type="button"
+                    onClick={() => locale !== "en" && switchLocale("en")}
+                    className={`relative z-10 w-9 h-6 flex items-center justify-center text-xs font-bold rounded-full transition-colors duration-300 ${locale === "en"
+                        ? "text-white"
+                        : isOverlay
+                          ? "text-white/70 hover:text-white"
+                          : "text-heading-color/60 hover:text-heading-color"
+                      }`}
+                    aria-label="Switch to English"
+                  >
+                    EN
+                  </button>
+                </div>
               </li>
               <li className="block xl:hidden">
                 <button

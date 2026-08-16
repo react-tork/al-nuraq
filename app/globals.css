@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 /* Load the Tailwind config so its explicit `content` array overrides
@@ -318,12 +318,16 @@
    ============================================================ */
 body {
   color: var(--paragraph-color);
-  font-family: var(--body-font);
+  font-family: "Montserrat", "Nunito Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
   line-height: 1.8;
   background-color: var(--white);
+}
+
+[dir="rtl"] body {
+  font-family: "Noto Kufi Arabic", "Montserrat", sans-serif;
 }
 
 /* Quarter responsive body typography — reproduced from the original

@@ -52,18 +52,6 @@ export default function About() {
                             />
                         </div>
 
-                        {/* Small overlay image */}
-                        <div className="absolute rtl:right-[10px] bottom-[30px] md:bottom-[70px] w-150px md:w-300px">
-                            <div className="relative">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1767385998034-fe0cdd9071bb?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0"
-                                    alt=""
-                                    className="w-full h-auto object-cover object-center"
-                                    width={339}
-                                    height={253}
-                                />
-                            </div>
-                        </div>
                     </div>
                     {/* about right */}
                     <div>
