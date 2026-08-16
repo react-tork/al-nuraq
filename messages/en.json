@@ -267,8 +267,17 @@
       "breadcrumbCurrent": "Al Nuraq",
       "title": "About Al Nuraq",
       "description": "Professional scrap buying and collection services built around clear communication, reliable service and practical solutions."
+    },
+    "story": {
+      "sectionLabel": "Our Story",
+      "heading": "Who We Are",
+      "paragraphOne": "Al Nuraq is a professional scrap buying business operating in Dammam, Riyadh and surrounding areas of Saudi Arabia. The company was established to provide a practical, reliable and transparent scrap purchasing and collection service for a wide range of customers.",
+      "paragraphTwo": "Whether you are an individual clearing out a household, a contractor finishing a project or a factory with ongoing material recovery requirements, Al Nuraq offers organized solutions tailored to the type and scale of your scrap.",
+      "paragraphThree": "The company handles a broad range of materials — from metals and cables to machinery, electronics and construction scrap — providing a single point of contact for diverse scrap buying needs across the region.",
+      "buttonLabel": "Contact Us"
     }
   },
+
   "services": {
     "banner": {
       "subtitle": "Our Services",
@@ -674,34 +683,103 @@
     "phone": "+966 51 067 9737",
     "items": {
       "faq1": {
-        "question": "How to buy a product?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec ac. Mauris sit amet massa vitae tortor. Quisque id diam vel quam elementum pulvinar. Gravida in fermentum et sollicitudin ac orci phasellus. Facilisis gravida neque convallis a cras semper. Non arcu risus quis varius quam quisque id."
+        "question": "What is Al Nuraq?",
+        "answer": "Al Nuraq is a professional scrap buying business operating in Dammam, Riyadh and surrounding areas of Saudi Arabia. We purchase a wide range of scrap materials from individuals, businesses and industrial customers."
       },
       "faq2": {
-        "question": "How can i make refund from your website?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec ac. Mauris sit amet massa vitae tortor. Quisque id diam vel quam elementum pulvinar. Gravida in fermentum et sollicitudin ac orci phasellus. Facilisis gravida neque convallis a cras semper. Non arcu risus quis varius quam quisque id."
+        "question": "Where does Al Nuraq operate?",
+        "answer": "Our primary service areas are Dammam and Riyadh. We also cover Khobar and Qatif, subject to collection availability. Contact us to confirm service in your specific location."
       },
       "faq3": {
-        "question": "I am a new user. How should I start?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec ac. Mauris sit amet massa vitae tortor. Quisque id diam vel quam elementum pulvinar. Gravida in fermentum et sollicitudin ac orci phasellus. Facilisis gravida neque convallis a cras semper. Non arcu risus quis varius quam quisque id."
+        "question": "How do I get started?",
+        "answer": "Contact us by phone, WhatsApp or through the contact form on this website. Tell us what material you have and your location, and our team will guide you through the next steps."
       },
       "faq4": {
-        "question": "Returns and refunds",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec ac. Mauris sit amet massa vitae tortor. Quisque id diam vel quam elementum pulvinar. Gravida in fermentum et sollicitudin ac orci phasellus. Facilisis gravida neque convallis a cras semper. Non arcu risus quis varius quam quisque id."
+        "question": "What types of scrap does Al Nuraq buy?",
+        "answer": "We buy metal scrap, copper, aluminium, iron and steel, cables and wires, machinery, industrial equipment, electrical panels, compressors, batteries, e-scrap, construction scrap, car scrap and household items."
       },
       "faq5": {
-        "question": "Are my details secured?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec ac. Mauris sit amet massa vitae tortor. Quisque id diam vel quam elementum pulvinar. Gravida in fermentum et sollicitudin ac orci phasellus. Facilisis gravida neque convallis a cras semper. Non arcu risus quis varius quam quisque id."
+        "question": "Do you buy copper and aluminium cables?",
+        "answer": "Yes. We buy copper and aluminium cables and wires, both bare and insulated. The value depends on whether the cable is bare copper, insulated or requires stripping."
       },
       "faq6": {
-        "question": "Sale code is not working",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec ac. Mauris sit amet massa vitae tortor. Quisque id diam vel quam elementum pulvinar. Gravida in fermentum et sollicitudin ac orci phasellus. Facilisis gravida neque convallis a cras semper. Non arcu risus quis varius quam quisque id."
+        "question": "Do you buy industrial machinery?",
+        "answer": "Yes. Al Nuraq purchases industrial machines, motors, pumps, compressors and related mechanical equipment. Both working and non-working machinery can be evaluated."
       },
       "faq7": {
-        "question": "How do I make payment by my credit card",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec ac. Mauris sit amet massa vitae tortor. Quisque id diam vel quam elementum pulvinar. Gravida in fermentum et sollicitudin ac orci phasellus. Facilisis gravida neque convallis a cras semper. Non arcu risus quis varius quam quisque id."
+        "question": "Do you buy e-scrap and electronics?",
+        "answer": "Yes. We buy electronic scrap including computer components, circuit boards, IT equipment and general e-waste. Each item is evaluated on its material composition."
+      },
+      "faq8": {
+        "question": "Do you buy household scrap and appliances?",
+        "answer": "Yes. We buy old appliances, household metal items and domestic scrap materials. Contact us to confirm whether your specific items qualify."
+      },
+      "faq9": {
+        "question": "Do you provide scrap pickup?",
+        "answer": "Yes, Al Nuraq offers scrap collection services for customers in Dammam, Riyadh and surrounding areas. Collection depends on the type of material, quantity and your location."
+      },
+      "faq10": {
+        "question": "Is same-day collection available?",
+        "answer": "Same-day collection may be available depending on location, material and current scheduling. Contact us directly to confirm availability for your requirements."
+      },
+      "faq11": {
+        "question": "Is there a minimum quantity for collection?",
+        "answer": "Minimum quantity requirements depend on the material type and location. Contact us to discuss your specific quantity and we will advise on collection eligibility."
+      },
+      "faq12": {
+        "question": "Can you collect from construction sites or factories?",
+        "answer": "Yes. Al Nuraq works with contractors, construction companies and industrial facilities and can arrange collection from job sites and industrial locations, subject to assessment."
+      },
+      "faq13": {
+        "question": "How is the scrap value determined?",
+        "answer": "Scrap value is assessed based on material type, condition, weight and current market rates. All materials are weighed and evaluated transparently before the final value is confirmed."
+      },
+      "faq14": {
+        "question": "Do you guarantee the highest price?",
+        "answer": "Al Nuraq does not make unsupported price guarantees. We provide competitive evaluations based on current market conditions and transparent assessment."
+      },
+      "faq15": {
+        "question": "Do you publish scrap prices?",
+        "answer": "Scrap prices fluctuate based on market conditions. We do not publish fixed prices. Contact us with your material details to receive a current assessment."
+      },
+      "faq16": {
+        "question": "When is payment made?",
+        "answer": "Payment is completed after final evaluation and weighing, according to the agreed terms. Payment timing and method are confirmed before collection proceeds."
+      },
+      "faq17": {
+        "question": "Can businesses arrange bulk scrap collection?",
+        "answer": "Yes. Al Nuraq can work with commercial businesses and industrial customers to arrange organized collection based on scrap volume and schedule requirements."
+      },
+      "faq18": {
+        "question": "Do you work with factories and warehouses?",
+        "answer": "Yes. We work with factories, warehouses, contractors and industrial facilities across our service areas."
+      },
+      "faq19": {
+        "question": "Can you handle full factory or warehouse clearances?",
+        "answer": "Yes. For large-scale clearances, contact us to discuss the scope. We can assess the material, discuss the process and arrange logistics accordingly."
+      },
+      "faq20": {
+        "question": "Is regular or scheduled collection available for industrial customers?",
+        "answer": "For facilities with ongoing scrap generation, Al Nuraq can discuss arrangements for regular or periodic collection. Contact us to discuss your requirements."
+      },
+      "faq21": {
+        "question": "Do you serve Dammam?",
+        "answer": "Yes. Dammam is one of our primary service areas. We serve individuals, factories, contractors and commercial businesses across the city."
+      },
+      "faq22": {
+        "question": "Do you serve Riyadh?",
+        "answer": "Yes. Riyadh is one of our core service areas. We serve a range of customers from residential individuals to industrial facilities across the capital."
+      },
+      "faq23": {
+        "question": "Do you serve Khobar?",
+        "answer": "Yes, Al Nuraq serves customers in Khobar and surrounding areas, subject to collection availability."
+      },
+      "faq24": {
+        "question": "Do you serve Qatif?",
+        "answer": "Yes, Al Nuraq serves customers in Qatif and nearby areas, subject to collection availability. Contact us to confirm your location."
       }
     }
+
   },
   "contact": {
     "pageTitle": "Contact Us",
@@ -792,5 +870,15 @@
     "emailPlaceholder": "Your email address",
     "successMessage": "Subscribed successfully!",
     "errorMessage": "Something went wrong. Please try again."
+  },
+  "pageBanner": {
+    "title": "Page Title",
+    "breadcrumbHome": "Home",
+    "breadcrumbPage": "Page",
+    "subtitle": "Welcome",
+    "description": "Explore our services and discover how we can help you.",
+    "primaryCta": "Get a Quote",
+    "secondaryCta": "WhatsApp Us"
   }
 }
+

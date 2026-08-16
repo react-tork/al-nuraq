@@ -122,22 +122,35 @@ export default function About() {
             </section>
 
             {/* video lightbox (replaces GLightbox `.glightbox2`) */}
-            <Lightbox
-                open={lightboxOpen}
-                close={() => setLightboxOpen(false)}
-                plugins={[Video]}
-                slides={[
-                    {
-                        type: "video",
-                        sources: [
-                            {
-                                src: "https://www.youtube.com/embed/tlThdr3O5Qo?autoplay=1&showinfo=0&controls=1",
-                                type: "video/youtube",
-                            },
-                        ],
-                    },
-                ]}
-            />
+<Lightbox
+  open={lightboxOpen}
+  close={() => setLightboxOpen(false)}
+  slides={[
+    {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/A0LCbgtkOfo?autoplay=1&showinfo=0&controls=1",
+    },
+  ]}
+  render={{
+    slide: ({ slide }) => {
+      if (slide.type === "youtube") {
+        return (
+          <iframe
+            width="100%"
+            height="100%"
+            src={slide.src}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            style={{ maxWidth: "80%", maxHeight: "80%", aspectRatio: "16/9" }}
+          />
+        );
+      }
+      return null;
+    },
+  }}
+/>
         </>
     );
 }

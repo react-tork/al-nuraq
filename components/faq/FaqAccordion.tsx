@@ -1,7 +1,6 @@
 // components/faq/FaqAccordion.tsx
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -15,61 +14,23 @@ interface FaqItem {
   id: string;
   questionKey: string;
   answerKey: string;
-  videoUrl?: string;
-  videoThumb?: string;
 }
 
-const faqItems: FaqItem[] = [
-  {
-    id: "faq-1",
-    questionKey: "faq.items.faq1.question",
-    answerKey: "faq.items.faq1.answer",
-  },
-  {
-    id: "faq-2",
-    questionKey: "faq.items.faq2.question",
-    answerKey: "faq.items.faq2.answer",
-    videoUrl: "https://www.youtube.com/embed/LjCzPp-MK48?autoplay=1&showinfo=0",
-    videoThumb: "/img/bg/17.jpg",
-  },
-  {
-    id: "faq-3",
-    questionKey: "faq.items.faq3.question",
-    answerKey: "faq.items.faq3.answer",
-  },
-  {
-    id: "faq-4",
-    questionKey: "faq.items.faq4.question",
-    answerKey: "faq.items.faq4.answer",
-  },
-  {
-    id: "faq-5",
-    questionKey: "faq.items.faq5.question",
-    answerKey: "faq.items.faq5.answer",
-  },
-  {
-    id: "faq-6",
-    questionKey: "faq.items.faq6.question",
-    answerKey: "faq.items.faq6.answer",
-  },
-  {
-    id: "faq-7",
-    questionKey: "faq.items.faq7.question",
-    answerKey: "faq.items.faq7.answer",
-  },
-];
+const faqItems: FaqItem[] = Array.from({ length: 24 }, (_, i) => ({
+  id: `faq-${i + 1}`,
+  questionKey: `faq.items.faq${i + 1}.question`,
+  answerKey: `faq.items.faq${i + 1}.answer`,
+}));
 
 function AccordionItem({
   item,
   isOpen,
   onToggle,
-  onVideoClick,
   locale,
 }: {
   item: FaqItem;
   isOpen: boolean;
   onToggle: () => void;
-  onVideoClick: (videoUrl: string) => void;
   locale: Locale;
 }) {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -111,29 +72,6 @@ function AccordionItem({
         style={{ maxHeight }}
       >
         <div className="content-wrapper px-5 md:px-10 pt-15px pb-25px text-sm lg:text-base">
-          {item.videoUrl && item.videoThumb && (
-            <div className="float-right clear-both inline-block ml-5 relative z-0 after:w-full after:h-full after:absolute after:left-0 after:top-0 after:bg-primary-color after:opacity-30 after:z-1">
-              <Image
-                src={item.videoThumb}
-                alt=""
-                width={280}
-                height={200}
-                className="inline-block"
-              />
-              <div className="absolute left-0 top-0 flex justify-center items-center h-full w-full z-10">
-                <a
-                  href={item.videoUrl}
-                  className="w-60px h-60px text-center text-sm lg:text-base text-secondary-color shadow-box-shadow-2 rounded-full bg-white flex items-center justify-center"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onVideoClick(item.videoUrl!);
-                  }}
-                >
-                  <i className="icon-play" />
-                </a>
-              </div>
-            </div>
-          )}
           <p className="leading-1.8 lg:leading-1.8 mb-5">
             {getTranslation(item.answerKey, locale)}
           </p>
@@ -146,7 +84,7 @@ function AccordionItem({
 export default function FaqAccordion() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
-  const [activeId, setActiveId] = useState<string | null>("faq-2");
+  const [activeId, setActiveId] = useState<string | null>("faq-1");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
 
@@ -168,7 +106,6 @@ export default function FaqAccordion() {
               onToggle={() =>
                 setActiveId((prev) => (prev === item.id ? null : item.id))
               }
-              onVideoClick={handleVideoClick}
               locale={locale}
             />
           ))}

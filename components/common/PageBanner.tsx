@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, getPathnameWithLocale, type Locale } from "@/lib/i18n";
+import { getTranslation } from "@/lib/translations";
 
 type BreadcrumbItem = {
   label: string;
@@ -25,20 +26,36 @@ type PageBannerProps = {
 };
 
 export default function PageBanner({
-  title = "Page Title",
+  title,
   bgImage = "/images/bg/test.png",
-  breadcrumbs = [{ label: "Home", href: "/" }, { label: "Page" }],
-  subtitle = "Welcome",
-  description = "Explore our services and discover how we can help you.",
-  primaryCta = { label: "Get a Quote", href: "/contact" },
-  secondaryCta = {
-    label: "WhatsApp Us",
-    href: "https://wa.me/966510679737?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F",
-    isExternal: true,
-  },
+  breadcrumbs,
+  subtitle,
+  description,
+  primaryCta,
+  secondaryCta,
 }: PageBannerProps) {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
+
+  // Translated default values when props are not provided
+  const resolvedTitle = title ?? getTranslation("pageBanner.title", locale);
+  const resolvedBreadcrumbs =
+    breadcrumbs ??
+    [
+      { label: getTranslation("pageBanner.breadcrumbHome", locale), href: "/" },
+      { label: getTranslation("pageBanner.breadcrumbPage", locale) },
+    ];
+  const resolvedSubtitle = subtitle ?? getTranslation("pageBanner.subtitle", locale);
+  const resolvedDescription = description ?? getTranslation("pageBanner.description", locale);
+  const resolvedPrimaryCta =
+    primaryCta ?? { label: getTranslation("pageBanner.primaryCta", locale), href: "/contact" };
+  const resolvedSecondaryCta =
+    secondaryCta ?? {
+      label: getTranslation("pageBanner.secondaryCta", locale),
+      href: "https://wa.me/966510679737?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F",
+      isExternal: true,
+    };
+
 
   const localizedHref = (href: string) => {
     // External links (http, https, mailto, tel, wa.me) should not be localized
@@ -69,7 +86,7 @@ export default function PageBanner({
         <div className="relative container py-60px">
           {/* breadcrumbs */}
           <nav className="mb-4 text-sm text-secondary-color-light">
-            {breadcrumbs.map((item, i) => (
+            {resolvedBreadcrumbs.map((item, i) => (
               <span key={i}>
                 {item.href ? (
                   <a href={localizedHref(item.href)} className="hover:text-secondary-color transition-colors">
@@ -78,19 +95,19 @@ export default function PageBanner({
                 ) : (
                   <span className="text-secondary-color-light font-medium">{item.label}</span>
                 )}
-                {i < breadcrumbs.length - 1 && <span className="mx-2 text-secondary-color-light">/</span>}
+                {i < resolvedBreadcrumbs.length - 1 && <span className="mx-2 text-secondary-color-light">/</span>}
               </span>
             ))}
           </nav>
 
           {/* subtitle */}
           <p className="animate__animated animate__fadeInUp text-secondary-color font-semibold uppercase tracking-wide text-sm mb-2">
-            {subtitle}
+            {resolvedSubtitle}
           </p>
 
           <h1 className="animate__animated animate__fadeInUp text-3xl sm:text-4xl md:text-5xl lg:text-[42px] xl:text-[48px] font-bold text-secondary-color mb-0">
             <span className="relative inline-block leading-[1.2]">
-              {title}
+              {resolvedTitle}
               <span className="absolute -bottom-4 left-0 w-20 h-[3px] rounded-full bg-secondary-color" />
               <span className="absolute -bottom-4 left-[84px] w-2 h-[3px] rounded-full bg-secondary-color/40" />
             </span>
@@ -98,33 +115,34 @@ export default function PageBanner({
 
           {/* description */}
           <p className="animate__animated animate__fadeInUp mt-8 max-w-2xl text-secondary-color-light text-base sm:text-lg">
-            {description}
+            {resolvedDescription}
           </p>
 
           {/* CTAs */}
           <div className="tab-links flex gap-x-10px mb-4 md:mb-6 animated mt-4 md:mt-6">
             <div className="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold">
               <a
-                href={localizedHref(primaryCta.href)}
+                href={localizedHref(resolvedPrimaryCta.href)}
                 className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
               >
                 <i className="fas fa-phone-alt transition-transform duration-300 group-hover:rotate-12" />
-                {primaryCta.label}
+                {resolvedPrimaryCta.label}
               </a>
             </div>
 
             <div className="text-sm lg:text-base text-secondary-color-light relative group whitespace-nowrap transition-all duration-300 inline-block font-bold bg-secondary-color">
               <a
-                href={localizedHref(secondaryCta.href)}
-                target={secondaryCta.isExternal ? "_blank" : undefined}
-                rel={secondaryCta.isExternal ? "noopener noreferrer" : undefined}
+                href={localizedHref(resolvedSecondaryCta.href)}
+                target={resolvedSecondaryCta.isExternal ? "_blank" : undefined}
+                rel={resolvedSecondaryCta.isExternal ? "noopener noreferrer" : undefined}
                 className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
               >
                 <i className="fab fa-whatsapp text-lg md:text-xl transition-transform duration-300 group-hover:rotate-12" />
-                {secondaryCta.label}
+                {resolvedSecondaryCta.label}
               </a>
             </div>
           </div>
+
         </div>
       </div>
     </section>
