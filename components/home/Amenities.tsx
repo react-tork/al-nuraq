@@ -8,16 +8,16 @@ type Amenity = {
 };
 
 const amenities: Amenity[] = [
-  { id: 1, icon: "flaticon-car", key: "home.amenities.amenity1", href: "/scrap/iron-steel" },
-  { id: 2, icon: "flaticon-swimming", key: "home.amenities.amenity2", href: "/scrap/battery-scrap" },
-  { id: 3, icon: "flaticon-secure-shield", key: "home.amenities.amenity3", href: "/scrap/industrial-scrap" },
-  { id: 4, icon: "flaticon-stethoscope", key: "home.amenities.amenity4", href: "/scrap/e-scrap" },
-  { id: 5, icon: "flaticon-book", key: "home.amenities.amenity5", href: "/scrap/metal-scrap" },
-  { id: 6, icon: "flaticon-bed-1", key: "home.amenities.amenity6", href: "/scrap/iron-steel-scrap" },
-  { id: 7, icon: "flaticon-home-2", key: "home.amenities.amenity7", href: "/scrap/cable-wire" },
-  { id: 8, icon: "flaticon-slider", key: "home.amenities.amenity8", href: "/scrap/machinery-scrap" },
-  { id: 9, icon: "", key: "home.amenities.amenity9", href: "/scrap/copper-scrap" },
-  { id: 10, icon: "", key: "home.amenities.amenity10", href: "/scrap/aluminium-scrap" },
+  { id: 1, icon: "flaticon-car", key: "home.amenities.amenity1", href: "/services" },
+  { id: 2, icon: "flaticon-swimming", key: "home.amenities.amenity2", href: "/scrap/metal-scrap" },
+  { id: 3, icon: "flaticon-secure-shield", key: "home.amenities.amenity3", href: "/scrap/copper-scrap" },
+  { id: 4, icon: "flaticon-stethoscope", key: "home.amenities.amenity4", href: "/scrap/aluminium-scrap" },
+  { id: 5, icon: "flaticon-book", key: "home.amenities.amenity5", href: "/scrap/iron-steel-scrap" },
+  { id: 6, icon: "flaticon-bed-1", key: "home.amenities.amenity6", href: "/scrap/cable-wire-scrap" },
+  { id: 7, icon: "flaticon-home-2", key: "home.amenities.amenity7", href: "/scrap/machinery-scrap" },
+  { id: 8, icon: "flaticon-slider", key: "home.amenities.amenity8", href: "/scrap/e-scrap" },
+  { id: 9, icon: "", key: "home.amenities.amenity9", href: "/scrap/battery-scrap" },
+  { id: 10, icon: "", key: "home.amenities.amenity10", href: "/scrap/industrial-scrap" },
 ];
 
 import { usePathname } from "next/navigation";

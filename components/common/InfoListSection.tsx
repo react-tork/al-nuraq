@@ -57,8 +57,8 @@ export default function InfoListSection({
       <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
         <span className="leading-1.3">{title}</span>
       </h2>
-      <span className="block w-12 h-1 rounded-full bg-secondary-color mb-30px" />
-      <ul className="flex flex-col gap-y-15px">
+      <span className="block w-20 h-1 rounded-full bg-secondary-color mb-30px" />
+      <ul className="flex flex-col gap-y-3">
         {items.map((item, index) => (
           <li
             key={index}

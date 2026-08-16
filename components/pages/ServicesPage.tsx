@@ -1,8 +1,8 @@
 "use client";
 
 import PageBanner from "@/components/common/PageBanner";
-import InfoListSection from "@/components/common/InfoListSection";
-import HowItWorks from "@/components/home/HowItWorks";
+import WhatWeBuy from "@/components/home/WhatWeBuy";
+import CollectionProcess from "@/components/scrap/CollectionProcess";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getPageBannerProps, pageDefinitions } from "@/lib/pages";
@@ -39,22 +39,8 @@ export default function MetalScrapPage() {
           href: "https://wa.me/966510679737",
         }}
       />
-      <InfoListSection
-        title={getTranslation("metalScrap.materials.title", locale)}
-        subtitle={getTranslation("metalScrap.materials.subtitle", locale)}
-        items={materialsItems}
-        image={{ src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format", alt: "Materials we buy" }}
-        imagePosition="start"
-      />
-      <InfoListSection
-        title={getTranslation("metalScrap.customers.title", locale)}
-        subtitle={getTranslation("metalScrap.customers.subtitle", locale)}
-        items={customersItems}
-        image={{ src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format", alt: "Customers we serve" }}
-        imagePosition="end"
-        className="bg-section-bg-1"
-      />
-      <HowItWorks />
+      <WhatWeBuy />
+      <CollectionProcess />
     </main>
   );
 }

@@ -11,6 +11,7 @@ type BreadcrumbItem = {
 type BannerCta = {
   label: string;
   href: string;
+  isExternal?: boolean;
 };
 
 type PageBannerProps = {
@@ -30,13 +31,20 @@ export default function PageBanner({
   subtitle = "Welcome",
   description = "Explore our services and discover how we can help you.",
   primaryCta = { label: "Get a Quote", href: "/contact" },
-  secondaryCta = { label: "Contact Us", href: "/contact" },
+  secondaryCta = {
+    label: "WhatsApp Us",
+    href: "https://wa.me/966510679737?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F",
+    isExternal: true,
+  },
 }: PageBannerProps) {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
 
-  const localizedHref = (href: string) =>
-    locale === "en" ? `/en${href}` : href;
+  const localizedHref = (href: string) => {
+    // External links (http, https, mailto, tel, wa.me) should not be localized
+    if (/^(https?:|mailto:|tel:|wa\.me)/.test(href)) return href;
+    return locale === "en" ? `/en${href}` : href;
+  };
 
   const switchLocale = (newLocale: Locale) => {
     const newPathname = getPathnameWithLocale(pathname, newLocale);
@@ -108,6 +116,8 @@ export default function PageBanner({
             <div className="text-sm lg:text-base text-secondary-color-light relative group whitespace-nowrap transition-all duration-300 inline-block font-bold bg-secondary-color">
               <a
                 href={localizedHref(secondaryCta.href)}
+                target={secondaryCta.isExternal ? "_blank" : undefined}
+                rel={secondaryCta.isExternal ? "noopener noreferrer" : undefined}
                 className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
               >
                 <i className="fab fa-whatsapp text-lg md:text-xl transition-transform duration-300 group-hover:rotate-12" />
