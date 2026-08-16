@@ -106,7 +106,7 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
   const isRTL = locale !== "en";
 
   return (
-    <div className="xl:col-span-2 mb-60px">
+    <div className="xl:col-span-3  mb-60px">
       <h3 className="text-22px font-bold mb-25px text-white">
         <span className="leading-1.3">
           {getTranslation("footer.contact", locale)}

@@ -113,7 +113,7 @@ export default function WhatWeBuy() {
             className="group p-15px shadow-box-shadow-4 bg-white"
           >
             {/* Card Thumb */}
-            <div className="relative leading-1 overflow-hidden aspect-square">
+            <div className="relative leading-1 overflow-hidden aspect-3/2">
               <Link href={localizedHref(item.link)} className="block h-full">
                 <img
                   src={item.img}
