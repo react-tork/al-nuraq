@@ -123,122 +123,100 @@ export default function NewsBlog() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
   return (
-    <section>
-      <div className="container pb-70px">
-        {/* section heading */}
-        <div className="text-center mb-50px">
-          <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
-            <span className="leading-1.3">{getTranslation('home.newsBlog.subtitle', locale)}</span>
-          </p>
-          <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold">
-            <span className="leading-1.3">{getTranslation('home.newsBlog.title', locale)}</span>
-          </h2>
-        </div>
+    <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
+      {/* section heading */}
+      <div className="text-center mb-50px">
+        <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
+          <span className="leading-1.3">{getTranslation('home.newsBlog.subtitle', locale)}</span>
+        </p>
+        <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold">
+          <span className="leading-1.3">{getTranslation('home.newsBlog.title', locale)}</span>
+        </h2>
+      </div>
 
-        <div className="news-slider-container swiper-container relative -mx-15px">
-          <Swiper
-            modules={[Navigation, Pagination]}
-            slidesPerView={1}
-            spaceBetween={0}
-            speed={800}
-            loop
-            navigation={{
-              nextEl: ".news-slider-container .swiper-button-next",
-              prevEl: ".news-slider-container .swiper-button-prev",
-            }}
-            pagination={{
-              el: ".news-slider-container .swiper-pagination",
-              clickable: true,
-            }}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1200: { slidesPerView: 3 },
-              1600: { slidesPerView: 3 },
-            }}
-            className="news-slider static"
-          >
-            {posts.map((post) => (
-              <SwiperSlide
-                key={post.id}
-                className="mb-65px xl:mb-50px px-15px cursor-default"
-              >
-                <div className="group">
-                  {/* card thumb */}
-                  <div className="relative leading-1">
-                    <a href="/blog-details" className="overflow-hidden block">
-                      <Image
-                        src={post.image}
-                        alt={getTranslation(post.titleKey, locale)}
-                        width={470}
-                        height={340}
-                        className="w-full h-auto group-hover:scale-110 transition-all duration-700"
-                      />
+      <div className="news-slider-container swiper-container relative -mx-15px">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          slidesPerView={1}
+          spaceBetween={0}
+          speed={800}
+          loop
+          navigation={{
+            nextEl: ".news-slider-container .swiper-button-next",
+            prevEl: ".news-slider-container .swiper-button-prev",
+          }}
+          pagination={{
+            el: ".news-slider-container .swiper-pagination",
+            clickable: true,
+          }}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1200: { slidesPerView: 3 },
+            1600: { slidesPerView: 3 },
+          }}
+          className="news-slider static"
+        >
+          {posts.map((post) => (
+            <SwiperSlide
+              key={post.id}
+              className="mb-65px xl:mb-50px px-15px cursor-default"
+            >
+              <div className="group">
+                {/* card thumb */}
+                <div className="relative leading-1">
+                  <a href="/blog-details" className="overflow-hidden block">
+                    <Image
+                      src={post.image}
+                      alt={getTranslation(post.titleKey, locale)}
+                      width={470}
+                      height={340}
+                      className="w-full h-auto group-hover:scale-110 transition-all duration-700"
+                    />
+                  </a>
+                </div>
+                {/* card body */}
+                <div className="p-30px shadow-box-shadow-4">
+                  <h5 className="text-lg md:text-xl lg:text-22px font-semibold text-heading-color">
+                    <a
+                      href="/blog-details"
+                      className="hover:text-secondary-color leading-1.3 line-clamp-3"
+                    >
+                      {getTranslation(post.titleKey, locale)}
                     </a>
-                  </div>
-                  {/* card body */}
-                  <div className="p-30px shadow-box-shadow-4">
-                    <ul className="mb-15px flex gap-x-25px items-center">
+                  </h5>
+                  <div className="pt-5 mt-5 lg:pt-5 border-t border-border-color-1">
+                    <ul className="flex justify-between items-center">
                       <li className="text-xs md:text-sm font-semibold">
-                        <a
-                          href="#"
-                          className="leading-1.8 hover:text-secondary-color flex gap-5px items-center"
-                        >
-                          <i className="far fa-user text-secondary-color" />
-                          {getTranslation('home.newsBlog.byAdmin', locale)}
-                        </a>
+                        <p className="leading-1.8 flex gap-5px items-center">
+                          <i className="far fa-calendar-alt text-secondary-color" />
+                          {getTranslation(post.dateKey, locale)}
+                        </p>
                       </li>
                       <li className="text-xs md:text-sm font-semibold">
                         <a
-                          href="#"
-                          className="leading-1.8 hover:text-secondary-color flex gap-5px items-center"
+                          href="/blog-details"
+                          className="leading-1.8 text-secondary-color uppercase"
                         >
-                          <i className="fas fa-tags text-secondary-color" />
-                          {getTranslation(post.categoryKey, locale)}
+                          {getTranslation('home.newsBlog.readMore', locale)}
                         </a>
                       </li>
                     </ul>
-                    <h4 className="text-lg md:text-xl lg:text-22px font-semibold text-heading-color">
-                      <a
-                        href="/blog-details"
-                        className="hover:text-secondary-color leading-1.3"
-                      >
-                        {getTranslation(post.titleKey, locale)}
-                      </a>
-                    </h4>
-                    <div className="pt-5 mt-5 lg:pt-5 border-t border-border-color-1">
-                      <ul className="flex justify-between items-center">
-                        <li className="text-xs md:text-sm font-semibold">
-                          <p className="leading-1.8 flex gap-5px items-center">
-                            <i className="far fa-calendar-alt text-secondary-color" />
-                            {getTranslation(post.dateKey, locale)}
-                          </p>
-                        </li>
-                        <li className="text-xs md:text-sm font-semibold">
-                          <a
-                            href="/blog-details"
-                            className="leading-1.8 text-secondary-color uppercase"
-                          >
-                            {getTranslation('home.newsBlog.readMore', locale)}
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
+              </div>
+            </SwiperSlide>
+          ))}
 
-            <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal !-bottom-[6px] block xl:hidden" />
-            <div className="hidden xl:block">
-              <div className="swiper-button-next bg-white z-1">
-                <i className="fas fa-arrow-left" />
-              </div>
-              <div className="swiper-button-prev bg-white z-1">
-                <i className="fas fa-arrow-right" />
-              </div>
+          <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal !-bottom-[6px] block xl:hidden" />
+          <div className="hidden xl:block">
+            <div className="swiper-button-next bg-white z-1">
+              <i className="fas fa-arrow-left" />
             </div>
-          </Swiper>
-        </div>
+            <div className="swiper-button-prev bg-white z-1">
+              <i className="fas fa-arrow-right" />
+            </div>
+          </div>
+        </Swiper>
       </div>
     </section>
   );

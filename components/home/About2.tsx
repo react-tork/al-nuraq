@@ -50,39 +50,37 @@ export default function About2() {
     return (
         <>
             {/* ==================== about 2 section ==================== */}
-            <section>
-                <div className="container pt-30 pb-90px">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-5 lg:gap-30px items-center">
-                        {/* about 2 left */}
-                        <div className="mb-5">
-                            <div className="mb-30px">
-                                <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-1px px-5 rounded-full inline-block font-semibold">
-                                    <span className="leading-1.3">WHY AL NURAQ</span>
-                                </p>
-                                <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
-                                    <span className="leading-1.3"> Why Choose Al Nuraq?</span>
-                                </h2>
-                            </div>
-                            <ul className="space-y-4 pb-4">
-                                {features.map((f, i) => (
-                                    <li key={i} className="text-xl lg:text-2xl flex items-center gap-3">
-                                        <i className="fas fa-check-circle text-secondary-color text-xl lg:text-2xl flex-shrink-0" />
-                                        <span className="leading-1.8">{getTranslation(f, locale)}</span>
-                                    </li>
-                                ))}
-                            </ul>
+            <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-5 lg:gap-30px items-center">
+                    {/* about 2 left */}
+                    <div className="mb-5">
+                        <div className="mb-30px">
+                            <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-1px px-5 rounded-full inline-block font-semibold">
+                                <span className="leading-1.3">WHY AL NURAQ</span>
+                            </p>
+                            <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
+                                <span className="leading-1.3"> Why Choose Al Nuraq?</span>
+                            </h2>
                         </div>
+                        <ul className="space-y-4 pb-4">
+                            {features.map((f, i) => (
+                                <li key={i} className="lg:text-lg flex items-center gap-3">
+                                    <i className="fas fa-check-circle text-secondary-color text-lg lg:text-xl flex-shrink-0" />
+                                    <span className="leading-1.8">{getTranslation(f, locale)}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-                        {/* about 2 right */}
-                        <div className="lg:ml-30px relative mb-10 lg:mb-0">
-                            <Image
-                                src="/images/others/9.png"
-                                alt=""
-                                className="max-w-full h-auto"
-                                width={1140}
-                                height={1210}
-                            />
-                        </div>
+                    {/* about 2 right */}
+                    <div className="lg:ml-30px relative mb-10 lg:mb-0">
+                        <Image
+                            src="/images/others/9.png"
+                            alt=""
+                            className="max-w-full h-auto"
+                            width={1140}
+                            height={1210}
+                        />
                     </div>
                 </div>
             </section>

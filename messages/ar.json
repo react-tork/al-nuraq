@@ -224,6 +224,15 @@
       "title14": "الأجهزة القديمة وعناصر المعادن المنزلية ومواد الخردة المنزلية."
     }
   },
+  "about": {
+    "banner": {
+      "breadcrumbHome": "الرئيسية",
+      "breadcrumbAbout": "من نحن",
+      "breadcrumbCurrent": "النورق",
+      "title": "عن النورق",
+      "description": "خدمات احترافية لشراء وجمع الخردة مبنية على تواصل واضح وخدمة موثوقة وحلول عملية."
+    }
+  },
   "metalScrap": {
     "banner": {
       "breadcrumbServices": "الخدمات",

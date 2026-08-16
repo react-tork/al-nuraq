@@ -224,6 +224,15 @@
       "title14": "Old appliances, household metal items and domestic scrap materials."
     }
   },
+  "about": {
+    "banner": {
+      "breadcrumbHome": "Home",
+      "breadcrumbAbout": "About",
+      "breadcrumbCurrent": "Al Nuraq",
+      "title": "About Al Nuraq",
+      "description": "Professional scrap buying and collection services built around clear communication, reliable service and practical solutions."
+    }
+  },
   "metalScrap": {
     "banner": {
       "breadcrumbServices": "Services",

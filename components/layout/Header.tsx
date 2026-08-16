@@ -155,7 +155,7 @@ export default function Header() {
                     >
                       {getTranslation(item.key, locale)}{" "}
                       <i
-                        className={`fas fa-chevron-down text-xs -ms-0.5 transition-all duration-300 group-hover:rotate-180 ${isOverlay ? "text-white" : ""
+                        className={`fas fa-chevron-down text-xs  transition-all duration-300 group-hover:rotate-180 ${isOverlay ? "text-white" : ""
                           }`}
                       ></i>
                     </a>

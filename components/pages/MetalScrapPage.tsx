@@ -2,6 +2,7 @@
 
 import PageBanner from "@/components/common/PageBanner";
 import InfoListSection from "@/components/common/InfoListSection";
+import HowItWorks from "@/components/home/HowItWorks";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getPageBannerProps, pageDefinitions } from "@/lib/pages";
@@ -48,6 +49,7 @@ export default function MetalScrapPage() {
         imagePosition="end"
         className="bg-section-bg-1"
       />
+      <HowItWorks />
     </main>
   );
 }

@@ -8,7 +8,7 @@ import Testimonials from "@/components/home/Testimonials";
 import NewsBlog from "@/components/home/NewsBlog";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
-import { getPageBannerProps, pageDefinitions } from "@/lib/pages";
+import { getTranslation } from "@/lib/translations";
 
 export default function AboutPage() {
   const pathname = usePathname();
@@ -16,10 +16,19 @@ export default function AboutPage() {
 
   return (
     <main>
-      <PageBanner {...getPageBannerProps(pageDefinitions.about, locale)} />
-     <About />
+      <PageBanner
+        breadcrumbs={[
+          { label: getTranslation("about.banner.breadcrumbHome", locale), href: "/" },
+          { label: getTranslation("about.banner.breadcrumbAbout", locale), href: "/about" },
+          { label: getTranslation("about.banner.breadcrumbCurrent", locale) },
+        ]}
+        title={getTranslation("about.banner.title", locale)}
+        bgImage="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=1200&h=600&fit=crop&auto=format"
+        description={getTranslation("about.banner.description", locale)}
+      />
+      <About />
       <Services />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <Testimonials />
       <NewsBlog />
     </main>

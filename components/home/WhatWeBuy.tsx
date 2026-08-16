@@ -86,21 +86,9 @@ export default function WhatWeBuy() {
   const localizedHref = (href: string) =>
     locale === "en" ? `/en${href}` : href;
 
-  const switchLocale = (newLocale: Locale) => {
-    const newPathname = getPathnameWithLocale(pathname, newLocale);
-    window.location.href = newPathname;
-  };
-
   return (
-    <section className="container pt-30 pb-90px">
+    <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
       <div className="text-center mb-50px">
-        <button
-          onClick={() => switchLocale(locale === "ar" ? "en" : "ar")}
-          className="px-3 py-2 text-sm font-semibold transition-all duration-300 rounded-md text-heading-color bg-heading-color/5 mb-15px"
-          aria-label="Switch language"
-        >
-          {getTranslation("header.languageSwitcher", locale)}
-        </button>
         <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
           <span className="leading-1.3">{getTranslation("home.newsBlog.subtitle", locale)}</span>
         </p>

@@ -60,8 +60,7 @@ export default function TeamSection() {
   const locale = getLocaleFromPathname(pathname) as Locale;
 
   return (
-    <section>
-      <div className="container pt-115px pb-90px">
+    <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
         {/* section heading */}
         <div className="text-center mb-50px">
           <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
@@ -151,7 +150,6 @@ export default function TeamSection() {
             );
           })}
         </div>
-      </div>
     </section>
   );
 }

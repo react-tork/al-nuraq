@@ -32,7 +32,7 @@ export default function Home() {
       {/* <VideoCta /> */}
       <Amenities />
       <Testimonials />
-      <div className="container pb-70px">
+      <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
         {/* section heading */}
         <div className="text-center mb-50px">
           <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
@@ -43,9 +43,9 @@ export default function Home() {
           </h2>
         </div>
         <LocationArea />
-      </div>
+      </section>
       <NewsBlog />
-      <div className="container pb-70px">
+      <section className="container pt-20 md:pt-24 pb-16 md:pb-20">
         {/* section heading */}
         <div className="text-center mb-50px">
           <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-0.5 px-5 rounded-full inline-block font-semibold">
@@ -56,7 +56,7 @@ export default function Home() {
           </h2>
         </div>
         <FaqAccordion />
-      </div>
+      </section>
 
     </main>
   );
