@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Lightbox from "yet-another-react-lightbox";
+import Lightbox, { Slide } from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
@@ -20,6 +20,14 @@ import "yet-another-react-lightbox/styles.css";
 /*  pulse1` pulsing ring and the circular `rounded-100%` icon badges   */
 /*  are preserved via the shared globals.css.                          */
 /* ------------------------------------------------------------------ */
+
+interface YouTubeSlide {
+  type: "youtube";
+  src: string;
+}
+
+type CustomSlide = Slide | YouTubeSlide;
+
 export default function About() {
     const pathname = usePathname();
     const locale = getLocaleFromPathname(pathname) as Locale;
@@ -127,18 +135,21 @@ export default function About() {
   close={() => setLightboxOpen(false)}
   slides={[
     {
-      type: "youtube",
-      src: "https://www.youtube.com/embed/A0LCbgtkOfo?autoplay=1&showinfo=0&controls=1",
-    },
+      type: "video" as const,
+      // custom field attach করার জন্য
+      embedUrl: "https://www.youtube.com/embed/A0LCbgtkOfo?autoplay=1&showinfo=0&controls=1",
+      sources: [],
+    } as any,
   ]}
   render={{
     slide: ({ slide }) => {
-      if (slide.type === "youtube") {
+      const s = slide as any;
+      if (s.embedUrl) {
         return (
           <iframe
             width="100%"
             height="100%"
-            src={slide.src}
+            src={s.embedUrl}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
