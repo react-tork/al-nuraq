@@ -62,7 +62,7 @@ export default function InfoListSection({
         {items.map((item, index) => (
           <li
             key={index}
-            className="bg-white shadow-sm hover:shadow-md rounded-10px px-4 py-3.5 border border-black/5 flex items-start gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary-color/5"
+            className="bg-white hover:shadow-md rounded-10px px-4 py-3.5 border border-black/5 flex items-start gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary-color/5"
           >
             <span className="w-7 h-7 rounded-full bg-secondary-color flex items-center justify-center flex-shrink-0">
               <i className="fas fa-check text-white text-sm" />

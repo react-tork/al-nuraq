@@ -18,13 +18,13 @@ const galleryImages = [
 
 /* Feature list (dashed bullet items) */
 const features = [
-    "Clear and straightforward communication",
-    "Transparent material evaluation process",
-    "Professional collection service",
-    "Solutions for both individuals and businesses",
-    "Experience handling different scrap categories",
-    "Flexible arrangements for larger quantities",
-    "Focus on responsible material recovery"
+    "home.about2.feature1",
+    "home.about2.feature2",
+    "home.about2.feature3",
+    "home.about2.feature4",
+    "home.about2.feature5",
+    "home.about2.feature6",
+    "home.about2.feature7"
 ];
 
 /* Business stats (flaticon icons + count + label) */
@@ -56,10 +56,10 @@ export default function About2() {
                     <div className="mb-5">
                         <div className="mb-30px">
                             <p className="text-sm md:text-15px lg:text-base text-secondary-color bg-secondary-color/10 capitalize mb-15px py-1px px-5 rounded-full inline-block font-semibold">
-                                <span className="leading-1.3">WHY AL NURAQ</span>
+                                <span className="leading-1.3">{getTranslation("home.about2.subtitle", locale)}</span>
                             </p>
                             <h2 className="text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
-                                <span className="leading-1.3"> Why Choose Al Nuraq?</span>
+                                <span className="leading-1.3">{getTranslation("home.about2.title", locale)}</span>
                             </h2>
                         </div>
                         <ul className="space-y-4 pb-4">

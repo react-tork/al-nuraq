@@ -18,7 +18,7 @@ const navigation = [
     label: "What We Buy",
     key: "header.whatWeBuy",
     children: [
-      { label: "All Services", slug: "/what-we-buy", key: "header.allServices" },
+      { label: "All Services", slug: "/services", key: "header.allServices" },
       { label: "Metal Scrap", slug: "/scrap/metal-scrap", key: "header.metalScrap" },
       { label: "Copper Scrap", slug: "/scrap/copper-scrap", key: "header.copperScrap" },
       { label: "Aluminium Scrap", slug: "/scrap/aluminium-scrap", key: "header.aluminiumScrap" },
@@ -27,7 +27,7 @@ const navigation = [
       { label: "Machinery Scrap", slug: "/scrap/machinery-scrap", key: "header.machineryScrap" },
       { label: "E-Scrap", slug: "/scrap/e-scrap", key: "header.eScrap" },
       { label: "Battery Scrap", slug: "/scrap/battery-scrap", key: "header.batteryScrap" },
-      { label: "Industrial Scrap", slug: "/scrap/industrial-scrap", key: "header.industrialScrap" },
+      { label: "Industrial Scrap", slug: "/industrial-solutions", key: "header.industrialScrap" },
     ],
   },
   { label: "Service Areas", slug: "/service-areas", key: "header.serviceAreas" },

@@ -6,6 +6,7 @@
   },
   "header": {
     "about": "About",
+    "services": "Services",
     "whatWeBuy": "What We Buy",
     "allServices": "All Services",
     "metalScrap": "Metal Scrap",
@@ -18,6 +19,7 @@
     "machineryScrap": "Machinery Scrap",
     "eScrap": "E-Scrap",
     "batteryScrap": "Battery Scrap",
+    "constructionScrap": "Construction Scrap",
     "industrialScrap": "Industrial Scrap",
     "serviceAreas": "Service Areas",
     "contact": "Contact",
@@ -84,17 +86,46 @@
       "label4": "Apartio Rooms"
     },
     "about2": {
-      "subtitle": "How We Work",
-      "title": "Our Approach",
-      "description": "Tell us what you have, where it is located, and the approximate quantity. Our team will review your details and help arrange the next step for evaluation and collection.",
-      "feature1": "Clear Communication and Prompt Responses",
-      "feature2": "Transparent Evaluation and Fair Pricing",
-      "feature3": "Organized Collection and Logistics",
-      "feature4": "Responsible Recovery and Recycling Practices",
+      "subtitle": "WHY AL NURAQ",
+      "title": "Why Choose Al Nuraq?",
+      "feature1": "Clear and straightforward communication",
+      "feature2": "Transparent material evaluation process",
+      "feature3": "Professional collection service",
+      "feature4": "Solutions for both individuals and businesses",
+      "feature5": "Experience handling different scrap categories",
+      "feature6": "Flexible arrangements for larger quantities",
+      "feature7": "Focus on responsible material recovery",
       "stat1Label": "Years Experience",
       "stat2Label": "Happy Clients",
       "stat3Label": "Tons Recycled",
       "stat4Label": "Cities Served"
+    },
+    "howItWorks": {
+      "subtitle": "How We Work",
+      "title": "A Simple Way to Sell Scrap",
+      "intro": "Tell us what you have and where it is located. We'll review the details, arrange collection where applicable, and confirm the final value after evaluation and weighing.",
+      "step1Title": "Contact Us",
+      "step1Desc": "Reach out by phone, WhatsApp or the contact form.",
+      "step2Title": "Share Scrap Details",
+      "step2Desc": "Tell us what materials you have, approximate quantity and your location.",
+      "step3Title": "Evaluation & Quote",
+      "step3Desc": "Our team reviews the details and provides an initial assessment.",
+      "step4Title": "Collection & Weighing",
+      "step4Desc": "Collection is arranged where applicable and materials are accurately weighed.",
+      "step5Title": "Final Payment",
+      "step5Desc": "Payment is completed according to the agreed terms after final evaluation."
+    },
+    "collectionProcess": {
+      "subtitle": "How We Work",
+      "title": "Our Collection Process",
+      "step1Number": "01",
+      "step1Title": "Contact Al Nuraq",
+      "step2Number": "02",
+      "step2Title": "Share Material Details",
+      "step3Number": "03",
+      "step3Title": "Evaluation & Quote",
+      "step4Number": "04",
+      "step4Title": "Collection & Payment"
     },
     "services": {
       "subtitle": "Why choose al nuraq",
@@ -107,7 +138,12 @@
       "service3Desc": "From household scrap to large industrial loads, we provide practical buying and collection solutions for individuals and businesses.",
       "service4Title": "Clear Weighing & Evaluation",
       "service4Desc": "Your material is weighed and assessed before the final value is confirmed, keeping the transaction straightforward and transparent.",
-      "findAHome": "Find A Home"
+      "findAHome": "Find A Home",
+      "banner": {
+        "subtitle": "What We Buy",
+        "title": "Scrap Buying & Collection Services in Saudi Arabia",
+        "description": "Al Nuraq buys and collects a wide range of scrap materials, from metal, copper and aluminium to cables, machinery, electrical equipment and e-scrap. We serve individuals, businesses, factories, contractors and other commercial customers across Riyadh, Dammam and surrounding areas."
+      }
     },
     "apartmentsPlan": {
       "subtitle": "Sell Your Scrap With Ease",
@@ -231,6 +267,23 @@
       "breadcrumbCurrent": "Al Nuraq",
       "title": "About Al Nuraq",
       "description": "Professional scrap buying and collection services built around clear communication, reliable service and practical solutions."
+    }
+  },
+  "services": {
+    "banner": {
+      "subtitle": "Our Services",
+      "title": "Scrap Buying & Collection Services",
+      "description": "Al Nuraq provides professional scrap buying and collection services for metal, copper, aluminium, cables, machinery, electronics and industrial materials across Dammam, Riyadh and surrounding areas."
+    }
+  },
+  "industrialSolutions": {
+    "banner": {
+      "breadcrumbHome": "Home",
+      "breadcrumbIndustrialSolutions": "Industrial Solutions",
+      "breadcrumbB2B": "B2B",
+      "subtitle": "B2B",
+      "title": "Industrial Scrap Solutions",
+      "description": "Practical scrap purchasing and collection support for factories, warehouses, contractors and commercial facilities."
     }
   },
   "metalScrap": {
@@ -449,11 +502,37 @@
       "item5": "Individuals with old batteries"
     }
   },
+  "constructionScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Construction Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys construction scrap including structural steel, rebar, demolition metal and recoverable materials from construction and demolition sites."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Steel rebar and structural sections",
+      "item2": "Metal formwork and scaffolding",
+      "item3": "Copper and aluminium from MEP",
+      "item4": "Demolition metal scrap",
+      "item5": "Cables and wiring from fit-outs",
+      "item6": "Mixed construction site scrap"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Construction contractors",
+      "item2": "Demolition companies",
+      "item3": "MEP subcontractors",
+      "item4": "Project developers",
+      "item5": "Property maintenance companies"
+    }
+  },
   "faq": {
     "stillNeedHelp": "Still need help? Reach out to support 24/7:",
     "contactUs": "Contact Us",
     "phone": "+966 51 067 9737",
-
     "items": {
       "faq1": {
         "question": "How to buy a product?",

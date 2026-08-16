@@ -2,6 +2,7 @@
 
 import PageBanner from "@/components/common/PageBanner";
 import InfoListSection from "@/components/common/InfoListSection";
+import CollectionProcess from "@/components/scrap/CollectionProcess"
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getPageBannerProps, pageDefinitions } from "@/lib/pages";
@@ -48,6 +49,7 @@ export default function CableWirePage() {
         imagePosition="end"
         className="bg-section-bg-1"
       />
+      <CollectionProcess />
     </main>
   );
 }

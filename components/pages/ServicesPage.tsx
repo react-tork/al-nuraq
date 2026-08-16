@@ -2,8 +2,7 @@
 
 import PageBanner from "@/components/common/PageBanner";
 import InfoListSection from "@/components/common/InfoListSection";
-import CollectionProcess from "@/components/scrap/CollectionProcess"
-
+import HowItWorks from "@/components/home/HowItWorks";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getPageBannerProps, pageDefinitions } from "@/lib/pages";
@@ -25,15 +24,20 @@ export default function MetalScrapPage() {
       <PageBanner
         breadcrumbs={[
           { label: getTranslation("common.home", locale), href: "/" },
-          { label: getTranslation("metalScrap.banner.breadcrumbServices", locale), href: "/services" },
-          { label: getTranslation("header.metalScrap", locale) },
+          { label: getTranslation("header.services", locale), href: "/services" },
         ]}
-        subtitle={getTranslation("metalScrap.banner.subtitle", locale)}
-        title={getTranslation("metalScrap.banner.title", locale)}
+        subtitle={getTranslation("services.banner.subtitle", locale)}
+        title={getTranslation("services.banner.title", locale)}
         bgImage="https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format"
-        description={getTranslation("metalScrap.banner.description", locale)}
-        primaryCta={{ label: getTranslation("contact.form.title", locale), href: "/contact" }}
-        secondaryCta={{ label: getTranslation("footer.whatsapp", locale), href: "https://wa.me/966510679737" }}
+        description={getTranslation("services.banner.description", locale)}
+        primaryCta={{
+          label: getTranslation("contact.form.title", locale),
+          href: "/contact",
+        }}
+        secondaryCta={{
+          label: getTranslation("footer.whatsapp", locale),
+          href: "https://wa.me/966510679737",
+        }}
       />
       <InfoListSection
         title={getTranslation("metalScrap.materials.title", locale)}
@@ -50,7 +54,7 @@ export default function MetalScrapPage() {
         imagePosition="end"
         className="bg-section-bg-1"
       />
-      <CollectionProcess />
+      <HowItWorks />
     </main>
   );
 }

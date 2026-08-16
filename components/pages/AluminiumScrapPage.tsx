@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getPageBannerProps, pageDefinitions } from "@/lib/pages";
 import { getTranslation } from "@/lib/translations";
+import CollectionProcess from "@/components/scrap/CollectionProcess"
 
 export default function AluminiumScrapPage() {
   const pathname = usePathname();
@@ -48,6 +49,7 @@ export default function AluminiumScrapPage() {
         imagePosition="end"
         className="bg-section-bg-1"
       />
+      <CollectionProcess />
     </main>
   );
 }

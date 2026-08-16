@@ -11,7 +11,7 @@ import { getTranslation } from "@/lib/translations";
 /* "Company" footer link column */
 const companyLinks = [
   { href: "/about", key: "footer.about" },
-  { href: "/what-we-buy", key: "footer.whatWeBuy" },
+  { href: "/services", key: "footer.whatWeBuy" },
   { href: "/industrial-solutions", key: "footer.industrialSolutions" },
   { href: "/scrap-pickup", key: "footer.scrapPickup" },
   { href: "/service-areas", key: "footer.serviceAreas" },

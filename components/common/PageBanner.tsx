@@ -110,7 +110,7 @@ export default function PageBanner({
                 href={localizedHref(secondaryCta.href)}
                 className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
               >
-                <i className="fab fa-whatsapp text-lg transition-transform duration-300 group-hover:rotate-12" />
+                <i className="fab fa-whatsapp text-lg md:text-xl transition-transform duration-300 group-hover:rotate-12" />
                 {secondaryCta.label}
               </a>
             </div>

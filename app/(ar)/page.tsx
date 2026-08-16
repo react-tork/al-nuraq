@@ -30,7 +30,7 @@ export default function Home() {
       {/* <FeaturedApartments /> */}
       {/* <ApartmentsPlan /> */}
       {/* <VideoCta /> */}
-      <Amenities />
+      {/* <Amenities /> */}
 
       <Testimonials />
       <section className="container pt-20 md:pt-24 pb-16 md:pb-20">

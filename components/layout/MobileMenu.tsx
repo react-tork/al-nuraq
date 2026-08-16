@@ -17,7 +17,7 @@ const accordionItems: AccordionItem[] = [
   {
     labelKey: "header.whatWeBuy",
     links: [
-      { href: "/what-we-buy", labelKey: "header.allServices" },
+      { href: "/services", labelKey: "header.allServices" },
       { href: "/scrap/metal-scrap", labelKey: "header.metalScrap" },
       { href: "/scrap/copper-scrap", labelKey: "header.copperScrap" },
       { href: "/scrap/aluminium-scrap", labelKey: "header.aluminiumScrap" },

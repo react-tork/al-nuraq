@@ -1,11 +1,10 @@
 "use client";
 
 import PageBanner from "@/components/common/PageBanner";
-import About from "@/components/home/About";
+// import About from "@/components/home/About";
 import Services from "@/components/home/Services";
-import TeamSection from "@/components/about/TeamSection";
+import About3 from "@/components/about/About3";
 import Testimonials from "@/components/home/Testimonials";
-import NewsBlog from "@/components/home/NewsBlog";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
@@ -26,11 +25,10 @@ export default function AboutPage() {
         bgImage="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=1200&h=600&fit=crop&auto=format"
         description={getTranslation("about.banner.description", locale)}
       />
-      <About />
+      {/* <About /> */}
+      <About3 />
       <Services />
-      {/* <TeamSection /> */}
       <Testimonials />
-      <NewsBlog />
     </main>
   );
 }
