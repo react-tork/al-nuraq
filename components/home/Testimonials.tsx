@@ -21,21 +21,21 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    image: "/images/testimonial/1.jpg",
+    image: "https://images.unsplash.com/photo-1653198020531-4a15524333e9?fm=jpg&q=60&w=400&auto=format&fit=crop&ixlib=rb-4.1.0",
     nameKey: "home.testimonials.testimonial1Name",
     roleKey: "home.testimonials.testimonial1Role",
     quoteKey: "home.testimonials.testimonial1Quote",
   },
   {
     id: 2,
-    image: "/images/testimonial/2.jpg",
+    image: "https://images.unsplash.com/photo-1715838854648-ea200803934a?fm=jpg&q=60&w=400&auto=format&fit=crop&ixlib=rb-4.1.0",
     nameKey: "home.testimonials.testimonial2Name",
     roleKey: "home.testimonials.testimonial2Role",
     quoteKey: "home.testimonials.testimonial2Quote",
   },
   {
     id: 3,
-    image: "/images/testimonial/3.jpg",
+    image: "https://images.unsplash.com/photo-1698510047345-ff32de8a3b74?fm=jpg&q=60&w=400&auto=format&fit=crop&ixlib=rb-4.1.0",
     nameKey: "home.testimonials.testimonial3Name",
     roleKey: "home.testimonials.testimonial3Role",
     quoteKey: "home.testimonials.testimonial3Quote",

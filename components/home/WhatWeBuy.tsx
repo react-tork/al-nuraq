@@ -98,7 +98,7 @@ export default function WhatWeBuy() {
         <p>{getTranslation("home.newsBlog.description", locale)}</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-30px">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-30px">
         {scrapItems.map((item) => (
           <div
             key={item.key}

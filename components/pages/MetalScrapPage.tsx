@@ -39,14 +39,14 @@ export default function MetalScrapPage() {
         title={getTranslation("metalScrap.materials.title", locale)}
         subtitle={getTranslation("metalScrap.materials.subtitle", locale)}
         items={materialsItems}
-        image={{ src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format", alt: "Materials we buy" }}
+        image={{ src: "https://images.unsplash.com/photo-1707879447469-60e84418d027?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Materials we buy" }}
         imagePosition="start"
       />
       <InfoListSection
         title={getTranslation("metalScrap.customers.title", locale)}
         subtitle={getTranslation("metalScrap.customers.subtitle", locale)}
         items={customersItems}
-        image={{ src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format", alt: "Customers we serve" }}
+        image={{ src: "https://images.unsplash.com/photo-1763926025420-adf538deaee4?q=80&w=1143&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Customers we serve" }}
         imagePosition="end"
         className="bg-section-bg-1"
       />

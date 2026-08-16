@@ -73,14 +73,35 @@ export default function About2() {
                     </div>
 
                     {/* about 2 right */}
-                    <div className="lg:ml-30px relative mb-10 lg:mb-0">
-                        <Image
-                            src="/images/others/9.png"
-                            alt=""
-                            className="max-w-full h-auto"
-                            width={1140}
-                            height={1210}
-                        />
+                    <div className="lg:ml-[30px] relative mb-10 lg:mb-0">
+                        <div className="grid grid-cols-2 gap-[15px]">
+                            {/* left — large image, spans both rows */}
+                            <div className="row-span-2 h-full">
+                                <img
+                                    src="https://images.unsplash.com/photo-1702388247780-fedec1db0b5d?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0"
+                                    alt="Stacked steel bars at industrial facility"
+                                    className="w-full h-full object-cover rounded-lg"
+                                />
+                            </div>
+
+                            {/* top-right */}
+                            <div>
+                                <img
+                                    src="https://images.unsplash.com/photo-1697698532634-ea59b636ccea?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0"
+                                    alt="Rolls of steel lined up in a warehouse"
+                                    className="w-full h-auto rounded-lg"
+                                />
+                            </div>
+
+                            {/* bottom-right */}
+                            <div>
+                                <img
+                                    src="https://images.unsplash.com/photo-1702388247745-14431714d32f?fm=jpg&q=60&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0"
+                                    alt="Welder working on metal with sparks"
+                                    className="w-full h-auto rounded-lg"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

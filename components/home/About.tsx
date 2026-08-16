@@ -33,7 +33,7 @@ export default function About() {
                     {/* about left */}
                     <div className="lg:ms-30px relative mb-10 lg:mb-0">
                         <Image
-                            src="/images/others/7.png"
+                            src="https://images.unsplash.com/photo-1777364701676-b70698be404d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0"
                             alt=""
                             className="max-w-full h-auto"
                             width={574}
@@ -42,7 +42,7 @@ export default function About() {
                         <div className="absolute rtl:right-[10px] bottom-[70px] w-150px md:w-300px">
                             <div className="relative">
                                 <Image
-                                    src="/images/others/8.png"
+                                    src="https://images.unsplash.com/photo-1767385998034-fe0cdd9071bb?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0"
                                     alt=""
                                     className="w-full h-auto"
                                     width={339}

@@ -21,98 +21,98 @@ type NewsPost = {
 const posts: NewsPost[] = [
   {
     id: 1,
-    image: "/images/blog/1.jpg",
+    image: "https://images.unsplash.com/photo-1702388247780-fedec1db0b5d?fm=jpg&q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
     categoryKey: "home.newsBlog.category1",
     titleKey: "home.newsBlog.title1",
     dateKey: "home.newsBlog.category1",
   },
   {
     id: 2,
-    image: "/images/blog/2.jpg",
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?fm=jpg&q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
     categoryKey: "home.newsBlog.category2",
     titleKey: "home.newsBlog.title2",
     dateKey: "home.newsBlog.category2",
   },
   {
     id: 3,
-    image: "/images/blog/3.jpg",
+    image: "https://images.unsplash.com/photo-1579783902614-e3fb5141b0cb?fm=jpg&q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
     categoryKey: "home.newsBlog.category3",
     titleKey: "home.newsBlog.title3",
     dateKey: "home.newsBlog.category3",
   },
   {
     id: 4,
-    image: "/images/blog/4.jpg",
+    image: "https://images.unsplash.com/photo-1697698532634-ea59b636ccea?fm=jpg&q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
     categoryKey: "home.newsBlog.category4",
     titleKey: "home.newsBlog.title4",
     dateKey: "home.newsBlog.category4",
   },
   {
     id: 5,
-    image: "/images/blog/5.jpg",
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop&auto=format",
     categoryKey: "home.newsBlog.category5",
     titleKey: "home.newsBlog.title5",
     dateKey: "home.newsBlog.category5",
   },
   {
     id: 6,
-    image: "/images/blog/6.jpg",
+    image: "https://images.unsplash.com/photo-1513828646384-e4d8ec30d2bb?fm=jpg&q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
     categoryKey: "home.newsBlog.category6",
     titleKey: "home.newsBlog.title6",
     dateKey: "home.newsBlog.category6",
   },
   {
     id: 7,
-    image: "/images/blog/7.jpg",
+    image: "https://images.unsplash.com/photo-1631376178637-392efc9e356b?fm=jpg&q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
     categoryKey: "home.newsBlog.category7",
     titleKey: "home.newsBlog.title7",
     dateKey: "home.newsBlog.category7",
   },
   {
     id: 8,
-    image: "/images/blog/8.jpg",
+    image: "https://images.unsplash.com/photo-1597672609278-6d8c1c7b1c7b?w=1200&h=800&fit=crop&auto=format",
     categoryKey: "home.newsBlog.category8",
     titleKey: "home.newsBlog.title8",
     dateKey: "home.newsBlog.category8",
   },
   {
     id: 9,
-    image: "/images/blog/9.jpg",
+    image: "https://images.unsplash.com/photo-1702388247745-14431714d32f?fm=jpg&q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
     categoryKey: "home.newsBlog.category9",
     titleKey: "home.newsBlog.title9",
     dateKey: "home.newsBlog.category9",
   },
   {
     id: 10,
-    image: "/images/blog/10.jpg",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&h=800&fit=crop&auto=format",
     categoryKey: "home.newsBlog.category10",
     titleKey: "home.newsBlog.title10",
     dateKey: "home.newsBlog.category10",
   },
   {
     id: 11,
-    image: "/images/blog/11.jpg",
+    image: "https://images.unsplash.com/photo-1613970351372-9804e380bd09?fm=jpg&q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
     categoryKey: "home.newsBlog.category11",
     titleKey: "home.newsBlog.title11",
     dateKey: "home.newsBlog.category11",
   },
   {
     id: 12,
-    image: "/images/blog/12.jpg",
+    image: "https://images.unsplash.com/photo-1777364701676-b70698be404d?fm=jpg&q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
     categoryKey: "home.newsBlog.category12",
     titleKey: "home.newsBlog.title12",
     dateKey: "home.newsBlog.category12",
   },
   {
     id: 13,
-    image: "/images/blog/13.jpg",
+    image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1200&h=800&fit=crop&auto=format",
     categoryKey: "home.newsBlog.category13",
     titleKey: "home.newsBlog.title13",
     dateKey: "home.newsBlog.category13",
   },
   {
     id: 14,
-    image: "/images/blog/14.jpg",
+    image: " https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=800&fit=crop&auto=format",
     categoryKey: "home.newsBlog.category14",
     titleKey: "home.newsBlog.title14",
     dateKey: "home.newsBlog.category14",
@@ -164,13 +164,12 @@ export default function NewsBlog() {
               <div className="group">
                 {/* card thumb */}
                 <div className="relative leading-1">
-                  <a href="/blog-details" className="overflow-hidden block">
+                  <a href="/blog-details" className="relative w-full h-[340px] overflow-hidden">
                     <Image
                       src={post.image}
                       alt={getTranslation(post.titleKey, locale)}
-                      width={470}
-                      height={340}
-                      className="w-full h-auto group-hover:scale-110 transition-all duration-700"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-all duration-700"
                     />
                   </a>
                 </div>

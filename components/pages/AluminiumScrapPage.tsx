@@ -38,14 +38,14 @@ export default function AluminiumScrapPage() {
         title={getTranslation("aluminiumScrap.materials.title", locale)}
         subtitle={getTranslation("aluminiumScrap.materials.subtitle", locale)}
         items={materialsItems}
-        image={{ src: "https://images.unsplash.com/photo-1561503412-852800622772?w=1000&h=600&fit=crop&auto=format", alt: "Materials we buy" }}
+        image={{ src: "https://images.unsplash.com/photo-1657742239061-64b6de9e0c4a?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Materials we buy" }}
         imagePosition="start"
       />
       <InfoListSection
         title={getTranslation("aluminiumScrap.customers.title", locale)}
         subtitle={getTranslation("aluminiumScrap.customers.subtitle", locale)}
         items={customersItems}
-        image={{ src: "https://images.unsplash.com/photo-1561503412-852800622772?w=1000&h=600&fit=crop&auto=format", alt: "Customers we serve" }}
+        image={{ src: "https://images.unsplash.com/photo-1727372416969-6cb1f1696f83?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Customers we serve" }}
         imagePosition="end"
         className="bg-section-bg-1"
       />

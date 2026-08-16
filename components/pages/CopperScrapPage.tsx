@@ -38,14 +38,14 @@ export default function CopperScrapPage() {
         title={getTranslation("copperScrap.materials.title", locale)}
         subtitle={getTranslation("copperScrap.materials.subtitle", locale)}
         items={materialsItems}
-        image={{ src: "https://images.unsplash.com/photo-1717667745852-a5bd6876c1de?w=1000&h=600&fit=crop&auto=format", alt: "Materials we buy" }}
+        image={{ src: "https://plus.unsplash.com/premium_photo-1754650790891-554d82b1a95e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Materials we buy" }}
         imagePosition="start"
       />
       <InfoListSection
         title={getTranslation("copperScrap.customers.title", locale)}
         subtitle={getTranslation("copperScrap.customers.subtitle", locale)}
         items={customersItems}
-        image={{ src: "https://images.unsplash.com/photo-1717667745852-a5bd6876c1de?w=1000&h=600&fit=crop&auto=format", alt: "Customers we serve" }}
+        image={{ src: "https://images.unsplash.com/photo-1642910537288-60b161d5cac3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Customers we serve" }}
         imagePosition="end"
         className="bg-section-bg-1"
       />
