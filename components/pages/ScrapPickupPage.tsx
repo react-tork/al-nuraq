@@ -20,18 +20,35 @@ export default function ScrapPickupPage() {
     <main>
       <PageBanner
         breadcrumbs={[
-          { label: getTranslation("scrapPickup.banner.breadcrumbHome", locale), href: "/" },
-          { label: getTranslation("scrapPickup.banner.breadcrumbScrapPickup", locale) },
+          {
+            label: getTranslation("scrapPickup.banner.breadcrumbHome", locale),
+            href: "/",
+          },
+          {
+            label: getTranslation(
+              "scrapPickup.banner.breadcrumbScrapPickup",
+              locale,
+            ),
+          },
         ]}
         subtitle={getTranslation("scrapPickup.banner.subtitle", locale)}
         title={getTranslation("scrapPickup.banner.title", locale)}
         description={getTranslation("scrapPickup.banner.description", locale)}
         bgImage="https://images.unsplash.com/photo-1722695694560-f452b0919d3a?w=1200&h=700&fit=crop&auto=format"
-        primaryCta={{ label: getTranslation("scrapPickup.banner.primaryCta", locale), href: "/contact" }}
-        secondaryCta={{ label: getTranslation("footer.whatsapp", locale), href: "https://wa.me/966510679737?text=Hello%20Al%20Nuraq%2C%20I%20would%20like%20to%20request%20a%20scrap%20pickup." }}
+        primaryCta={{
+          label: getTranslation("scrapPickup.banner.primaryCta", locale),
+          href: "/contact",
+        }}
+        secondaryCta={{
+          label: getTranslation("footer.whatsapp", locale),
+          href: "https://wa.me/966559679148?text=Hello%20Al%20Nuraq%2C%20I%20would%20like%20to%20request%20a%20scrap%20pickup.",
+        }}
       />
       <PickupProcessSection
-        sectionLabel={getTranslation("scrapPickup.process.sectionLabel", locale)}
+        sectionLabel={getTranslation(
+          "scrapPickup.process.sectionLabel",
+          locale,
+        )}
         heading={getTranslation("scrapPickup.process.heading", locale)}
         steps={processSteps}
       />
