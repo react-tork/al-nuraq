@@ -119,14 +119,10 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
         {/* Address */}
         <li>
           <p
-            className={`leading-1.8 text-white flex items-start ${
-              isRTL ? "flex-row-reverse" : "flex-row"
-            }`}
+            className={`leading-1.8 text-white flex items-start`}
           >
             <i
-              className={`icon-placeholder mt-1 shrink-0 ${
-                isRTL ? "ml-15px" : "mr-15px"
-              }`}
+              className={`icon-placeholder mt-1 shrink-0 me-15px`}
             ></i>
 
             <span>{getTranslation("footer.address", locale)}</span>
@@ -137,9 +133,7 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
         <li>
           <a href="tel:+966510679737" className="leading-1.8 flex items-start">
             <i
-              className={`icon-call mt-1 shrink-0 ${
-                isRTL ? "ml-15px" : "mr-15px"
-              }`}
+              className={`icon-call mt-1 shrink-0 me-15px`}
             ></i>
 
             <span>{getTranslation("footer.phone", locale)}</span>
@@ -153,9 +147,7 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
             className="leading-1.8 flex items-start"
           >
             <i
-              className={`icon-whatsapp mt-1 shrink-0 ${
-                isRTL ? "ml-15px" : "mr-15px"
-              }`}
+              className={`icon-whatsapp mt-1 shrink-0 me-15px`}
             ></i>
 
             <span>{getTranslation("footer.whatsapp", locale)}</span>
@@ -169,9 +161,7 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
             className="leading-1.8 flex items-start"
           >
             <i
-              className={`icon-mail mt-1 shrink-0 ${
-                isRTL ? "ml-15px" : "mr-15px"
-              }`}
+              className={`icon-mail mt-1 shrink-0 me-15px`}
             ></i>
 
             <span>{getTranslation("footer.email", locale)}</span>

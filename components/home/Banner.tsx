@@ -110,7 +110,7 @@ export default function Banner() {
                         </p>
                         <div className="mt-5 lg:mt-10 mb-30px xl:mb-0 animate__animated">
 
-                          <h5 className="capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block ml-15px">
+                          <h5 className="capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block ms-15px">
                             <span className="inline-block absolute top-0 right-0 w-full h-full bg-secondary-color group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300" />
                             <a
                               href="about.html"
@@ -177,7 +177,7 @@ export default function Banner() {
                         </p>
                         <div className="lg:mt-5 mb-30px xl:mb-0 animate__animated">
 
-                          <h5 className="capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block ml-15px">
+                          <h5 className="capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block ms-15px">
                             <span className="inline-block absolute top-0 right-0 w-full h-full bg-secondary-color group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300" />
                             <a
                               href="service.html"
