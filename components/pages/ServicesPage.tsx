@@ -13,10 +13,10 @@ export default function MetalScrapPage() {
   const locale = getLocaleFromPathname(pathname) as Locale;
 
   const materialsItems = [1, 2, 3, 4, 5, 6].map((i) =>
-    getTranslation(`metalScrap.materials.item${i}`, locale)
+    getTranslation(`metalScrap.materials.item${i}`, locale),
   );
   const customersItems = [1, 2, 3, 4, 5].map((i) =>
-    getTranslation(`metalScrap.customers.item${i}`, locale)
+    getTranslation(`metalScrap.customers.item${i}`, locale),
   );
 
   return (
@@ -24,7 +24,10 @@ export default function MetalScrapPage() {
       <PageBanner
         breadcrumbs={[
           { label: getTranslation("common.home", locale), href: "/" },
-          { label: getTranslation("header.services", locale), href: "/services" },
+          {
+            label: getTranslation("header.services", locale),
+            href: "/services",
+          },
         ]}
         subtitle={getTranslation("services.banner.subtitle", locale)}
         title={getTranslation("services.banner.title", locale)}
@@ -36,7 +39,7 @@ export default function MetalScrapPage() {
         }}
         secondaryCta={{
           label: getTranslation("footer.whatsapp", locale),
-          href: "https://wa.me/966510679737",
+          href: "https://wa.me/966559679148",
         }}
       />
       <WhatWeBuy />

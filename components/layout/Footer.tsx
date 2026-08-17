@@ -135,7 +135,7 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
 
         {/* Phone */}
         <li>
-          <a href="tel:+966510679737" className="leading-1.8 flex items-start">
+          <a href="tel:+966559679148" className="leading-1.8 flex items-start">
             <i
               className={`icon-call mt-1 shrink-0 ${
                 isRTL ? "ml-15px" : "mr-15px"
@@ -149,7 +149,7 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
         {/* WhatsApp */}
         <li>
           <a
-            href="https://wa.me/966510679737"
+            href="https://wa.me/966559679148"
             className="leading-1.8 flex items-start"
           >
             <i

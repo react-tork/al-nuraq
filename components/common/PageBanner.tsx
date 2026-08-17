@@ -1,7 +1,11 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { getLocaleFromPathname, getPathnameWithLocale, type Locale } from "@/lib/i18n";
+import {
+  getLocaleFromPathname,
+  getPathnameWithLocale,
+  type Locale,
+} from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
 
 type BreadcrumbItem = {
@@ -39,23 +43,23 @@ export default function PageBanner({
 
   // Translated default values when props are not provided
   const resolvedTitle = title ?? getTranslation("pageBanner.title", locale);
-  const resolvedBreadcrumbs =
-    breadcrumbs ??
-    [
-      { label: getTranslation("pageBanner.breadcrumbHome", locale), href: "/" },
-      { label: getTranslation("pageBanner.breadcrumbPage", locale) },
-    ];
-  const resolvedSubtitle = subtitle ?? getTranslation("pageBanner.subtitle", locale);
-  const resolvedDescription = description ?? getTranslation("pageBanner.description", locale);
-  const resolvedPrimaryCta =
-    primaryCta ?? { label: getTranslation("pageBanner.primaryCta", locale), href: "/contact" };
-  const resolvedSecondaryCta =
-    secondaryCta ?? {
-      label: getTranslation("pageBanner.secondaryCta", locale),
-      href: "https://wa.me/966510679737?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F",
-      isExternal: true,
-    };
-
+  const resolvedBreadcrumbs = breadcrumbs ?? [
+    { label: getTranslation("pageBanner.breadcrumbHome", locale), href: "/" },
+    { label: getTranslation("pageBanner.breadcrumbPage", locale) },
+  ];
+  const resolvedSubtitle =
+    subtitle ?? getTranslation("pageBanner.subtitle", locale);
+  const resolvedDescription =
+    description ?? getTranslation("pageBanner.description", locale);
+  const resolvedPrimaryCta = primaryCta ?? {
+    label: getTranslation("pageBanner.primaryCta", locale),
+    href: "/contact",
+  };
+  const resolvedSecondaryCta = secondaryCta ?? {
+    label: getTranslation("pageBanner.secondaryCta", locale),
+    href: "https://wa.me/966559679148?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F",
+    isExternal: true,
+  };
 
   const localizedHref = (href: string) => {
     // External links (http, https, mailto, tel, wa.me) should not be localized
@@ -89,13 +93,20 @@ export default function PageBanner({
             {resolvedBreadcrumbs.map((item, i) => (
               <span key={i}>
                 {item.href ? (
-                  <a href={localizedHref(item.href)} className="hover:text-secondary-color transition-colors">
+                  <a
+                    href={localizedHref(item.href)}
+                    className="hover:text-secondary-color transition-colors"
+                  >
                     {item.label}
                   </a>
                 ) : (
-                  <span className="text-secondary-color-light font-medium">{item.label}</span>
+                  <span className="text-secondary-color-light font-medium">
+                    {item.label}
+                  </span>
                 )}
-                {i < resolvedBreadcrumbs.length - 1 && <span className="mx-2 text-secondary-color-light">/</span>}
+                {i < resolvedBreadcrumbs.length - 1 && (
+                  <span className="mx-2 text-secondary-color-light">/</span>
+                )}
               </span>
             ))}
           </nav>
@@ -134,7 +145,11 @@ export default function PageBanner({
               <a
                 href={localizedHref(resolvedSecondaryCta.href)}
                 target={resolvedSecondaryCta.isExternal ? "_blank" : undefined}
-                rel={resolvedSecondaryCta.isExternal ? "noopener noreferrer" : undefined}
+                rel={
+                  resolvedSecondaryCta.isExternal
+                    ? "noopener noreferrer"
+                    : undefined
+                }
                 className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
               >
                 <i className="fab fa-whatsapp text-lg md:text-xl transition-transform duration-300 group-hover:rotate-12" />
@@ -142,7 +157,6 @@ export default function PageBanner({
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </section>

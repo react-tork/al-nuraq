@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
 
-
 interface HeroSlide {
   id: number;
   videoSrc: string;
@@ -48,7 +47,7 @@ export default function HeroBanner5() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(video);
@@ -56,7 +55,6 @@ export default function HeroBanner5() {
   }, []);
 
   return (
-
     <section className="hero hero-primary overflow-hidden relative z-0">
       <div className="hero hero-primary overflow-hidden relative z-0">
         <Swiper
@@ -83,7 +81,6 @@ export default function HeroBanner5() {
                 id="herobanner"
                 className="w-screen max-w-full h-full absolute left-0 top-0 -z-1 object-cover"
               >
-
                 <source src={slide.videoSrc} type="video/mp4" />
               </video>
 
@@ -138,7 +135,7 @@ export default function HeroBanner5() {
                   <div className="tab-links flex justify-center gap-x-10px items-center mb-4 md:mb-6 animated">
                     <div className="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold">
                       <a
-                        href="tel:+966510679737"
+                        href="tel:+966559679148"
                         className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
                       >
                         <i className="fas fa-phone-alt transition-transform duration-300 group-hover:rotate-12" />
@@ -148,7 +145,7 @@ export default function HeroBanner5() {
 
                     <div className="text-sm lg:text-base text-white relative group whitespace-nowrap transition-all duration-300 inline-block font-bold bg-secondary-color">
                       <a
-                        href="https://wa.me/966510679737?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F"
+                        href="https://wa.me/966559679148?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"

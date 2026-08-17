@@ -27,7 +27,7 @@ const cards: IconCard[] = [
     icon: "/images/icons/11.png",
     titleKey: "contact.icons.phoneTitle",
     lineKeys: ["contact.icons.phone1"],
-    href: "tel:+966510679737",
+    href: "tel:+966559679148",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const cards: IconCard[] = [
     icon: "icon-whatsapp",
     titleKey: "contact.icons.whatsappTitle",
     lineKeys: ["contact.icons.whatsapp1"],
-    href: "https://wa.me/966510679737",
+    href: "https://wa.me/966559679148",
     isFontIcon: true,
   },
 ];
