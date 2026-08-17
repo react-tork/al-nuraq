@@ -136,6 +136,7 @@ export default function HeroBanner5() {
                     <div className="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold">
                       <a
                         href="tel:+966559679148"
+                        target="_blank"
                         className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
                       >
                         <i className="fas fa-phone-alt transition-transform duration-300 group-hover:rotate-12" />

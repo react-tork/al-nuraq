@@ -16,7 +16,8 @@ export default function ContactPage() {
     <main>
       <PageBanner title={getTranslation("contact.pageTitle", locale)} />
       <ContactIcons />
-      <ContactForm />
+      <div className="py-10"></div>
+      {/* <ContactForm /> */}
       <ContactMap />
     </main>
   );

@@ -113,7 +113,7 @@ export default function FaqAccordion() {
       </div>
 
       {/* contact */}
-      <div className="pt-100px text-center">
+      {/* <div className="pt-100px text-center">
         <h4 className="text-xl md:text-22px lg:text-26px xl:text-3xl font-bold text-heading-color">
           <span className="heading-1.3 md:heading-1.3 lg:heading-1.3 xl:heading-1.3">
             {getTranslation("faq.stillNeedHelp", locale)}
@@ -134,7 +134,7 @@ export default function FaqAccordion() {
             <i className="fas fa-phone" /> {getTranslation("faq.phone", locale)}
           </span>
         </h4>
-      </div>
+      </div> */}
 
       {/* video lightbox */}
       {activeVideoUrl && (

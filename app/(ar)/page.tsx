@@ -45,7 +45,7 @@ export default function Home() {
         </div>
         <LocationArea />
       </section>
-      <NewsBlog />
+      {/* <NewsBlog /> */}
       <section className="container pt-16 md:pt-20 pb-12 md:pb-18">
         {/* section heading */}
         <div className="text-center mb-50px">

@@ -26,7 +26,7 @@ const accordionItems: AccordionItem[] = [
       { href: "/scrap/machinery-scrap", labelKey: "header.machineryScrap" },
       { href: "/scrap/e-scrap", labelKey: "header.eScrap" },
       { href: "/scrap/battery-scrap", labelKey: "header.batteryScrap" },
-      { href: "/scrap/industrial-scrap", labelKey: "header.industrialScrap" },
+      { href: "/industrial-solutions-scrap", labelKey: "header.industrialScrap" },
     ],
   },
 ];

@@ -17,7 +17,7 @@ const amenities: Amenity[] = [
   { id: 7, icon: "flaticon-home-2", key: "home.amenities.amenity7", href: "/scrap/machinery-scrap" },
   { id: 8, icon: "flaticon-slider", key: "home.amenities.amenity8", href: "/scrap/e-scrap" },
   { id: 9, icon: "", key: "home.amenities.amenity9", href: "/scrap/battery-scrap" },
-  { id: 10, icon: "", key: "home.amenities.amenity10", href: "/scrap/industrial-scrap" },
+  { id: 10, icon: "", key: "home.amenities.amenity10", href: "/industrial-solutions-scrap" },
 ];
 
 import { usePathname } from "next/navigation";

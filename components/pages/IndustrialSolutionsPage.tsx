@@ -23,11 +23,11 @@ export default function IndustrialSolutionsPage() {
     title: getTranslation(`industrialSolutions.services.service${i}Title`, locale),
     description: getTranslation(`industrialSolutions.services.service${i}Desc`, locale),
     href: [
-      "/scrap/industrial-scrap",
+      "/industrial-solutions-scrap",
       "/scrap/machinery-scrap",
       "/scrap/metal-scrap",
       "/scrap/cable-wire-scrap",
-      "/scrap/industrial",
+      "/industrial-solutions",
       "/scrap/construction",
     ][i - 1],
   }));

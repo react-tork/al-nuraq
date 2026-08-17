@@ -96,7 +96,7 @@ export default function Testimonials() {
                         <span className="text-3xl me-0.5 translate-y-2 inline-block">
                           <i className="flaticon-left-quote-1 group-hover:text-secondary-color transition-all duration-300" />
                         </span>
-                        <span className="leading-1.8">{getTranslation(t.quoteKey, locale)}</span>
+                        <span className="leading-1.8 line-clamp-4">{getTranslation(t.quoteKey, locale)}</span>
                       </p>
                     </div>
                     {/* card footer */}
@@ -112,11 +112,11 @@ export default function Testimonials() {
                       </div>
                       <div>
                         <h4 className="text-base lg:text-lg font-semibold text-heading-color mb-0">
-                          <span className="leading-1.3 hover:text-secondary-color">
+                          <span className="leading-1.3 hover:text-secondary-color h-14">
                             {getTranslation(t.nameKey, locale)}
                           </span>
                         </h4>
-                        <span className="text-sm uppercase">{getTranslation(t.roleKey, locale)}</span>
+                        <span className="text-sm uppercase line-clamp-1">{getTranslation(t.roleKey, locale)}</span>
                       </div>
                     </div>
                     <span className="hover-line absolute bottom-0 left-0 w-0 group-hover:w-full h-1 bg-secondary-color transition-all duration-300 block" />

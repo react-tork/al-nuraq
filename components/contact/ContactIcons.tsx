@@ -84,6 +84,7 @@ export default function ContactIcons() {
                         {card.href ? (
                           <a
                             href={card.href}
+                            target="_blank"
                             className="hover:text-secondary-color transition-colors"
                           >
                             {getTranslation(lineKey, locale)}

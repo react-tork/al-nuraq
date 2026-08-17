@@ -219,7 +219,7 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={() => locale !== "ar" && switchLocale("ar")}
-                    className={`relative z-10 w-9 h-6 pb-1 flex items-center justify-center text-xs font-bold rounded-full transition-colors duration-300 ${locale === "ar"
+                    className={`relative z-10 w-9 h-6 flex items-center justify-center text-xs font-bold rounded-full transition-colors duration-300 ${locale === "ar"
                         ? "text-white"
                         : isOverlay
                           ? "text-white/70 hover:text-white"
@@ -227,7 +227,7 @@ export default function Header() {
                       }`}
                     aria-label="Switch to Arabic"
                   >
-                    ع
+                    AR
                   </button>
 
                   {/* English */}

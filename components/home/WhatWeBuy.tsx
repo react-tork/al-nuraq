@@ -54,7 +54,7 @@ const scrapItems = [
   {
     key: "9",
     img: "/images/own/industrial-scrap.jpg",
-    link: "/scrap/industrial-scrap",
+    link: "/industrial-solutions",
   },
   {
     key: "10",

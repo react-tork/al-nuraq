@@ -31,24 +31,29 @@ const resourcesLinks = [
 /* Footer social icons */
 const socialLinks = [
   {
-    href: "https://www.facebook.com",
+    href: "https://www.facebook.com/alnuraqscrap",
     icon: "fab fa-facebook-f",
     label: "Facebook",
   },
   {
-    href: "https://x.com",
+    href: "https://x.com/alnuragscrap",
     icon: "fab fa-twitter",
     label: "Twitter",
   },
   {
-    href: "https://www.linkedin.com",
+    href: "https://www.linkedin.com/company/alnuragscrap",
     icon: "fab fa-linkedin-in",
     label: "LinkedIn",
   },
   {
-    href: "https://www.youtube.com",
+    href: "https://www.youtube.com/@alnuraqscrap",
     icon: "fab fa-youtube",
     label: "YouTube",
+  },
+  {
+    href: "https://www.snapchat.com/@alnuragscrap",
+    icon: "fab fa-snapchat",
+    label: "Snapchat",
   },
 ];
 
@@ -131,7 +136,7 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
 
         {/* Phone */}
         <li>
-          <a href="tel:+966559679148" className="leading-1.8 flex items-start">
+          <a href="tel:+966559679148" target="_blank" className="leading-1.8 flex items-start">
             <i
               className={`icon-call mt-1 shrink-0 me-15px`}
             ></i>
@@ -144,6 +149,7 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
         <li>
           <a
             href="https://wa.me/966559679148"
+            target="_blank"
             className="leading-1.8 flex items-start"
           >
             <i
@@ -268,7 +274,7 @@ export default function Footer() {
                   <ul className={`flex items-center gap-x-5 mt-5`}>
                     {socialLinks.map((item) => (
                       <li key={item.label}>
-                        <a href={item.href} className="leading-1.8">
+                        <a href={item.href} target="_blank" className="leading-1.8">
                           <i className={item.icon}></i>
                         </a>
                       </li>
