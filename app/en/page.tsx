@@ -14,8 +14,23 @@ import FaqAccordion from "@/components/faq/FaqAccordion";
 import LocationArea from "@/components/service-areas/LocationArea";
 import NewsBlog from "@/components/home/NewsBlog";
 import { getTranslation } from "@/lib/translations";
+import type { Metadata } from "next";
 
 const locale = "en" as const;
+
+export const metadata: Metadata = {
+  title: "Professional Scrap Metal Buyer in Dammam and Riyadh | Al Nuraq",
+  description: "Al Nuraq is a professional scrap metal buyer in Dammam and Riyadh. We buy copper, aluminum, iron, steel, industrial scrap, and provide pickup services for businesses and individuals.",
+  keywords: "scrap metal buyer, Dammam, Riyadh, copper scrap, aluminum scrap, iron scrap, steel scrap, industrial scrap, scrap pickup, Saudi Arabia",
+  openGraph: {
+    title: "Professional Scrap Metal Buyer in Dammam and Riyadh | Al Nuraq",
+    description: "Al Nuraq is a professional scrap metal buyer in Dammam and Riyadh. We buy copper, aluminum, iron, steel, industrial scrap, and provide pickup services.",
+    url: "https://alnuraqscrap.com/en",
+    siteName: "Al Nuraq",
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (
