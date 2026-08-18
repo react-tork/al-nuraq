@@ -37,7 +37,7 @@ export default function BlogSidebar() {
   return (
     <div className="lg:col-start-9 lg:col-span-4 space-y-10 mt-[100px] lg:mt-0">
       {/* newsletter */}
-      <div className="px-5 xl:px-35px pt-35px pb-10 xl:py-50px bg-primary-color relative z-0">
+      {/* <div className="px-5 xl:px-35px pt-35px pb-10 xl:py-50px bg-primary-color relative z-0">
         <h4 className="text-sm md:text-15px lg:text-base text-secondary-color font-bold mb-5px">
           <span className="leading-1.3 md:leading-1.3 lg:leading-1.3">
             {getTranslation("blogSidebar.subscribe", locale)}
@@ -80,7 +80,7 @@ export default function BlogSidebar() {
         <div className="text-[120px] text-color-1 absolute right-5 top-[15%] -z-1 opacity-10 leading-1">
           <i className="fas fa-envelope-open-text" />
         </div>
-      </div>
+      </div> */}
 
       {/* img */}
       <div>

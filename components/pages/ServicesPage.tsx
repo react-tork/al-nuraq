@@ -33,17 +33,9 @@ export default function MetalScrapPage() {
         title={getTranslation("services.banner.title", locale)}
         bgImage="https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format"
         description={getTranslation("services.banner.description", locale)}
-        primaryCta={{
-          label: getTranslation("contact.form.title", locale),
-          href: "/contact",
-        }}
-        secondaryCta={{
-          label: getTranslation("footer.whatsapp", locale),
-          href: "https://wa.me/966559679148",
-        }}
       />
       <WhatWeBuy />
-      <CollectionProcess />
+      {/* <CollectionProcess /> */}
     </main>
   );
 }

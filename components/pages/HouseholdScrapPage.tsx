@@ -7,15 +7,15 @@ import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
 import CollectionProcess from "@/components/scrap/CollectionProcess";
 
-export default function ConstructionScrapPage() {
+export default function HouseholdScrapPage() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname) as Locale;
 
   const materialsItems = [1, 2, 3, 4, 5, 6].map((i) =>
-    getTranslation(`constructionScrap.materials.item${i}`, locale),
+    getTranslation(`householdScrap.materials.item${i}`, locale),
   );
   const customersItems = [1, 2, 3, 4, 5].map((i) =>
-    getTranslation(`constructionScrap.customers.item${i}`, locale),
+    getTranslation(`householdScrap.customers.item${i}`, locale),
   );
 
   return (
@@ -25,43 +25,37 @@ export default function ConstructionScrapPage() {
           { label: getTranslation("common.home", locale), href: "/" },
           {
             label: getTranslation(
-              "constructionScrap.banner.breadcrumbServices",
+              "householdScrap.banner.breadcrumbServices",
               locale,
             ),
             href: "/services",
           },
-          { label: getTranslation("header.constructionScrap", locale) },
+          { label: getTranslation("header.householdScrap", locale) },
         ]}
-        subtitle={getTranslation("constructionScrap.banner.subtitle", locale)}
-        title={getTranslation("constructionScrap.banner.title", locale)}
-        bgImage="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=1000&h=600&fit=crop&auto=format"
+        subtitle={getTranslation("householdScrap.banner.subtitle", locale)}
+        title={getTranslation("householdScrap.banner.title", locale)}
+        bgImage="https://images.unsplash.com/photo-1556912173-3db9963f2db6?w=1000&h=600&fit=crop&auto=format"
         description={getTranslation(
-          "constructionScrap.banner.description",
+          "householdScrap.banner.description",
           locale,
         )}
       />
       <InfoListSection
-        title={getTranslation("constructionScrap.materials.title", locale)}
-        subtitle={getTranslation(
-          "constructionScrap.materials.subtitle",
-          locale,
-        )}
+        title={getTranslation("householdScrap.materials.title", locale)}
+        subtitle={getTranslation("householdScrap.materials.subtitle", locale)}
         items={materialsItems}
         image={{
-          src: "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=1000&h=600&fit=crop&auto=format",
+          src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           alt: "Materials we buy",
         }}
         imagePosition="start"
       />
       <InfoListSection
-        title={getTranslation("constructionScrap.customers.title", locale)}
-        subtitle={getTranslation(
-          "constructionScrap.customers.subtitle",
-          locale,
-        )}
+        title={getTranslation("householdScrap.customers.title", locale)}
+        subtitle={getTranslation("householdScrap.customers.subtitle", locale)}
         items={customersItems}
         image={{
-          src: "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?w=1000&h=600&fit=crop&auto=format",
+          src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           alt: "Customers we serve",
         }}
         imagePosition="end"

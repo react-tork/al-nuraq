@@ -14,9 +14,8 @@ type BreadcrumbItem = {
 };
 
 type BannerCta = {
-  label: string;
-  href: string;
-  isExternal?: boolean;
+  label?: string;
+  href?: string;
 };
 
 type PageBannerProps = {
@@ -51,14 +50,16 @@ export default function PageBanner({
     subtitle ?? getTranslation("pageBanner.subtitle", locale);
   const resolvedDescription =
     description ?? getTranslation("pageBanner.description", locale);
-  const resolvedPrimaryCta = primaryCta ?? {
-    label: getTranslation("pageBanner.primaryCta", locale),
-    href: "/contact",
+  const resolvedPrimaryCta = {
+    label: primaryCta?.label ?? getTranslation("pageBanner.primaryCta", locale),
+    href: primaryCta?.href ?? "tel:+966559679148",
   };
-  const resolvedSecondaryCta = secondaryCta ?? {
-    label: getTranslation("pageBanner.secondaryCta", locale),
-    href: "https://wa.me/966559679148?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F",
-    isExternal: true,
+  const resolvedSecondaryCta = {
+    label:
+      secondaryCta?.label ?? getTranslation("pageBanner.secondaryCta", locale),
+    href:
+      secondaryCta?.href ??
+      "https://wa.me/966559679148?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F",
   };
 
   const localizedHref = (href: string) => {
@@ -134,6 +135,8 @@ export default function PageBanner({
             <div className="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold">
               <a
                 href={localizedHref(resolvedPrimaryCta.href)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
               >
                 <i className="fas fa-phone-alt transition-transform duration-300 group-hover:rotate-12" />
@@ -144,12 +147,8 @@ export default function PageBanner({
             <div className="text-sm lg:text-base text-secondary-color-light relative group whitespace-nowrap transition-all duration-300 inline-block font-bold bg-secondary-color">
               <a
                 href={localizedHref(resolvedSecondaryCta.href)}
-                target={resolvedSecondaryCta.isExternal ? "_blank" : undefined}
-                rel={
-                  resolvedSecondaryCta.isExternal
-                    ? "noopener noreferrer"
-                    : undefined
-                }
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase inline-flex items-center gap-2"
               >
                 <i className="fab fa-whatsapp text-lg md:text-xl transition-transform duration-300 group-hover:rotate-12" />

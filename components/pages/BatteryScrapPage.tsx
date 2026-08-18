@@ -37,14 +37,6 @@ export default function BatteryScrapPage() {
         title={getTranslation("batteryScrap.banner.title", locale)}
         bgImage="https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=1000&h=600&fit=crop&auto=format"
         description={getTranslation("batteryScrap.banner.description", locale)}
-        primaryCta={{
-          label: getTranslation("contact.form.title", locale),
-          href: "/contact",
-        }}
-        secondaryCta={{
-          label: getTranslation("footer.whatsapp", locale),
-          href: "https://wa.me/966559679148",
-        }}
       />
       <InfoListSection
         title={getTranslation("batteryScrap.materials.title", locale)}
@@ -67,7 +59,7 @@ export default function BatteryScrapPage() {
         imagePosition="end"
         className="bg-section-bg-1"
       />
-      <CollectionProcess />
+      {/* <CollectionProcess /> */}
     </main>
   );
 }

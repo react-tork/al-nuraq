@@ -19,6 +19,9 @@
     "machineryScrap": "Machinery Scrap",
     "eScrap": "E-Scrap",
     "batteryScrap": "Battery Scrap",
+    "carsScrap": "Car Scrap",
+    "householdScrap": "Household Scrap",
+    "electricalPanelsScrap": "Electrical Panels",
     "constructionScrap": "Construction Scrap",
     "industrialScrap": "Industrial Scrap",
     "serviceAreas": "Service Areas",
@@ -326,7 +329,7 @@
       "subtitle": "Collection Service",
       "title": "Scrap Pickup in Dammam & Riyadh",
       "description": "Al Nuraq provides organized scrap collection from residential, commercial and industrial locations across our service areas. Contact us to check availability for your location and material.",
-      "primaryCta": "Request Scrap Pickup"
+      "primaryCta": "Call Now"
     },
     "note": {
       "title": "Important Note on Same-Day Collection",
@@ -707,6 +710,87 @@
       "item5": "Individuals with old batteries"
     }
   },
+  "carsScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Car Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys car scrap including end-of-life vehicles, car parts, automotive metal and components for responsible material recovery."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "End-of-life vehicles",
+      "item2": "Car body panels and frames",
+      "item3": "Engines and engine parts",
+      "item4": "Automotive metal components",
+      "item5": "Wheels and rims",
+      "item6": "Mixed car scrap"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Automotive workshops",
+      "item2": "Car dealerships",
+      "item3": "Individuals with old cars",
+      "item4": "Auto repair shops",
+      "item5": "Fleet operators"
+    }
+  },
+  "householdScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Household Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys household scrap including old appliances, household metal items and domestic scrap materials from homes and residences."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Old appliances (fridges, washing machines)",
+      "item2": "Household metal items",
+      "item3": "Kitchen equipment and utensils",
+      "item4": "Furniture with metal components",
+      "item5": "Plumbing fixtures and fittings",
+      "item6": "Mixed household scrap"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Homeowners",
+      "item2": "Tenants moving out",
+      "item3": "Property managers",
+      "item4": "Real estate agents",
+      "item5": "Individuals clearing homes"
+    }
+  },
+  "electricalPanelsScrap": {
+    "banner": {
+      "breadcrumbServices": "Services",
+      "subtitle": "Scrap Buying",
+      "title": "Electrical Panels Scrap Buyer in Dammam & Riyadh",
+      "description": "Al Nuraq buys electrical panels scrap including control panels, switchboards, electrical boards and distribution panels from industrial and commercial sites."
+    },
+    "materials": {
+      "title": "Materials",
+      "subtitle": "What We Buy",
+      "item1": "Control panels",
+      "item2": "Switchboards and switchgear",
+      "item3": "Electrical distribution panels",
+      "item4": "Circuit breaker panels",
+      "item5": "Industrial electrical boards",
+      "item6": "Mixed electrical panel scrap"
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Who We Serve",
+      "item1": "Industrial facilities",
+      "item2": "Commercial buildings",
+      "item3": "Electrical contractors",
+      "item4": "Construction projects",
+      "item5": "Facility managers"
+    }
+  },
   "constructionScrap": {
     "banner": {
       "breadcrumbServices": "Services",
@@ -853,7 +937,7 @@
       "whatsapp1": "+966 55 967 9148"
     },
     "form": {
-      "title": "Get A Quote",
+      "title": "call Now",
       "namePlaceholder": "Enter your name",
       "emailPlaceholder": "Enter email address",
       "servicePlaceholder": "Select Service Type",
@@ -934,7 +1018,7 @@
     "breadcrumbPage": "Page",
     "subtitle": "Welcome",
     "description": "Explore our services and discover how we can help you.",
-    "primaryCta": "Get a Quote",
+    "primaryCta": "Call Now",
     "secondaryCta": "WhatsApp Us"
   }
 }

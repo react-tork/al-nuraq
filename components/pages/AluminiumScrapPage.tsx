@@ -40,14 +40,6 @@ export default function AluminiumScrapPage() {
           "aluminiumScrap.banner.description",
           locale,
         )}
-        primaryCta={{
-          label: getTranslation("contact.form.title", locale),
-          href: "/contact",
-        }}
-        secondaryCta={{
-          label: getTranslation("footer.whatsapp", locale),
-          href: "https://wa.me/966559679148",
-        }}
       />
       <InfoListSection
         title={getTranslation("aluminiumScrap.materials.title", locale)}
@@ -70,7 +62,7 @@ export default function AluminiumScrapPage() {
         imagePosition="end"
         className="bg-section-bg-1"
       />
-      <CollectionProcess />
+      {/* <CollectionProcess /> */}
     </main>
   );
 }

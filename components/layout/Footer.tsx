@@ -18,9 +18,9 @@ const companyLinks = [
   { href: "/contact", key: "footer.contactUs" },
   { href: "/services", key: "footer.whatWeBuy" },
   { href: "/industrial-solutions", key: "footer.industrialSolutions" },
-  { href: "/scrap-pickup", key: "footer.scrapPickup" },
+  // { href: "/scrap-pickup", key: "footer.scrapPickup" },
   { href: "/service-areas", key: "footer.serviceAreas" },
-  { href: "/how-it-works", key: "footer.howItWorks" },
+  // { href: "/how-it-works", key: "footer.howItWorks" },
 ];
 
 /* "Resources" footer link column */
@@ -276,8 +276,8 @@ export default function Footer() {
         </div>
 
         {/* Footer copyright */}
-        <div className="py-25px px-15px 3xl:px-[2%] 4xl:px-[5%] bg-section-bg-7 text-sm lg:text-base text-white">
-          <div className="px-15px">
+        <div className=" py-25px bg-section-bg-7 text-sm lg:text-base text-white">
+          <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-15px">
               <div>
                 <p className="leading-1.8 text-center lg:text-start text-white">
@@ -291,13 +291,13 @@ export default function Footer() {
                   isRTL ? "flex-row-reverse" : "flex-row"
                 }`}
               >
-                <li>
+                {/* <li>
                   <a href="#" className="leading-1.8">
                     {getTranslation("footer.termsAndConditions", locale)}
                   </a>
-                </li>
+                </li> */}
 
-                <li>
+                {/* <li>
                   <a href="#" className="leading-1.8">
                     {getTranslation("footer.claim", locale)}
                   </a>
@@ -307,7 +307,7 @@ export default function Footer() {
                   <a href="#" className="leading-1.8">
                     {getTranslation("footer.privacyAndPolicy", locale)}
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

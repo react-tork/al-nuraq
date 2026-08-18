@@ -37,14 +37,6 @@ export default function CopperScrapPage() {
         title={getTranslation("copperScrap.banner.title", locale)}
         bgImage="https://images.unsplash.com/photo-1717667745852-a5bd6876c1de?w=1000&h=600&fit=crop&auto=format"
         description={getTranslation("copperScrap.banner.description", locale)}
-        primaryCta={{
-          label: getTranslation("contact.form.title", locale),
-          href: "/contact",
-        }}
-        secondaryCta={{
-          label: getTranslation("footer.whatsapp", locale),
-          href: "https://wa.me/966559679148",
-        }}
       />
       <InfoListSection
         title={getTranslation("copperScrap.materials.title", locale)}
@@ -67,7 +59,7 @@ export default function CopperScrapPage() {
         imagePosition="end"
         className="bg-section-bg-1"
       />
-      <CollectionProcess />
+      {/* <CollectionProcess /> */}
     </main>
   );
 }

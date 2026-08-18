@@ -38,14 +38,7 @@ export default function MetalScrapPage() {
         title={getTranslation("metalScrap.banner.title", locale)}
         bgImage="https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=600&h=400&fit=crop&auto=format"
         description={getTranslation("metalScrap.banner.description", locale)}
-        primaryCta={{
-          label: getTranslation("contact.form.title", locale),
-          href: "/contact",
-        }}
-        secondaryCta={{
-          label: getTranslation("footer.whatsapp", locale),
-          href: "https://wa.me/966559679148",
-        }}
+
       />
       <InfoListSection
         title={getTranslation("metalScrap.materials.title", locale)}
@@ -68,7 +61,7 @@ export default function MetalScrapPage() {
         imagePosition="end"
         className="bg-section-bg-1"
       />
-      <CollectionProcess />
+      {/* <CollectionProcess /> */}
     </main>
   );
 }

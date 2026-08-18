@@ -22,10 +22,7 @@ export default function FaqPage() {
             <BlogSidebar />
         </div>
       </section>
-      {/* <Counter /> */}
-      <div className="mt-10 md:mt-20">
-      <NewsBlog />
-      </div>
+
     </main>
   );
 }

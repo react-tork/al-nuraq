@@ -17,8 +17,9 @@ const navigation = [
   {
     label: "What We Buy",
     key: "header.whatWeBuy",
+    slug: "/services",
     children: [
-      { label: "All Services", slug: "/services", key: "header.allServices" },
+      // { label: "All Services", slug: "/services", key: "header.allServices" },
       { label: "Metal Scrap", slug: "/scrap/metal-scrap", key: "header.metalScrap" },
       { label: "Copper Scrap", slug: "/scrap/copper-scrap", key: "header.copperScrap" },
       { label: "Aluminium Scrap", slug: "/scrap/aluminium-scrap", key: "header.aluminiumScrap" },
@@ -27,6 +28,9 @@ const navigation = [
       { label: "Machinery Scrap", slug: "/scrap/machinery-scrap", key: "header.machineryScrap" },
       { label: "E-Scrap", slug: "/scrap/e-scrap", key: "header.eScrap" },
       { label: "Battery Scrap", slug: "/scrap/battery-scrap", key: "header.batteryScrap" },
+      { label: "Car Scrap", slug: "/scrap/cars", key: "header.carsScrap" },
+      { label: "Household Scrap", slug: "/scrap/household", key: "header.householdScrap" },
+      { label: "Electrical Panels", slug: "/scrap/electrical-panels", key: "header.electricalPanelsScrap" },
       { label: "Industrial Scrap", slug: "/industrial-solutions", key: "header.industrialScrap" },
     ],
   },
@@ -144,8 +148,8 @@ export default function Header() {
                     activeHref.startsWith(item.children[0].slug + "/"));
                 return item.children ? (
                   <li key={item.label} className="relative group">
-                    <a
-                      href="#"
+                    <Link
+                      href={locale === 'en' ? `/en${item.slug}` : item.slug}
                       className={`text-lg xl:text-15px 2xl:text-lg font-semibold whitespace-nowrap ps-10px py-22px hover:text-secondary-color ${isOverlay
                         ? "text-white"
                         : isParentActive
@@ -158,7 +162,7 @@ export default function Header() {
                         className={`fas fa-chevron-down text-xs  transition-all duration-300 group-hover:rotate-180 ${isOverlay ? "text-white" : ""
                           }`}
                       ></i>
-                    </a>
+                    </Link>
 
                     <ul className="py-15px border-t-[5px] border-secondary-color bg-white w-dropdown shadow-box-shadow-4 absolute start-0 top-full opacity-0 invisible translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-xl">
                       {item.children.map((child) => {
@@ -203,15 +207,29 @@ export default function Header() {
           <div>
             <ul className="flex gap-10px items-center">
               <li>
+                <a
+                  href="https://wa.me/966559679148?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp us"
+                  className={`flex items-center justify-center w-8.5 h-8.5 rounded-sm transition-all duration-300 ${isOverlay
+                    ? "bg-white/10 border border-white/20 text-white hover:bg-white/20"
+                    : "bg-[#25D366] text-white shadow-md hover:scale-105"
+                    }`}
+                >
+                  <i className="fab fa-whatsapp text-lg" />
+                </a>
+              </li>
+              <li>
                 <div
-                  className={`relative flex items-center p-1 rounded-full transition-all duration-300 ${isOverlay
-                      ? "bg-white/10 border border-white/20"
-                      : "bg-heading-color/5 border border-heading-color/10"
+                  className={`relative flex items-center p-1 rounded-sm transition-all duration-300 ${isOverlay
+                    ? "bg-white/10 border border-white/20"
+                    : "bg-heading-color/5 border border-heading-color/10"
                     }`}
                 >
                   {/* Active background */}
                   <span
-                    className={`absolute top-1 bottom-1 w-[34px] rounded-full bg-secondary-color transition-all duration-300 ${locale === "ar" ? "rtl:right-1 ltr:left-1" : "rtl:left-1 ltr:right-1"
+                    className={`absolute top-0 bottom-0 w-[40px] rounded-xs bg-secondary-color transition-all duration-300 ${locale === "ar" ? "rtl:right-0 ltr:left-0" : "rtl:left-0 ltr:right-0"
                       }`}
                   />
 
@@ -220,10 +238,10 @@ export default function Header() {
                     type="button"
                     onClick={() => locale !== "ar" && switchLocale("ar")}
                     className={`relative z-10 w-9 h-6 flex items-center justify-center text-xs font-bold rounded-full transition-colors duration-300 ${locale === "ar"
-                        ? "text-white"
-                        : isOverlay
-                          ? "text-white/70 hover:text-white"
-                          : "text-heading-color/60 hover:text-heading-color"
+                      ? "text-white"
+                      : isOverlay
+                        ? "text-white/70 hover:text-white"
+                        : "text-heading-color/60 hover:text-heading-color"
                       }`}
                     aria-label="Switch to Arabic"
                   >
@@ -235,10 +253,10 @@ export default function Header() {
                     type="button"
                     onClick={() => locale !== "en" && switchLocale("en")}
                     className={`relative z-10 w-9 h-6 flex items-center justify-center text-xs font-bold rounded-full transition-colors duration-300 ${locale === "en"
-                        ? "text-white"
-                        : isOverlay
-                          ? "text-white/70 hover:text-white"
-                          : "text-heading-color/60 hover:text-heading-color"
+                      ? "text-white"
+                      : isOverlay
+                        ? "text-white/70 hover:text-white"
+                        : "text-heading-color/60 hover:text-heading-color"
                       }`}
                     aria-label="Switch to English"
                   >

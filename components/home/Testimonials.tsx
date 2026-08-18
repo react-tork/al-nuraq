@@ -96,7 +96,7 @@ export default function Testimonials() {
                         <span className="text-3xl me-0.5 translate-y-2 inline-block">
                           <i className="flaticon-left-quote-1 group-hover:text-secondary-color transition-all duration-300" />
                         </span>
-                        <span className="leading-1.8 line-clamp-4">{getTranslation(t.quoteKey, locale)}</span>
+                        <span className="line-clamp-4 h-30">{getTranslation(t.quoteKey, locale)}</span>
                       </p>
                     </div>
                     {/* card footer */}

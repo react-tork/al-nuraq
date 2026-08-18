@@ -127,14 +127,14 @@ export default function LocationArea() {
                                 </li>
                             ))}
                         </ul>
-
+{/* 
                         <Link
                             href={area.slug}
                             className="text-sm md:text-base text-secondary-color hover:text-heading-color font-semibold inline-flex items-center gap-2 group/link"
                         >
                             {getTranslation("serviceAreas.viewPage", locale).replace("{city}", city)}
                             <i className="fas fa-arrow-right text-xs transition-transform duration-300 group-hover/link:translate-x-1" />
-                        </Link>
+                        </Link> */}
                     </div>
                 );
             })}
