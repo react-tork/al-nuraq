@@ -206,30 +206,16 @@ export default function Header() {
           {/* header right */}
           <div>
             <ul className="flex gap-10px items-center">
-              <li>
-                <a
-                  href="https://wa.me/966559679148?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp us"
-                  className={`flex items-center justify-center w-8.5 h-8.5 rounded-sm transition-all duration-300 ${isOverlay
-                    ? "bg-white/10 border border-white/20 text-white hover:bg-white/20"
-                    : "bg-[#25D366] text-white shadow-md hover:scale-105"
-                    }`}
-                >
-                  <i className="fab fa-whatsapp text-lg" />
-                </a>
-              </li>
-              <li>
+                            <li>
                 <div
-                  className={`relative flex items-center p-1 rounded-sm transition-all duration-300 ${isOverlay
+                  className={`relative flex items-center p-1 transition-all duration-300 ${isOverlay
                     ? "bg-white/10 border border-white/20"
                     : "bg-heading-color/5 border border-heading-color/10"
                     }`}
                 >
                   {/* Active background */}
                   <span
-                    className={`absolute top-0 bottom-0 w-[40px] rounded-xs bg-secondary-color transition-all duration-300 ${locale === "ar" ? "rtl:right-0 ltr:left-0" : "rtl:left-0 ltr:right-0"
+                    className={`absolute top-0 bottom-0 w-7 bg-secondary-color transition-all duration-300 ${locale === "ar" ? "rtl:right-0 ltr:left-0" : "rtl:left-0 ltr:right-0"
                       }`}
                   />
 
@@ -237,7 +223,7 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={() => locale !== "ar" && switchLocale("ar")}
-                    className={`relative z-10 w-9 h-6 flex items-center justify-center text-xs font-bold rounded-full transition-colors duration-300 ${locale === "ar"
+                    className={`relative z-10 w-6 h-4 flex items-center justify-center text-xs font-bold transition-colors duration-300 ${locale === "ar"
                       ? "text-white"
                       : isOverlay
                         ? "text-white/70 hover:text-white"
@@ -252,7 +238,7 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={() => locale !== "en" && switchLocale("en")}
-                    className={`relative z-10 w-9 h-6 flex items-center justify-center text-xs font-bold rounded-full transition-colors duration-300 ${locale === "en"
+                    className={`relative z-10 w-6 h-4 flex items-center justify-center text-xs font-bold transition-colors duration-300 ${locale === "en"
                       ? "text-white"
                       : isOverlay
                         ? "text-white/70 hover:text-white"
@@ -264,9 +250,27 @@ export default function Header() {
                   </button>
                 </div>
               </li>
+              <li>
+                <a
+                  href="https://wa.me/966559679148?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp us"
+                  className={`flex font-bold px-2 sm:px-4.5 h-8 sm:h-12 items-center justify-center transition-all duration-300 text-sm ${isOverlay
+                    ? "bg-whatsapp/10 border border-whatsapp/20 text-whatsapp hover:bg-whatsapp/20"
+                    : "bg-whatsapp text-white/90 shadow-md hover:scale-105"
+                    }`}
+                >
+                  <i className="fab fa-whatsapp text-lg sm:me-2" />
+                  <span className="hidden sm:inline">
+                    {getTranslation('pageBanner.secondaryCta', locale)}
+                  </span>
+                </a>
+              </li>
+
               <li className="block xl:hidden">
                 <button
-                  className={`show-drawer h-50px w-50px shadow-box-shadow-1 flex justify-center items-center transition-all duration-300 relative ${isOverlay ? "bg-white" : "text-heading-color"
+                  className={`show-drawer h-8 w-8 shadow-box-shadow-1 flex justify-center items-center transition-all duration-300 relative ${isOverlay ? "bg-white" : "text-heading-color"
                     }`}
                   onClick={() => setMobileOpen((prev) => !prev)}
                   aria-label="Toggle menu"

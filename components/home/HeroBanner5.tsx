@@ -121,7 +121,7 @@ export default function HeroBanner5() {
                       </a>
                     </div>
 
-                    <div className="text-sm lg:text-base text-white relative group whitespace-nowrap transition-all duration-300 inline-block font-bold bg-secondary-color">
+                    <div className="text-sm lg:text-base text-white relative group whitespace-nowrap transition-all duration-300 inline-block font-bold bg-whatsapp">
                       <a
                         href="https://wa.me/966559679148?text=Hi%2C%20I%20want%20to%20sell%20my%20scrap.%20Can%20you%20share%20more%20details%3F"
                         target="_blank"

@@ -144,7 +144,7 @@ export default function PageBanner({
               </a>
             </div>
 
-            <div className="text-sm lg:text-base text-secondary-color-light relative group whitespace-nowrap transition-all duration-300 inline-block font-bold bg-secondary-color">
+            <div className="text-sm lg:text-base text-white relative group whitespace-nowrap transition-all duration-300 inline-block font-bold bg-whatsapp">
               <a
                 href={localizedHref(resolvedSecondaryCta.href)}
                 target="_blank"

@@ -113,7 +113,7 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
               className={`icon-call mt-1 shrink-0 me-15px`}
             ></i>
 
-            <span>{getTranslation("footer.phone", locale)}</span>
+            <span dir="ltr">{getTranslation("footer.phone", locale)}</span>
           </a>
         </li>
 
@@ -121,14 +121,15 @@ function FooterContactColumn({ locale }: { locale: Locale }) {
         <li>
           <a
             href="https://wa.me/966559679148"
+            
             target="_blank"
             className="leading-1.8 flex items-start"
           >
             <i
-              className={`icon-whatsapp mt-1 shrink-0 me-15px`}
+              className={`icon-whatsapp mt-1 shrink-0 me-15px text-whatsapp`}
             ></i>
 
-            <span>{getTranslation("footer.whatsapp", locale)}</span>
+            <span dir="ltr">{getTranslation("footer.whatsapp", locale)}</span>
           </a>
         </li>
 

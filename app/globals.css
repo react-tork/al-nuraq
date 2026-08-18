@@ -55,6 +55,9 @@
   --color-white-7: #F7F5F0;
   --color-green: #77c720;
   --color-ratings: #B58D4F;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #128C7E;
+  --color-whatsapp-light: #DCF8C6;
 
   /* ---------- Fonts ---------- */
   --font-heading: "Poppins", sans-serif;
