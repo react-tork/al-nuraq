@@ -278,26 +278,26 @@ export default function Footer() {
         {/* Footer copyright */}
         <div className=" py-25px bg-section-bg-7 text-sm lg:text-base text-white">
           <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-15px">
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-y-15px">
               <div>
-                <p className="leading-1.8 text-center lg:text-start text-white">
+                <p className="leading-1.8 text-center text-white">
                   {getTranslation("footer.allRightsReserved", locale)} @{" "}
                   {getTranslation("footer.companyName", locale)} 2026
                 </p>
               </div>
-
+{/* 
               <ul
                 className={`flex gap-x-25px items-center justify-center lg:justify-end capitalize font-semibold font-poppins text-sm ${
                   isRTL ? "flex-row-reverse" : "flex-row"
                 }`}
               >
-                {/* <li>
+                <li>
                   <a href="#" className="leading-1.8">
                     {getTranslation("footer.termsAndConditions", locale)}
                   </a>
-                </li> */}
+                </li>
 
-                {/* <li>
+                <li>
                   <a href="#" className="leading-1.8">
                     {getTranslation("footer.claim", locale)}
                   </a>
@@ -307,8 +307,8 @@ export default function Footer() {
                   <a href="#" className="leading-1.8">
                     {getTranslation("footer.privacyAndPolicy", locale)}
                   </a>
-                </li> */}
-              </ul>
+                </li>
+              </ul> */}
             </div>
           </div>
         </div>
