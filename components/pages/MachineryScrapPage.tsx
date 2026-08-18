@@ -47,7 +47,7 @@ export default function MachineryScrapPage() {
         subtitle={getTranslation("machineryScrap.materials.subtitle", locale)}
         items={materialsItems}
         image={{
-          src: "https://images.unsplash.com/photo-1720036236855-9a1a2e4d3f26?w=1000&h=600&fit=crop&auto=format",
+          src: "https://plus.unsplash.com/premium_photo-1676760960755-bb03532a8ca3?q=80&w=822&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           alt: "Materials we buy",
         }}
         imagePosition="start"

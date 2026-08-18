@@ -34,7 +34,7 @@ export default function HouseholdScrapPage() {
         ]}
         subtitle={getTranslation("householdScrap.banner.subtitle", locale)}
         title={getTranslation("householdScrap.banner.title", locale)}
-        bgImage="https://images.unsplash.com/photo-1556912173-3db9963f2db6?w=1000&h=600&fit=crop&auto=format"
+        bgImage="https://images.unsplash.com/photo-1785900976828-9d67c8b24134?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         description={getTranslation(
           "householdScrap.banner.description",
           locale,
@@ -45,7 +45,7 @@ export default function HouseholdScrapPage() {
         subtitle={getTranslation("householdScrap.materials.subtitle", locale)}
         items={materialsItems}
         image={{
-          src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          src: "https://images.unsplash.com/photo-1605656383818-6a2ad24ef37b?q=80&w=1097&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           alt: "Materials we buy",
         }}
         imagePosition="start"
@@ -55,7 +55,7 @@ export default function HouseholdScrapPage() {
         subtitle={getTranslation("householdScrap.customers.subtitle", locale)}
         items={customersItems}
         image={{
-          src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          src: "https://images.unsplash.com/photo-1617303331806-3d6b58e03241?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           alt: "Customers we serve",
         }}
         imagePosition="end"

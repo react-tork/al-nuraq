@@ -46,7 +46,7 @@ export default function CableWirePage() {
         subtitle={getTranslation("cableWireScrap.materials.subtitle", locale)}
         items={materialsItems}
         image={{
-          src: "https://images.unsplash.com/photo-1687038520563-2310e8b06ed2?w=1000&h=600&fit=crop&auto=format",
+          src: "https://images.unsplash.com/photo-1642910537288-60b161d5cac3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           alt: "Materials we buy",
         }}
         imagePosition="start"

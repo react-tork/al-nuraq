@@ -34,7 +34,7 @@ export default function ElectricalPanelsScrapPage() {
         ]}
         subtitle={getTranslation("electricalPanelsScrap.banner.subtitle", locale)}
         title={getTranslation("electricalPanelsScrap.banner.title", locale)}
-        bgImage="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1000&h=600&fit=crop&auto=format"
+        bgImage="https://images.unsplash.com/flagged/photo-1566843017081-a27f11f2bf05?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         description={getTranslation(
           "electricalPanelsScrap.banner.description",
           locale,
@@ -45,7 +45,7 @@ export default function ElectricalPanelsScrapPage() {
         subtitle={getTranslation("electricalPanelsScrap.materials.subtitle", locale)}
         items={materialsItems}
         image={{
-          src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          src: "https://images.unsplash.com/photo-1550777190-77308a2b7387?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           alt: "Materials we buy",
         }}
         imagePosition="start"
@@ -55,7 +55,7 @@ export default function ElectricalPanelsScrapPage() {
         subtitle={getTranslation("electricalPanelsScrap.customers.subtitle", locale)}
         items={customersItems}
         image={{
-          src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          src: "https://images.unsplash.com/photo-1614002093698-80e88047be3a?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           alt: "Customers we serve",
         }}
         imagePosition="end"

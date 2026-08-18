@@ -35,7 +35,7 @@ export default function AluminiumScrapPage() {
         ]}
         subtitle={getTranslation("aluminiumScrap.banner.subtitle", locale)}
         title={getTranslation("aluminiumScrap.banner.title", locale)}
-        bgImage="https://images.unsplash.com/photo-1561503412-852800622772?w=1000&h=600&fit=crop&auto=format"
+        bgImage="/images/own/alumunium-scrap.jpg"
         description={getTranslation(
           "aluminiumScrap.banner.description",
           locale,

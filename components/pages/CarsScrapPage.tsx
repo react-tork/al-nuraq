@@ -34,7 +34,7 @@ export default function CarsScrapPage() {
         ]}
         subtitle={getTranslation("carsScrap.banner.subtitle", locale)}
         title={getTranslation("carsScrap.banner.title", locale)}
-        bgImage="https://images.unsplash.com/photo-1565689666646-2596ef8d8b8e?w=1000&h=600&fit=crop&auto=format"
+        bgImage="https://images.unsplash.com/photo-1570042707390-2e011141ab78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyJTIwc2NyYXB8ZW58MHx8MHx8fDA%3D"
         description={getTranslation(
           "carsScrap.banner.description",
           locale,
@@ -45,7 +45,7 @@ export default function CarsScrapPage() {
         subtitle={getTranslation("carsScrap.materials.subtitle", locale)}
         items={materialsItems}
         image={{
-          src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          src: "https://images.unsplash.com/photo-1771240661767-5b10be9e7d8c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhciUyMHNjcmFwfGVufDB8fDB8fHww",
           alt: "Materials we buy",
         }}
         imagePosition="start"
@@ -55,7 +55,7 @@ export default function CarsScrapPage() {
         subtitle={getTranslation("carsScrap.customers.subtitle", locale)}
         items={customersItems}
         image={{
-          src: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          src: "https://images.unsplash.com/photo-1585572214973-0fd84fd354fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FyJTIwc2NyYXB8ZW58MHx8MHx8fDA%3D",
           alt: "Customers we serve",
         }}
         imagePosition="end"

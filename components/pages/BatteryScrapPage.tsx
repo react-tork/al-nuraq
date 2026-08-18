@@ -35,7 +35,7 @@ export default function BatteryScrapPage() {
         ]}
         subtitle={getTranslation("batteryScrap.banner.subtitle", locale)}
         title={getTranslation("batteryScrap.banner.title", locale)}
-        bgImage="https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=1000&h=600&fit=crop&auto=format"
+        bgImage="https://images.unsplash.com/photo-1642801069630-bbb4d78061be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmF0dGVyeSUyMHNjcmFwfGVufDB8fDB8fHww"
         description={getTranslation("batteryScrap.banner.description", locale)}
       />
       <InfoListSection
@@ -43,7 +43,7 @@ export default function BatteryScrapPage() {
         subtitle={getTranslation("batteryScrap.materials.subtitle", locale)}
         items={materialsItems}
         image={{
-          src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=1000&h=600&fit=crop&auto=format",
+          src: "/images/own/battery-scrap.jpg",
           alt: "Materials we buy",
         }}
         imagePosition="start"
@@ -53,7 +53,7 @@ export default function BatteryScrapPage() {
         subtitle={getTranslation("batteryScrap.customers.subtitle", locale)}
         items={customersItems}
         image={{
-          src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=1000&h=600&fit=crop&auto=format",
+          src: "https://images.unsplash.com/photo-1642801069630-bbb4d78061be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmF0dGVyeSUyMHNjcmFwfGVufDB8fDB8fHww",
           alt: "Customers we serve",
         }}
         imagePosition="end"

@@ -33,7 +33,7 @@ export default function EScrapPage() {
         ]}
         subtitle={getTranslation("eScrap.banner.subtitle", locale)}
         title={getTranslation("eScrap.banner.title", locale)}
-        bgImage="https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=1000&h=600&fit=crop&auto=format"
+        bgImage="https://images.unsplash.com/photo-1608653206809-e6a8044173b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEUtU2NyYXB8ZW58MHx8MHx8fDA%3D"
         description={getTranslation("eScrap.banner.description", locale)}
       />
       <InfoListSection
@@ -41,7 +41,7 @@ export default function EScrapPage() {
         subtitle={getTranslation("eScrap.materials.subtitle", locale)}
         items={materialsItems}
         image={{
-          src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=1000&h=600&fit=crop&auto=format",
+          src: "https://images.unsplash.com/photo-1759500657339-6e11b99a8882?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8RSUyMFNjcmFwfGVufDB8fDB8fHww",
           alt: "Materials we buy",
         }}
         imagePosition="start"
@@ -51,7 +51,7 @@ export default function EScrapPage() {
         subtitle={getTranslation("eScrap.customers.subtitle", locale)}
         items={customersItems}
         image={{
-          src: "https://images.unsplash.com/photo-1638983851342-63e1aa939a7a?w=1000&h=600&fit=crop&auto=format",
+          src: "https://images.unsplash.com/photo-1728610996980-bb247b031477?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8RSUyMFNjcmFwfGVufDB8fDB8fHww",
           alt: "Customers we serve",
         }}
         imagePosition="end"
