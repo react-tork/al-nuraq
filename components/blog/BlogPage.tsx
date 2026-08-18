@@ -1,95 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import PageBanner from "@/components/common/PageBanner";
+
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, type Locale } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
-
-type BlogPost = {
-  id: number;
-  categoryKey: string;
-  titleKey: string;
-  descriptionKey: string;
-  dateKey: string;
-  readTimeKey: string;
-  filter: string;
-};
-
-const posts: BlogPost[] = [
-  {
-    id: 1,
-    categoryKey: "blog.posts.post1.category",
-    titleKey: "blog.posts.post1.title",
-    descriptionKey: "blog.posts.post1.description",
-    dateKey: "blog.posts.post1.date",
-    readTimeKey: "blog.posts.post1.readTime",
-    filter: "all",
-  },
-  {
-    id: 2,
-    categoryKey: "blog.posts.post2.category",
-    titleKey: "blog.posts.post2.title",
-    descriptionKey: "blog.posts.post2.description",
-    dateKey: "blog.posts.post2.date",
-    readTimeKey: "blog.posts.post2.readTime",
-    filter: "copper",
-  },
-  {
-    id: 3,
-    categoryKey: "blog.posts.post3.category",
-    titleKey: "blog.posts.post3.title",
-    descriptionKey: "blog.posts.post3.description",
-    dateKey: "blog.posts.post3.date",
-    readTimeKey: "blog.posts.post3.readTime",
-    filter: "industrial",
-  },
-  {
-    id: 4,
-    categoryKey: "blog.posts.post4.category",
-    titleKey: "blog.posts.post4.title",
-    descriptionKey: "blog.posts.post4.description",
-    dateKey: "blog.posts.post4.date",
-    readTimeKey: "blog.posts.post4.readTime",
-    filter: "aluminium",
-  },
-  {
-    id: 5,
-    categoryKey: "blog.posts.post5.category",
-    titleKey: "blog.posts.post5.title",
-    descriptionKey: "blog.posts.post5.description",
-    dateKey: "blog.posts.post5.date",
-    readTimeKey: "blog.posts.post5.readTime",
-    filter: "all",
-  },
-  {
-    id: 6,
-    categoryKey: "blog.posts.post6.category",
-    titleKey: "blog.posts.post6.title",
-    descriptionKey: "blog.posts.post6.description",
-    dateKey: "blog.posts.post6.date",
-    readTimeKey: "blog.posts.post6.readTime",
-    filter: "scrapMetal",
-  },
-  {
-    id: 7,
-    categoryKey: "blog.posts.post7.category",
-    titleKey: "blog.posts.post7.title",
-    descriptionKey: "blog.posts.post7.description",
-    dateKey: "blog.posts.post7.date",
-    readTimeKey: "blog.posts.post7.readTime",
-    filter: "industrial",
-  },
-  {
-    id: 8,
-    categoryKey: "blog.posts.post8.category",
-    titleKey: "blog.posts.post8.title",
-    descriptionKey: "blog.posts.post8.description",
-    dateKey: "blog.posts.post8.date",
-    readTimeKey: "blog.posts.post8.readTime",
-    filter: "all",
-  },
-];
+import { blogPosts } from "@/lib/blog";
 
 const filters = [
   { key: "all", labelKey: "blog.filters.all" },
@@ -108,8 +27,8 @@ export default function BlogPage() {
 
   const filteredPosts =
     activeFilter === "all"
-      ? posts
-      : posts.filter((post) => post.filter === activeFilter);
+      ? blogPosts
+      : blogPosts.filter((post) => post.filter === activeFilter);
 
   return (
     <main>
@@ -132,11 +51,10 @@ export default function BlogPage() {
               <button
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
-                className={`px-5 py-2.5 text-sm md:text-base font-semibold rounded-full transition-all duration-300 border ${
-                  activeFilter === filter.key
+                className={`px-5 py-2.5 text-sm md:text-base font-semibold rounded-full transition-all duration-300 border ${activeFilter === filter.key
                     ? "bg-secondary-color text-white border-secondary-color"
                     : "bg-white text-heading-color border-border-color-1 hover:border-secondary-color hover:text-secondary-color"
-                }`}
+                  }`}
               >
                 {getTranslation(filter.labelKey, locale)}
               </button>
@@ -148,8 +66,20 @@ export default function BlogPage() {
             {filteredPosts.map((post) => (
               <article
                 key={post.id}
-                className="group bg-white border border-border-color-1 shadow-box-shadow-1 hover:shadow-box-shadow-4 transition-all duration-300 overflow-hidden flex flex-col"
+                className="group relative bg-white border border-border-color-1 shadow-box-shadow-1 hover:shadow-box-shadow-4 transition-all duration-300 overflow-hidden flex flex-col"
               >
+                {/* card thumb */}
+                <div className="relative leading-1 aspect-[16/10] overflow-hidden">
+                  <Link href={`/blog/${post.slug}`} className="block h-full">
+                    <Image
+                      src={post.image}
+                      alt={getTranslation(post.titleKey, locale)}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-all duration-700"
+                    />
+                  </Link>
+                </div>
+
                 {/* card body */}
                 <div className="p-30px flex flex-col flex-1">
                   {/* category + read time */}
@@ -165,12 +95,12 @@ export default function BlogPage() {
 
                   {/* title */}
                   <h3 className="text-lg md:text-xl lg:text-22px font-semibold text-heading-color mb-3">
-                    <a
-                      href="/blog-details"
+                    <Link
+                      href={`/blog/${post.slug}`}
                       className="hover:text-secondary-color leading-1.3 line-clamp-2 transition-colors duration-300"
                     >
                       {getTranslation(post.titleKey, locale)}
-                    </a>
+                    </Link>
                   </h3>
 
                   {/* description */}
@@ -185,17 +115,16 @@ export default function BlogPage() {
                         <i className="far fa-calendar-alt text-secondary-color" />
                         {getTranslation(post.dateKey, locale)}
                       </span>
-                      <a
-                        href="/blog-details"
+                      <Link
+                        href={`/blog/${post.slug}`}
                         className="text-xs md:text-sm font-semibold text-secondary-color uppercase hover:text-heading-color transition-colors duration-300"
                       >
                         {getTranslation("blog.read", locale)} <i className="fas fa-arrow-right rtl:rotate-180" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
-
-                <span className="hover-line absolute bottom-0 left-0 rtl:left-auto rtl:right-0 w-0 group-hover:w-full h-1 bg-secondary-color transition-all duration-300 block" />
+                <div className="hover-line absolute bottom-0 left-0 rtl:left-auto rtl:right-0 w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-secondary-color to-transparent transition-all duration-300 block" />
               </article>
             ))}
           </div>

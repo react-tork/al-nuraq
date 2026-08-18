@@ -109,29 +109,6 @@ export default function HeroBanner5() {
                   <p className="text-sm sm:text-base text-white/90 max-w-[640px] mb-30px animated [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]">
                     {getTranslation("home.hero.description", locale)}
                   </p>
-                  {/* sample button design */}
-                  {/* <div
-                          class="tab-links flex justify-center gap-x-10px items-center mb-10px"
-                        >
-                          <div
-                            class="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold"
-                          >
-                            <button
-                              class="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase"
-                            >
-                              <i class="fas fa-home ml-10px"></i> Rent Home
-                            </button>
-                          </div>
-                          <div
-                            class="text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold"
-                          >
-                            <button
-                              class="relative z-10 px-25px lg:px-10 py-15px whitespace-normal leading-1.8 lg:leading-1.8 uppercase"
-                            >
-                              <i class="fas fa-home ml-10px"></i> Sale Home
-                            </button>
-                          </div>
-                        </div> */}
                   <div className="tab-links flex justify-center gap-x-10px items-center mb-4 md:mb-6 animated">
                     <div className="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold">
                       <a

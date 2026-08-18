@@ -215,39 +215,6 @@ export default function MobileMenu({
               </ul>
             </div>
 
-
-            {/* my account */}
-            {/* <div>
-              <ul className="mb-30px pb-5 pt-5px border-b border-border-primary">
-                <li className="group mt-4">
-                  <Link href="/account" className="text-sm lg:text-base">
-                    <span className="inline-block h-50px w-50px border-2 border-border-color-1 text-center leading-50px rtl:ml-3">
-                      <i className="far fa-user"></i>
-                    </span>
-                    My Account
-                  </Link>
-                </li>
-                <li className="group mt-4">
-                  <Link href="/wishlist" className="text-sm lg:text-base">
-                    <span className="inline-block h-50px w-50px border-2 border-border-color-1 text-center leading-50px rtl:ml-3">
-                      <i className="far fa-heart"></i>
-                      <sup className="pl-0.5">3</sup>
-                    </span>
-                    Wishlist
-                  </Link>
-                </li>
-                <li className="group mt-4">
-                  <Link href="/cart" className="text-sm lg:text-base">
-                    <span className="inline-block h-50px w-50px border-2 border-border-color-1 text-center leading-50px rtl:ml-3">
-                      <i className="fas fa-shopping-cart"></i>
-                      <sup>5</sup>
-                    </span>
-                    Shoping Cart
-                  </Link>
-                </li>
-              </ul>
-            </div> */}
-
           </div>
           {/* Mobile menu social area */}
           <div className="flex justify-center">

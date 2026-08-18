@@ -10,6 +10,7 @@ import {
   type Locale,
 } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
+import { socialLinks } from "@/lib/social";
 
 /* "Company" footer link column */
 const companyLinks = [
@@ -26,35 +27,6 @@ const companyLinks = [
 const resourcesLinks = [
   { href: "/blog", key: "footer.blog" },
   { href: "/faq", key: "footer.faq" },
-];
-
-/* Footer social icons */
-const socialLinks = [
-  {
-    href: "https://www.facebook.com/alnuraqscrap",
-    icon: "fab fa-facebook-f",
-    label: "Facebook",
-  },
-  {
-    href: "https://x.com/alnuragscrap",
-    icon: "fab fa-twitter",
-    label: "Twitter",
-  },
-  {
-    href: "https://www.linkedin.com/company/alnuragscrap",
-    icon: "fab fa-linkedin-in",
-    label: "LinkedIn",
-  },
-  {
-    href: "https://www.youtube.com/@alnuraqscrap",
-    icon: "fab fa-youtube",
-    label: "YouTube",
-  },
-  {
-    href: "https://www.snapchat.com/@alnuragscrap",
-    icon: "fab fa-snapchat",
-    label: "Snapchat",
-  },
 ];
 
 /* Footer link column renderer */
@@ -310,7 +282,7 @@ export default function Footer() {
               <div>
                 <p className="leading-1.8 text-center lg:text-start text-white">
                   {getTranslation("footer.allRightsReserved", locale)} @{" "}
-                  {getTranslation("footer.companyName", locale)} 2024
+                  {getTranslation("footer.companyName", locale)} 2026
                 </p>
               </div>
 

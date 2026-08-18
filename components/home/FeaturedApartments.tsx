@@ -132,19 +132,19 @@ export default function FeaturedApartments() {
                     <ul className="flex flex-wrap gap-15px py-4">
                       <li className="text-sm pr-4 border-r border-primary-color/20">
                         <p className="leading-1.8 font-bold">
-                          3<i className="flaticon-bed ml-1" />
+                          3<i className="flaticon-bed me-1" />
                         </p>
                         <p className="leading-1.8">Bedrooms</p>
                       </li>
                       <li className="text-sm pr-4 border-r border-primary-color/20">
                         <p className="leading-1.8 font-bold">
-                          2<i className="flaticon-clean ml-1" />
+                          2<i className="flaticon-clean me-1" />
                         </p>
                         <p className="leading-1.8">Bedrooms</p>
                       </li>
                       <li className="text-sm">
                         <p className="leading-1.8 font-bold">
-                          3450<i className="flaticon-square-shape-design-interface-tool-symbol ml-1" />
+                          3450<i className="flaticon-square-shape-design-interface-tool-symbol me-1" />
                         </p>
                         <p className="leading-1.8">square Ft</p>
                       </li>
@@ -334,7 +334,7 @@ export default function FeaturedApartments() {
           />
           <div className="modal-content max-w-[500px] m-2 mt-150px sm:mx-auto relative z-small p-30px bg-white">
             <div className="flex">
-              <div className="w-[125px] ml-5 flex-shrink-0">
+              <div className="w-[125px] me5 flex-shrink-0">
                 <Image src="/images/product/4.png" alt="" width={854} height={614} className="w-full h-auto" />
               </div>
               <div className="pl-25px relative">

@@ -199,7 +199,7 @@ export default function Banner() {
                       </div>
                       {/* banner right */}
                       <div className="lg:row-start-1 lg:row-span-1 lg:col-start-1 lg:col-span-1">
-                        <div className="4xl:absolute rtl:right-[60px] rtl:xl:right-[150px] bottom-[100px] 4xl:h-[70%] 4xl:w-[45%]">
+                        <div className="4xl:absolute start-60px bottom-100px 4xl:h-[70%] 4xl:w-[45%]">
                           <Image
                             className="4xl:h-full 4xl:ml-auto"
                             src="/images/slider/21.png"
