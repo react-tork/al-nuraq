@@ -35,13 +35,13 @@ export default function InfoListSection({
       <div className="relative group h-full">
         {/* decorative offset shape behind the image */}
         <div className="absolute inset-0 bg-secondary-color/10 rounded-10px translate-x-2 translate-y-2" />
-        <div className="relative overflow-hidden rounded-10px border border-black/5 shadow-lg h-full">
+        <div className="relative overflow-hidden rounded-10px border border-black/5 shadow-lg h-full min-h-96">
           <Image
             src={image.src}
             alt={image.alt}
-            width={800}
-            height={1000}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
       </div>
