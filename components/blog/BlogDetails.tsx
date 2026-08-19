@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 import { type BlogPost } from "@/lib/blog";
 import { getTranslation } from "@/lib/translations";
-import { type Locale, getPathnameWithLocale } from "@/lib/i18n";
+import { type Locale } from "@/lib/i18n";
 import { socialLinks } from "@/lib/social";
 
 // ---------------------------------------------------------------------------
@@ -161,9 +161,10 @@ export default function BlogDetails({
                     </h4>
                     <ul className="text-sm lg:text-base flex gap-18px justify-center items-center text-color-1">
                       {(() => {
+                        const shareBase = locale === "en" ? `/en/blog/${post.slug}` : `/blog/${post.slug}`;
                         const shareUrl = typeof window !== 'undefined' 
-                          ? `${window.location.origin}${getPathnameWithLocale(`/blog/${post.slug}`, locale)}`
-                          : `/blog/${post.slug}`;
+                          ? `${window.location.origin}${shareBase}`
+                          : shareBase;
                         const shareTitle = t(post.titleKey);
                         
                         const shareTargets = [
@@ -217,7 +218,7 @@ export default function BlogDetails({
                     </h4>
                     <h4 className="text-lg lg:text-2xl font-semibold text-heading-color">
                       <Link
-                        href={getPathnameWithLocale(`/blog/${relatedPosts[0]?.slug ?? post.slug}`, locale)}
+                        href={locale === "en" ? `/en/blog/${relatedPosts[0]?.slug ?? post.slug}` : `/blog/${relatedPosts[0]?.slug ?? post.slug}`}
                         className="leading-1.3 md:leading-1.3 xl:leading-1.3"
                       >
                         {relatedPosts[0]
@@ -234,7 +235,7 @@ export default function BlogDetails({
                     </h4>
                     <h4 className="text-lg lg:text-2xl font-semibold text-heading-color">
                       <Link
-                        href={getPathnameWithLocale(`/blog/${relatedPosts[1]?.slug ?? post.slug}`, locale)}
+                        href={locale === "en" ? `/en/blog/${relatedPosts[1]?.slug ?? post.slug}` : `/blog/${relatedPosts[1]?.slug ?? post.slug}`}
                         className="leading-1.3 md:leading-1.3 xl:leading-1.3"
                       >
                         {relatedPosts[1]
@@ -256,7 +257,7 @@ export default function BlogDetails({
                       <div key={related.id} className="group shadow-box-shadow-5">
                         <div className="leading-1 aspect-[4/3]">
                           <Link
-                            href={getPathnameWithLocale(`/blog/${related.slug}`, locale)}
+                            href={locale === "en" ? `/en/blog/${related.slug}` : `/blog/${related.slug}`}
                             className="relative overflow-hidden block h-full"
                           >
                             <Image
@@ -276,7 +277,7 @@ export default function BlogDetails({
                           </p>
                           <h4 className="text-xl font-semibold text-heading-color mb-5">
                             <Link
-                              href={getPathnameWithLocale(`/blog/${related.slug}`, locale)}
+                              href={locale === "en" ? `/en/blog/${related.slug}` : `/blog/${related.slug}`}
                               className="hover:text-secondary-color leading-1.3"
                             >
                               {t(related.titleKey)}
@@ -319,7 +320,7 @@ export default function BlogDetails({
                         <div className="group border border-border-color-13 shadow-box-shadow-4">
                           <div className="leading-1 aspect-[4/3]">
                             <Link
-                              href={getPathnameWithLocale(`/blog/${recent.slug}`, locale)}
+                              href={locale === "en" ? `/en/blog/${recent.slug}` : `/blog/${recent.slug}`}
                               className="relative overflow-hidden block h-full"
                             >
                               <Image
@@ -340,7 +341,7 @@ export default function BlogDetails({
                             </p>
                             <h4 className="text-base font-semibold text-heading-color mb-15px">
                               <Link
-                                href={getPathnameWithLocale(`/blog/${recent.slug}`, locale)}
+                                href={locale === "en" ? `/en/blog/${recent.slug}` : `/blog/${recent.slug}`}
                                 className="hover:text-secondary-color leading-1.3"
                               >
                                 {t(recent.titleKey)}
@@ -377,7 +378,7 @@ export default function BlogDetails({
                   >
                     <div className="flex gap-x-5">
                       <div className="w-20 flex-shrink-0 aspect-square">
-                        <Link href={getPathnameWithLocale(`/blog/${recent.slug}`, locale)} className="relative block h-full">
+                        <Link href={locale === "en" ? `/en/blog/${recent.slug}` : `/blog/${recent.slug}`} className="relative block h-full">
                           <Image
                             src={recent.image}
                             alt={t(recent.titleKey)}
@@ -389,7 +390,7 @@ export default function BlogDetails({
                       <div>
                         <h6 className="text-sm font-medium mb-5px">
                           <Link
-                            href={getPathnameWithLocale(`/blog/${recent.slug}`, locale)}
+                            href={locale === "en" ? `/en/blog/${recent.slug}` : `/blog/${recent.slug}`}
                             className="leading-1.3"
                           >
                             {t(recent.titleKey)}

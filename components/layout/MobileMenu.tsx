@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, getPathnameWithoutLocale, type Locale } from "@/lib/i18n";
 import { getTranslation } from "@/lib/translations";
+import { socialLinks } from "@/lib/social";
 
 /* Accordion item: label key + list of links */
 type AccordionItem = {
@@ -222,38 +223,18 @@ export default function MobileMenu({
           {/* Mobile menu social area */}
           <div className="flex justify-center">
             <ul className="flex gap-3 items-center pt-4">
-              <li>
-                <a
-                  className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
-                  href="https://www.facebook.com"
-                >
-                  <i className="fab fa-facebook-f leading-10"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
-                  href="https://www.twiter.com"
-                >
-                  <i className="fab fab fa-twitter leading-10"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
-                  href="https://www.linkedin.com"
-                >
-                  <i className="fab fa-linkedin leading-10"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
-                  href="https://www.instagram.com"
-                >
-                  <i className="fab fa-instagram leading-10"></i>
-                </a>
-              </li>
+              {socialLinks.map((item) => (
+                <li key={item.label}>
+                  <a
+                    className="h-10 w-10 bg-section-bg-1 hover:bg-secondary-color hover:text-white text-center text-sm lg:text-base flex justify-center items-center"
+                    href={item.href}
+                    target="_blank"
+                    aria-label={item.label}
+                  >
+                    <i className={`${item.icon} leading-10`}></i>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

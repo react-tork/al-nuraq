@@ -34,7 +34,7 @@ export default function BlogPage() {
     <main>
       <PageBanner
         breadcrumbs={[
-          { label: getTranslation("blog.banner.breadcrumbHome", locale), href: "/" },
+          { label: getTranslation("blog.banner.breadcrumbHome", locale), href: locale === "en" ? "/en" : "/" },
           { label: getTranslation("blog.banner.breadcrumbBlog", locale) },
         ]}
         subtitle={getTranslation("blog.banner.subtitle", locale)}
@@ -70,7 +70,7 @@ export default function BlogPage() {
               >
                 {/* card thumb */}
                 <div className="relative leading-1 aspect-[16/10] overflow-hidden">
-                  <Link href={`/blog/${post.slug}`} className="block h-full">
+                  <Link href={locale === "en" ? `/en/blog/${post.slug}` : `/blog/${post.slug}`} className="block h-full">
                     <Image
                       src={post.image}
                       alt={getTranslation(post.titleKey, locale)}
@@ -96,7 +96,7 @@ export default function BlogPage() {
                   {/* title */}
                   <h3 className="text-lg md:text-xl lg:text-22px font-semibold text-heading-color mb-3">
                     <Link
-                      href={`/blog/${post.slug}`}
+                      href={locale === "en" ? `/en/blog/${post.slug}` : `/blog/${post.slug}`}
                       className="hover:text-secondary-color leading-1.3 line-clamp-2 transition-colors duration-300"
                     >
                       {getTranslation(post.titleKey, locale)}
@@ -116,7 +116,7 @@ export default function BlogPage() {
                         {getTranslation(post.dateKey, locale)}
                       </span>
                       <Link
-                        href={`/blog/${post.slug}`}
+                        href={locale === "en" ? `/en/blog/${post.slug}` : `/blog/${post.slug}`}
                         className="text-xs md:text-sm font-semibold text-secondary-color uppercase hover:text-heading-color transition-colors duration-300"
                       >
                         {getTranslation("blog.read", locale)} <i className="fas fa-arrow-right rtl:rotate-180" />

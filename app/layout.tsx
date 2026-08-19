@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og.png",
+        url: "/images/og.jpg",
         width: 1200,
         height: 630,
         alt: "Al Nuraq - Scrap Metal Buyer in Dammam and Riyadh",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Al Nuraq | Scrap Metal Buyer in Dammam and Riyadh",
     description: "Al Nuraq is a scrap metal buyer in Dammam and Riyadh. We buy copper, aluminum, iron, steel, industrial scrap, and provide pickup services for businesses and individuals.",
-    images: ["/images/og.png"],
+    images: ["/images/og.jpg"],
   },
   formatDetection: {
     email: false,
