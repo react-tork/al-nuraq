@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Iron and Steel - Heavy Metal Scrap Buying | Al Nuraq",
   description: "Al Nuraq buys iron and steel scrap in Dammam and Riyadh. Heavy metals, construction steel, and industrial iron recycling at competitive prices.",
   keywords: "iron and steel, heavy metal scrap, construction steel, industrial iron, metal recycling, Dammam, Riyadh",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/en/scrap/iron-steel",
+  },
   openGraph: {
     title: "Iron and Steel - Heavy Metal Scrap Buying | Al Nuraq",
     description: "Al Nuraq buys iron and steel scrap in Dammam and Riyadh at competitive prices.",

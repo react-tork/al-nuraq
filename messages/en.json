@@ -84,7 +84,7 @@
       "title": "About Al Nuraq – Your Trusted Scrap Partner",
       "description": "Al Nuraq buys metal, copper, aluminium, cables, machinery and industrial scrap from businesses, factories, contractors and individuals. We provide professional scrap evaluation and convenient collection services across Dammam, Riyadh and surrounding areas.",
       "feature1": "Fair, Market-Based Pricing",
-      "feature2": "Professional Scrap Collection",
+      "feature2": "Scrap Collection",
       "feature3": "Service for Every Customer",
       "feature4": "Clear Weighing & Evaluation",
       "quote": "Reliable scrap buying, fair pricing, and professional collection services you can count on.",
@@ -143,7 +143,7 @@
       "title": "Scrap Buying Made Simple",
       "service1Title": "Fair, Market-Based Pricing",
       "service1Desc": "We evaluate your scrap based on its type, quality, quantity and current market conditions, with clear communication throughout the process.",
-      "service2Title": "Professional Scrap Collection",
+      "service2Title": "Scrap Collection",
       "service2Desc": "We arrange convenient collection services for homes, businesses, factories and other locations across our service areas.",
       "service3Title": "Service for Every Customer",
       "service3Desc": "From household scrap to large industrial loads, we provide practical buying and collection solutions for individuals and businesses.",
@@ -288,7 +288,6 @@
       "buttonLabel": "Contact Us"
     }
   },
-
   "services": {
     "banner": {
       "subtitle": "Our Services",
@@ -501,7 +500,6 @@
       "readMore": "Read More"
     }
   },
-
   "metalScrap": {
     "banner": {
       "breadcrumbServices": "Services",
@@ -928,7 +926,6 @@
         "answer": "Yes, Al Nuraq serves customers in Qatif and nearby areas, subject to collection availability. Contact us to confirm your location."
       }
     }
-
   },
   "contact": {
     "pageTitle": "Contact Us",
@@ -1030,4 +1027,3 @@
     "secondaryCta": "Let's Talk"
   }
 }
-

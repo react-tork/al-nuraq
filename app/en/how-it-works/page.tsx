@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "How It Works - Scrap Metal Pickup Process | Al Nuraq",
   description: "Learn how Al Nuraq's scrap metal pickup process works in Dammam and Riyadh. Simple steps to sell your copper, aluminum, iron, and steel scrap efficiently.",
   keywords: "how scrap pickup works, scrap metal process, scrap selling steps, Dammam, Riyadh, metal recycling",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/en/how-it-works",
+  },
   openGraph: {
     title: "How It Works - Scrap Metal Pickup Process | Al Nuraq",
     description: "Learn how Al Nuraq's scrap metal pickup process works in Dammam and Riyadh.",

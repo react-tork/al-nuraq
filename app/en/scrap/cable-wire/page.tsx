@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Cable and Wire - Electrical Cable Recycling | Al Nuraq",
   description: "Al Nuraq buys cable and wire scrap in Dammam and Riyadh. Copper cables, aluminum wires, electrical wiring, and industrial cable recycling.",
   keywords: "cable and wire, electrical cable recycling, copper cable, aluminum wire, wire scrap, Dammam, Riyadh",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/en/scrap/cable-wire",
+  },
   openGraph: {
     title: "Cable and Wire - Electrical Cable Recycling | Al Nuraq",
     description: "Al Nuraq buys cable and wire scrap in Dammam and Riyadh.",

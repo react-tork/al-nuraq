@@ -53,7 +53,7 @@ export default function ContactIcons() {
   return (
     <section>
       <div className="container pt-30 pb-5">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-30px">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-30px">
           {cards.map((card) => {
             const content = (
               <>

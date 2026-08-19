@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Construction Scrap - Building Material Recycling | Al Nuraq",
   description: "Al Nuraq buys construction scrap in Dammam and Riyadh. Building materials, steel beams, metal pipes, and construction site scrap recycling.",
   keywords: "construction scrap, building material recycling, construction metal, steel beams, scrap from construction, Dammam, Riyadh",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/scrap/construction",
+  },
   openGraph: {
     title: "Construction Scrap - Building Material Recycling | Al Nuraq",
     description: "Al Nuraq buys construction scrap in Dammam and Riyadh.",

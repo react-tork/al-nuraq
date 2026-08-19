@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Aluminium Scrap - Top Prices for Aluminum Recycling | Al Nuraq",
   description: "Al Nuraq buys aluminum scrap at best prices in Dammam and Riyadh. We accept aluminum sheets, cans, extrusions, and industrial aluminum scrap.",
   keywords: "aluminium scrap, aluminum recycling, aluminum prices, aluminum buyer, Dammam, Riyadh, aluminum scrap dealer",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/scrap/aluminium-scrap",
+  },
   openGraph: {
     title: "Aluminium Scrap - Top Prices for Aluminum Recycling | Al Nuraq",
     description: "Al Nuraq buys aluminum scrap at best prices in Dammam and Riyadh.",

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "About Us - Professional Scrap Metal Buyers | Al Nuraq",
   description: "Learn about Al Nuraq, the leading professional scrap metal buyers in Dammam and Riyadh. Discover our story, mission, and commitment to sustainable recycling.",
   keywords: "about Al Nuraq, scrap metal company, Dammam, Riyadh, recycling, scrap buyer company",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/en/about",
+  },
   openGraph: {
     title: "About Us - Professional Scrap Metal Buyers | Al Nuraq",
     description: "Learn about Al Nuraq, the leading professional scrap metal buyers in Dammam and Riyadh.",

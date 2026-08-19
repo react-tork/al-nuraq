@@ -54,12 +54,12 @@
     "faq": "الأسئلة الشائعة",
     "aboutDescription": "خدمات احترافية لشراء وجمع الخردة للمنازل والشركات والعملاء الصناعيين في الرياض والدمام.",
     "address": "الدمام المدينة الصناعية الثانية، المملكة العربية السعودية",
-    "phone": "+٩٦٦ ٥٥ ٩٦٧ ٩١٤٨",
-    "whatsapp": "+٩٦٦ ٥٥ ٩٦٧ ٩١٤٨",
+    "phone": "+966 55 967 9148",
+    "whatsapp": "+966 55 967 9148",
     "email": "alnuraqscrap@gmail.com",
     "ctaTitle": "هل أنت مستعد لبيع خردتك؟",
     "ctaDescription": "احصل على سعر عادل وجمع احترافي لمواد الخردة الخاصة بك.",
-    "exploreProperties": "اتصل بنا",
+    "exploreProperties": "Contact Us",
     "allRightsReserved": "جميع الحقوق محفوظة",
     "termsAndConditions": "الشروط والأحكام",
     "claim": "مطالبة",
@@ -73,8 +73,8 @@
       "titleLine2": "إلى",
       "titleHighlight": "نقد فوري",
       "description": "تشتري النورق المعادن والنحاس والألمنيوم والكابلات والآلات والخردة الصناعية من الشركات والمصانع والمقاولين والأفراد. نقدم تقييماً احترافياً للخردة وخدمات جمع مريحة في الدمام والرياض والمناطق المحيطة.",
-      "callNow": "اتصل الآن",
-      "whatsapp": "لنتحدث",
+      "callNow": "Call Now",
+      "whatsapp": "Whatsapp",
       "feature1": "جمع سريع",
       "feature2": "تقييم شفاف",
       "feature3": "خدمة موثوقة"
@@ -336,7 +336,7 @@
       "subtitle": "خدمة الجمع",
       "title": "جمع الخردة في الدمام والرياض",
       "description": "توفر النورق جمعاً منظماً للخردة من المواقع السكنية والتجارية والصناعية في مناطق خدمتنا. اتصل بنا للتحقق من التوفر لموقعك وموادك.",
-      "primaryCta": "ااتصل الآن"
+      "primaryCta": "Call Now"
     },
     "note": {
       "title": "ملاحظة مهمة حول الجمع في نفس اليوم",
@@ -828,7 +828,7 @@
   "faq": {
     "stillNeedHelp": "هل ما زلت بحاجة إلى مساعدة؟ تواصل مع الدعم على مدار الساعة:",
     "contactUs": "اتصل بنا",
-    "phone": "+٩٦٦ ٥٥ ٩٦٧ ٩١٤٨",
+    "phone": "+966 55 967 9148",
     "items": {
       "faq1": {
         "question": "ما هي النوراق؟",
@@ -935,15 +935,15 @@
       "emailTitle": "عنوان البريد الإلكتروني",
       "phoneTitle": "رقم الهاتف",
       "addressTitle": "عنوان المكتب",
-      "whatsappTitle": "واتساب",
+      "whatsappTitle": "whatsapp",
       "email1": "alnuraqscrap@gmail.com",
-      "phone1": "+٩٦٦ ٥٥ ٩٦٧ ٩١٤٨",
+      "phone1": "+966 55 967 9148",
       "address1": "الدمام المدينة الصناعية الثانية",
       "address2": "المملكة العربية السعودية",
-      "whatsapp1": "+٩٦٦ ٥٥ ٩٦٧ ٩١٤٨"
+      "whatsapp1": "+966 55 967 9148"
     },
     "form": {
-      "title": "اتصل الآن",
+      "title": "Call Now",
       "namePlaceholder": "أدخل اسمك",
       "emailPlaceholder": "أدخل عنوان البريد الإلكتروني",
       "servicePlaceholder": "اختر نوع الخدمة",
@@ -1024,7 +1024,7 @@
     "breadcrumbPage": "الصفحة",
     "subtitle": "مرحباً",
     "description": "استكشف خدماتنا واكتشف كيف يمكننا مساعدتك.",
-    "primaryCta": "اتصل الآن",
-    "secondaryCta": "لنتحدث"
+    "primaryCta": "Call Now",
+    "secondaryCta": "Let's Talk"
   }
 }

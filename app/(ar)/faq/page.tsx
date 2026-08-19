@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "FAQ - Scrap Metal Buying Questions | Al Nuraq",
   description: "Find answers to frequently asked questions about scrap metal buying, recycling services, pickup process, and pricing at Al Nuraq in Dammam and Riyadh.",
   keywords: "scrap metal FAQ, recycling questions, scrap buying FAQ, Dammam, Riyadh, metal recycling",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/faq",
+  },
   openGraph: {
     title: "FAQ - Scrap Metal Buying Questions | Al Nuraq",
     description: "Find answers to frequently asked questions about scrap metal buying and recycling services.",

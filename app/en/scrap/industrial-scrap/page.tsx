@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Industrial Scrap - Business Metal Recycling | Al Nuraq",
   description: "Al Nuraq buys industrial scrap in Dammam and Riyadh. Manufacturing scrap, factory metal waste, and industrial recycling solutions for businesses.",
   keywords: "industrial scrap, business metal recycling, manufacturing scrap, factory waste, industrial recycling, Dammam, Riyadh",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/en/scrap/industrial-scrap",
+  },
   openGraph: {
     title: "Industrial Scrap - Business Metal Recycling | Al Nuraq",
     description: "Al Nuraq buys industrial scrap in Dammam and Riyadh for businesses.",

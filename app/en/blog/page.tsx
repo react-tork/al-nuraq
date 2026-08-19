@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Blog - Scrap Metal Recycling Tips and Industry News | Al Nuraq",
   description: "Read Al Nuraq's blog for expert tips on scrap metal recycling, industry news, and guides on selling copper, aluminum, iron, and steel scrap in Saudi Arabia.",
   keywords: "scrap metal blog, recycling tips, metal industry news, scrap selling guide, Dammam, Riyadh",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/en/blog",
+  },
   openGraph: {
     title: "Blog - Scrap Metal Recycling Tips and Industry News | Al Nuraq",
     description: "Read Al Nuraq's blog for expert tips on scrap metal recycling, industry news, and guides.",

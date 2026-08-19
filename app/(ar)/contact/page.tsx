@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Contact Us - Scrap Metal Buyers in Dammam and Riyadh | Al Nuraq",
   description: "Contact Al Nuraq for professional scrap metal buying services in Dammam and Riyadh. Get in touch for copper, aluminum, iron, steel scrap pickup and industrial scrap collection.",
   keywords: "contact Al Nuraq, scrap metal contact, Dammam, Riyadh, scrap pickup contact, industrial scrap buyer",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/contact",
+  },
   openGraph: {
     title: "Contact Us - Scrap Metal Buyers in Dammam and Riyadh | Al Nuraq",
     description: "Contact Al Nuraq for professional scrap metal buying services in Dammam and Riyadh.",

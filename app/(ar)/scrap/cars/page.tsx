@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Car Scrap - Vehicle and Auto Scrap Recycling | Al Nuraq",
   description: "Al Nuraq buys car scrap and vehicles in Dammam and Riyadh. End-of-life vehicles, auto parts, and car metal recycling at competitive prices.",
   keywords: "car scrap, vehicle recycling, auto scrap, car metal, junk cars, Dammam, Riyadh, car buyer",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/scrap/cars",
+  },
   openGraph: {
     title: "Car Scrap - Vehicle and Auto Scrap Recycling | Al Nuraq",
     description: "Al Nuraq buys car scrap and vehicles in Dammam and Riyadh at competitive prices.",

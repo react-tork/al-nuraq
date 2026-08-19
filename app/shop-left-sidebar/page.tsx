@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Shop - Al Nuraq Scrap Metal Services",
   description: "Browse Al Nuraq's scrap metal services and products in Dammam and Riyadh. Professional metal recycling and scrap buying solutions.",
   keywords: "shop, scrap metal services, metal recycling, Dammam, Riyadh, scrap buying",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/shop-left-sidebar",
+  },
   openGraph: {
     title: "Shop - Al Nuraq Scrap Metal Services",
     description: "Browse Al Nuraq's scrap metal services and products in Dammam and Riyadh.",

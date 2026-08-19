@@ -19,11 +19,14 @@ import type { Metadata } from "next";
 const locale = "en" as const;
 
 export const metadata: Metadata = {
-  title: "Professional Scrap Metal Buyer in Dammam and Riyadh | Al Nuraq",
-  description: "Al Nuraq is a professional scrap metal buyer in Dammam and Riyadh. We buy copper, aluminum, iron, steel, industrial scrap, and provide pickup services for businesses and individuals.",
+  title: "Al Nuraq | Scrap Metal Buyer in Dammam and Riyadh ",
+  description: "Al Nuraq is a scrap metal buyer in Dammam and Riyadh. We buy copper, aluminum, iron, steel, industrial scrap, and provide pickup services for businesses and individuals.",
   keywords: "scrap metal buyer, Dammam, Riyadh, copper scrap, aluminum scrap, iron scrap, steel scrap, industrial scrap, scrap pickup, Saudi Arabia",
+  alternates: {
+    canonical: "https://alnuraqscrap.com/en",
+  },
   openGraph: {
-    title: "Professional Scrap Metal Buyer in Dammam and Riyadh | Al Nuraq",
+    title: "Al Nuraq | Scrap Metal Buyer in Dammam and Riyadh ",
     description: "Al Nuraq is a professional scrap metal buyer in Dammam and Riyadh. We buy copper, aluminum, iron, steel, industrial scrap, and provide pickup services.",
     url: "https://alnuraqscrap.com/en",
     siteName: "Al Nuraq",

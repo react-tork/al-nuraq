@@ -131,7 +131,7 @@ export default function PageBanner({
           </p>
 
           {/* CTAs */}
-          <div className="tab-links flex gap-x-10px mb-4 md:mb-6 animated mt-4 md:mt-6">
+          <div className="tab-links flex justify-center sm:justify-start align-middle gap-x-10px mb-4 md:mb-6 animated mt-4 md:mt-6">
             <div className="active text-sm lg:text-base text-secondary-color relative group whitespace-nowrap transition-all duration-300 bg-section-bg-1 inline-block font-bold">
               <a
                 href={localizedHref(resolvedPrimaryCta.href)}

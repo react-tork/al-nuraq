@@ -21,6 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} | Al Nuraq Blog`,
     description: "Read about scrap metal recycling tips and industry insights from Al Nuraq experts.",
+    alternates: {
+      canonical: `https://alnuraqscrap.com/en/blog/${post.slug}`,
+    },
     openGraph: {
       title: `${post.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} | Al Nuraq Blog`,
       description: "Read about scrap metal recycling tips and industry insights from Al Nuraq experts.",
